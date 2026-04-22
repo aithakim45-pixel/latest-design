@@ -16,7 +16,9 @@
         p { color: var(--muted); font-size: 1.1rem; margin-bottom: 1rem; }
         .btn { display: inline-block; padding: 12px 28px; border-radius: 100px; font-weight: 600; transition: 0.3s; cursor: pointer; border: 2px solid transparent; text-align: center; }
         .btn-primary { background: var(--primary); color: var(--white); }
-        .btn-outline-white { border-color: var(--white); color: var(--white); }
+        .btn-outline { border: 2px solid var(--primary); color: var(--primary); }
+        .btn-outline:hover { background: var(--primary); color: var(--white); }
+        .btn-sm { padding: 8px 16px; font-size: 0.9rem; }
         
         /* Navbar */
         nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
@@ -26,49 +28,56 @@
         .lang-toggle { cursor: pointer; background: var(--light-grey); padding: 5px 15px; border-radius: 100px; font-weight: 700; }
         
         /* Hero */
-        .hero { background: var(--dark); color: var(--white); height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 5%; }
-        .hero h1 { font-size: 4rem; text-transform: uppercase; margin-bottom: 20px; }
+        .hero { background: var(--dark); color: var(--white); min-height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 150px 5% 80px; }
+        .hero h1 { font-size: 4rem; text-transform: uppercase; margin-bottom: 20px; max-width: 900px;}
         .orange-text { color: var(--primary); }
         .hero p { color: #A0AABF; max-width: 800px; font-size: 1.25rem; }
 
-        /* Intro */
-        .intro { padding: 80px 5%; display: flex; gap: 50px; flex-wrap: wrap; background: var(--white); align-items: center; }
-        .intro-text { flex: 2; min-width: 300px; font-size: 1.2rem; }
-        .intro-stats { flex: 1; min-width: 250px; display: flex; flex-direction: column; gap: 20px; font-weight: 700; font-size: 1.2rem; color: var(--dark); }
-        .intro-stats span { border-left: 4px solid var(--primary); padding-left: 15px; }
-        [dir="rtl"] .intro-stats span { border-left: none; border-right: 4px solid var(--primary); padding-left: 0; padding-right: 15px; }
+        /* Schedule Table Section */
+        .intro { padding: 80px 5%; background: var(--white); }
+        .intro h2 { font-size: 2.5rem; margin-bottom: 15px; color: var(--dark); text-transform: uppercase;}
+        .intro p { font-size: 1.2rem; max-width: 1000px; margin-bottom: 30px;}
+        .table-responsive { overflow-x: auto; width: 100%; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border-radius: 12px; }
+        .schedule-table { width: 100%; border-collapse: collapse; background: var(--white); min-width: 700px;}
+        .schedule-table th, .schedule-table td { padding: 20px; text-align: left; border-bottom: 1px solid #eee; }
+        [dir="rtl"] .schedule-table th, [dir="rtl"] .schedule-table td { text-align: right; }
+        .schedule-table th { background: var(--light-grey); color: var(--dark); font-weight: 700; font-size: 1.1rem;}
+        .schedule-table tr:last-child td { border-bottom: none; }
+        .schedule-table tr:hover { background: #fafafa; }
 
         /* Modules */
-        .modules { background: var(--light-grey); padding: 100px 5%; }
-        .mod-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 40px; }
-        .mod-card { background: var(--white); padding: 40px; border-radius: 16px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); position: relative; }
-        .mod-num { position: absolute; top: 40px; right: 40px; background: rgba(232, 93, 4, 0.1); color: var(--primary); width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; border-radius: 50%; font-weight: bold; font-size: 1.2rem;}
-        [dir="rtl"] .mod-num { right: auto; left: 40px; }
-        .mod-card h3 { font-size: 1.5rem; margin-bottom: 10px; width: 80%; }
-        .mod-meta { font-size: 0.9rem; color: var(--primary); font-weight: bold; margin-bottom: 20px; }
-        .mod-card ul { margin-left: 20px; color: var(--muted); }
+        .modules { padding: 100px 5%; }
+        .bg-light { background: var(--light-grey); }
+        .bg-white { background: var(--white); }
+        .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 50px; text-transform: uppercase;}
+        .mod-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .mod-card { background: var(--white); padding: 40px; border-radius: 16px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); border: 1px solid #eee; display: flex; flex-direction: column; transition: transform 0.3s;}
+        .bg-white .mod-card { background: var(--light-grey); border: none; }
+        .mod-card:hover { transform: translateY(-5px); }
+        .mod-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--primary); text-transform: uppercase;}
+        .mod-card-content { flex-grow: 1; }
+        .mod-card ul { margin-left: 20px; color: var(--muted); margin-bottom: 30px; margin-top: 20px;}
         [dir="rtl"] .mod-card ul { margin-left: 0; margin-right: 20px; }
-        .mod-card li { margin-bottom: 8px; }
+        .mod-card li { margin-bottom: 10px; }
 
         /* Consulting */
         .consulting { background: var(--dark); color: var(--white); padding: 100px 5%; text-align: center; }
-        .consulting ul { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin: 40px 0; font-size: 1.2rem; }
-        .consulting li::before { content: "✓"; color: var(--primary); margin-right: 10px; }
+        .consulting h2 { font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase;}
+        .consulting p { font-size: 1.2rem; color:#A0AABF; max-width: 900px; margin: 0 auto 40px; }
+        .consulting ul { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin: 0 auto 50px; font-size: 1.1rem; max-width: 1000px;}
+        .consulting li { background: rgba(255,255,255,0.05); padding: 15px 25px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); }
+        .consulting li::before { content: "✓"; color: var(--primary); margin-right: 10px; font-weight: bold;}
         [dir="rtl"] .consulting li::before { margin-right: 0; margin-left: 10px; }
-
-        /* Strip */
-        .cta-strip { background: var(--primary); color: var(--white); padding: 60px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-        .cta-strip h2 { margin: 0; }
-        .cta-strip .btn { background: var(--white); color: var(--primary); }
 
         /* Footer */
         footer { background: #050505; color: var(--white); padding: 80px 5% 30px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 50px; margin-bottom: 60px; }
         .footer-links h4 { margin-bottom: 20px; }
-        .footer-links a { color: var(--muted); }
+        .footer-links a { color: var(--muted); transition: 0.3s; }
+        .footer-links a:hover { color: var(--primary); }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: space-between; color: var(--muted); font-size: 0.9rem; }
         
-        .fade-in { opacity: 0; transform: translateY(30px); transition: 0.8s; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
@@ -83,90 +92,250 @@
             <a href="concrete.html" data-i18n="navConcrete">CONCRETE</a>
             <a href="bim.html" data-i18n="navBim">BIM</a>
             <a href="training.html" data-i18n="navTraining" style="color: var(--primary);">TRAINING</a>
+            <a href="blog.html" data-i18n="navInsights">INSIGHTS</a>
             <div class="lang-toggle" onclick="toggleLang()">EN | AR</div>
         </div>
     </nav>
 
     <header class="hero fade-in">
-        <h1 data-i18n="h1Title">TRAINING & <span class="orange-text">CONSULTING</span></h1>
-        <p data-i18n="h1Sub">Get fully onboarded, upskill your team, or request expert consulting tailored to the GCC market.</p>
+        <h1 data-i18n="heroTitle">GET TRAINING, WORKSHOP AND <span class="orange-text">CONSULTING SERVICES</span></h1>
+        <p data-i18n="heroSub">Maximize your and your team's IDEA StatiCa skills with our training, workshop, and consulting services.</p>
+        <p data-i18n="heroDesc" style="margin-top: 20px; font-size:1.1rem; color:#fff;">Get fully onboarded, take your IDEA StatiCa know-how to the next level, or request personalized consulting services. We are standing by to ensure you always get the help you need to make the most of your IDEA StatiCa's state-of-the-art technology.</p>
     </header>
 
     <section class="intro fade-in">
-        <div class="intro-text" data-i18n="introT">Whether you're new to IDEA StatiCa or looking to unlock advanced workflows, we offer structured training and personalized consulting for engineering teams across the GCC.</div>
-        <div class="intro-stats">
-            <span data-i18n="s1">6 Training Modules</span>
-            <span data-i18n="s2">Online & In-Person</span>
-            <span data-i18n="s3">Arabic & English</span>
+        <h2 data-i18n="schTitle">Onboarding training</h2>
+        <p data-i18n="schText">New to IDEA StatiCa, have active maintenance, and need to get your team up to speed? Sign up for an online steel or concrete onboarding session below to kick off your IDEA StatiCa experience the right way! <br><em>(*note, only available for commercial IDEA StatiCa license holders with valid Maintenance)</em></p>
+        
+        <div class="table-responsive">
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th data-i18n="thDate">Date</th>
+                        <th data-i18n="thTopic">Topic</th>
+                        <th data-i18n="thFormat">Format</th>
+                        <th data-i18n="thCap">Available Capacity</th>
+                        <th data-i18n="thLink">Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td data-i18n="r1Date">Thursday 12th March, 10 A.M.</td>
+                        <td data-i18n="r1Topic">Steel Onboarding Training – 2.5h + 0.5h FAQ</td>
+                        <td data-i18n="r1Format">Training</td>
+                        <td>03/15</td>
+                        <td><a href="#" class="btn btn-primary btn-sm" data-i18n="btnReg">Register</a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td data-i18n="r2Date">Thursday 26th March, 10 A.M.</td>
+                        <td data-i18n="r2Topic">Concrete Onboarding Training – 2.5h + 0.5h FAQ</td>
+                        <td data-i18n="r2Format">Training</td>
+                        <td>04/15</td>
+                        <td><a href="#" class="btn btn-primary btn-sm" data-i18n="btnReg">Register</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
-    <section class="modules fade-in">
+    <section class="modules bg-light fade-in">
+        <h2 class="section-title" data-i18n="secOnb">ONBOARDING TRAINING</h2>
         <div class="mod-grid">
-            <div class="mod-card"><div class="mod-num">1</div><h3 data-i18n="m1T">Steel Onboarding</h3><div class="mod-meta" data-i18n="m1M">2.5h • Online</div><ul><li data-i18n="m1L1">CBFEM method basics</li><li data-i18n="m1L2">Modeling workflows</li><li data-i18n="m1L3">Reports and Q&A</li></ul></div>
-            <div class="mod-card"><div class="mod-num">2</div><h3 data-i18n="m2T">Concrete Onboarding</h3><div class="mod-meta" data-i18n="m2M">2.5h • Online</div><ul><li data-i18n="m2L1">CSFM methodology</li><li data-i18n="m2L2">2D/3D anchoring</li><li data-i18n="m2L3">Reports and Q&A</li></ul></div>
-            <div class="mod-card"><div class="mod-num">3</div><h3 data-i18n="m3T">Advanced Modeling</h3><div class="mod-meta" data-i18n="m3M">Custom • Online/In-Person</div><ul><li data-i18n="m3L1">Working with sketches</li><li data-i18n="m3L2">DXF import optimization</li><li data-i18n="m3L3">Custom materials & welds</li></ul></div>
-            <div class="mod-card"><div class="mod-num">4</div><h3 data-i18n="m4T">Advanced Analysis</h3><div class="mod-meta" data-i18n="m4M">3.5h • Online/In-Person</div><ul><li data-i18n="m4L1">Buckling analysis</li><li data-i18n="m4L2">Seismic design principles</li><li data-i18n="m4L3">BOM report generation</li></ul></div>
-            <div class="mod-card"><div class="mod-num">5</div><h3 data-i18n="m5T">BIM Workflows</h3><div class="mod-meta" data-i18n="m5M">3h • Online/In-Person</div><ul><li data-i18n="m5L1">Checkbot setup</li><li data-i18n="m5L2">Establishing BIM links</li><li data-i18n="m5L3">Bulk output management</li></ul></div>
-            <div class="mod-card"><div class="mod-num">6</div><h3 data-i18n="m6T">Advanced Anchoring</h3><div class="mod-meta" data-i18n="m6M">2.5h • Online/In-Person</div><ul><li data-i18n="m6L1">Custom pedestals</li><li data-i18n="m6L2">Complex rebar setups</li><li data-i18n="m6L3">Load application techniques</li></ul></div>
+            <div class="mod-card">
+                <div class="mod-card-content">
+                    <h3 data-i18n="m1T">STEEL</h3>
+                    <p data-i18n="m1D">Join this 2.5 hour, online joint session to learn how to design and analyze steel connections with IDEA StatiCa. This session introduces key modeling techniques, connection design principles, and reporting.</p>
+                    <ul>
+                        <li data-i18n="m1L1">Understand the CBFEM Method and its applications</li>
+                        <li data-i18n="m1L2">Learn best practices for connection modeling and assumptions</li>
+                        <li data-i18n="m1L3">Perform checks and generate comprehensive reports</li>
+                        <li data-i18n="m1L4">Explore additional tools like the Viewer and Connection Library</li>
+                        <li data-i18n="m1L5">Dedicated Q&A session to address your questions</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn btn-outline" data-i18n="btnFind">Find A SESSION</a>
+            </div>
+            <div class="mod-card">
+                <div class="mod-card-content">
+                    <h3 data-i18n="m2T">CONCRETE</h3>
+                    <p data-i18n="m2D">Join this 2.5 hour, online joint session to learn how to master reinforced concrete design with IDEA StatiCa. This session covers both 2D and 3D anchoring approaches to optimize workflows.</p>
+                    <ul>
+                        <li data-i18n="m2L1">Apply CSFM Assumptions to design accurate 2D details</li>
+                        <li data-i18n="m2L2">Model 3D anchoring and transfer designs from Connection to Detail</li>
+                        <li data-i18n="m2L3">Perform structural checks and generate reports</li>
+                        <li data-i18n="m2L4">Optimize workflows and reduce manual effort</li>
+                        <li data-i18n="m2L5">Dedicated Q&A session to address your questions</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn btn-outline" data-i18n="btnFind">FIND A SESSION</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="modules bg-white fade-in">
+        <h2 class="section-title" data-i18n="secAdv">ADVANCED WORKSHOP</h2>
+        <div class="mod-grid">
+            <div class="mod-card">
+                <div class="mod-card-content">
+                    <h3 data-i18n="m3T">ADVANCED MODELING TECHNIQUES</h3>
+                    <p data-i18n="m3D">Join this online (or optionally in-person) hands-on session to take your team's connection modeling to the next level with advanced workflows and efficiency-driven techniques.</p>
+                    <ul>
+                        <li data-i18n="m3L1">Utilize Sketches, gallery usage</li>
+                        <li data-i18n="m3L2">Creation of custom materials and cross-sections</li>
+                        <li data-i18n="m3L3">Utilize dxf import and gain an in-depth understanding of manufacturing operations (welds, bolts, contacts, anchors, stiffening members)</li>
+                        <li data-i18n="m3L4">Autodesign of welds, cost estimation</li>
+                        <li data-i18n="m3L5">Leverage the Connection Library for repetitive design</li>
+                        <li data-i18n="m3L6">Practical hands-on experience with real-world modeling challenges.</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn btn-outline" data-i18n="btnReq">REQUEST TRAINING</a>
+            </div>
+            
+            <div class="mod-card">
+                <div class="mod-card-content">
+                    <h3 data-i18n="m4T">ADVANCED ANALYSIS & OUTPUT MANAGEMENT</h3>
+                    <p data-i18n="m4D">Join this 3.5 hour, online (or optionally in-person) hands-on session to enhance your team's understanding of complex analysis types and optimize result interpretation.</p>
+                    <ul>
+                        <li data-i18n="m4L1">Conduct linear buckling, stiffness, and GMNA analysis</li>
+                        <li data-i18n="m4L2">Seismic design</li>
+                        <li data-i18n="m4L3">Use advanced user settings to refine outputs</li>
+                        <li data-i18n="m4L4">Manage Bill of Materials (BOM) and reports</li>
+                        <li data-i18n="m4L5">Optimize analysis accuracy for better workflow efficiency</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn btn-outline" data-i18n="btnReq">REQUEST TRAINING</a>
+            </div>
+
+            <div class="mod-card">
+                <div class="mod-card-content">
+                    <h3 data-i18n="m5T">BIM WORKFLOWS</h3>
+                    <p data-i18n="m5D">Join this 3 hour, online (or optionally in-person) hands-on session to teach your team how to streamline collaboration with seamless BIM integration and automated workflows.</p>
+                    <ul>
+                        <li data-i18n="m5L1">Utilize BIM links for smooth data exchange</li>
+                        <li data-i18n="m5L2">Work efficiently with Checkbot and secondary synchronization</li>
+                        <li data-i18n="m5L3">Manage loads, combinations, and bulk connection designs</li>
+                        <li data-i18n="m5L4">Bulk output management (report, IFC export)</li>
+                        <li data-i18n="m5L5">Learn practical tips to optimize your BIM workflow</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn btn-outline" data-i18n="btnReq">REQUEST TRAINING</a>
+            </div>
+
+            <div class="mod-card">
+                <div class="mod-card-content">
+                    <h3 data-i18n="m6T">ANCHORING</h3>
+                    <p data-i18n="m6D">Join this 2.5 hour, online (or optionally in-person) hands-on session to teach your team how to use IDEA StatiCa to model and analyze custom concrete pedestals and embedded connections, with a focus on anchor failures like concrete cone breakout and reinforcement-based solutions.</p>
+                    <ul>
+                        <li data-i18n="m6L1">Custom pedestal and embedment modeling</li>
+                        <li data-i18n="m6L2">Rebar layout and detailing</li>
+                        <li data-i18n="m6L3">Load application and analysis</li>
+                        <li data-i18n="m6L4">Result interpretation and reporting</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn btn-outline" data-i18n="btnReq">REQUEST TRAINING</a>
+            </div>
+
+            <div class="mod-card">
+                <div class="mod-card-content">
+                    <h3 data-i18n="m7T">DESIGN OF STABILITY-SENSITIVE MEMBERS</h3>
+                    <p data-i18n="m7D">Join this 2.5 hour, online (or optionally in-person) hands-on session to teach your team how to analyze stability challenges in structural members using advanced nonlinear techniques.</p>
+                    <ul>
+                        <li data-i18n="m7L1">Understand different types of stability analysis</li>
+                        <li data-i18n="m7L2">Perform buckling and materially nonlinear analysis</li>
+                        <li data-i18n="m7L3">Import geometry from third-party software via the BIM link</li>
+                        <li data-i18n="m7L4">Generate reports with critical stability insights</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn btn-outline" data-i18n="btnReq">REQUEST TRAINING</a>
+            </div>
         </div>
     </section>
 
     <section class="consulting fade-in">
-        <h2 data-i18n="cT">Expert Consulting Services</h2>
-        <p style="color:#A0AABF;" data-i18n="cS">Hourly paid expert consultancy for custom workflows.</p>
-        <ul><li data-i18n="cL1">API integrations</li><li data-i18n="cL2">Parametric templates</li><li data-i18n="cL3">Data exchange optimization</li><li data-i18n="cL4">Advanced modeling guidance</li></ul>
-        <a href="mailto:support@gsdidea.ae" class="btn btn-primary" style="border: 1px solid white;" data-i18n="cB">Contact Us</a>
-    </section>
-
-    <section class="cta-strip fade-in">
-        <h2 data-i18n="stripT">New license holder? Register for a free onboarding session.</h2>
-        <a href="#" class="btn" data-i18n="stripB">Register Now</a>
+        <h2 data-i18n="secCons">EXPERT CONSULTING SERVICES</h2>
+        <p data-i18n="consText">Unlock the full potential of IDEA StatiCa with hourly paid expert consultancy. From custom API development, parametric templates, or workflow automation to hands-on guidance for optimizing your processes.</p>
+        <ul>
+            <li data-i18n="cL1">Develop custom API integrations to automate tasks and streamline data workflows</li>
+            <li data-i18n="cL2">Create parametric templates for consistent, reusable designs</li>
+            <li data-i18n="cL3">Optimize data exchange between IDEA StatiCa and third-party software</li>
+            <li data-i18n="cL4">Enhance advanced modeling and analysis techniques for complex projects</li>
+        </ul>
+        <a href="mailto:support@gsdidea.ae" class="btn btn-primary" style="border: 2px solid white; font-size: 1.1rem; padding: 15px 35px;" data-i18n="btnCont">CONTACT US</a>
     </section>
 
     <footer>
         <div class="footer-grid">
-            <div><div class="logo-container" style="color:white;">GSD IDEA</div><p data-i18n="fDesc" style="color:var(--muted); margin-top:10px;">The certified IDEA StatiCa reseller for UAE and GCC.</p></div>
-            <div class="footer-links"><h4 data-i18n="fL1">Products</h4><ul><li><a href="steel.html">Steel</a></li><li><a href="concrete.html">Concrete</a></li><li><a href="bim.html">BIM</a></li></ul></div>
-            <div class="footer-links"><h4 data-i18n="fL2">Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="training.html">Training</a></li><li><a href="blog.html">Blog</a></li></ul></div>
-            <div class="footer-links"><h4 data-i18n="fL3">Contact</h4><ul style="color:var(--muted);"><li>Dubai, UAE</li><li>support@gsdidea.ae</li></ul></div>
+            <div>
+                <a href="index.html" class="logo-container" style="color:white;">
+                    <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="5" y="5" width="40" height="40" stroke="#E85D04" stroke-width="8"/>
+                        <rect x="55" y="5" width="40" height="40" stroke="#E85D04" stroke-width="8"/>
+                        <rect x="30" y="55" width="40" height="40" stroke="#E85D04" stroke-width="8"/>
+                        <path d="M5 5L45 45M45 5L5 45M55 5L95 45M95 5L55 45M30 55L70 95M70 55L30 95" stroke="#E85D04" stroke-width="4"/>
+                    </svg>
+                    <span>GSD IDEA</span>
+                </a>
+                <p data-i18n="footerDesc" style="color:var(--muted); margin-top:15px;">The certified IDEA StatiCa, GEO5, and ZWSOFT reseller for the UAE and GCC region.</p>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="fL1">Products</h4>
+                <ul><li><a href="steel.html">IDEA StatiCa Steel</a></li><li><a href="concrete.html">IDEA StatiCa Concrete</a></li><li><a href="bim.html">BIM Links</a></li></ul>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="fL2">Company</h4>
+                <ul><li><a href="about.html">About Us</a></li><li><a href="training.html">Training</a></li><li><a href="blog.html">Blog</a></li></ul>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="fL3">Contact</h4>
+                <ul style="color:var(--muted);"><li>Concord Tower, Media City, Dubai</li><li>support@gsdidea.ae</li><li>+971 50 455 0485</li></ul>
+            </div>
         </div>
-        <div class="footer-bottom"><span>© 2026 Gulf Structural Design.</span></div>
+        <div class="footer-bottom"><span>© 2026 Gulf Structural Design.</span><span>Privacy Policy · Trade License</span></div>
     </footer>
 
     <script>
         const t = {
             en: {
-                logoText: "GSD IDEA", navSteel: "STEEL", navConcrete: "CONCRETE", navBim: "BIM", navTraining: "TRAINING",
-                h1Title: "TRAINING &", h1Sub: "Get fully onboarded, upskill your team, or request expert consulting tailored to the GCC market.",
-                introT: "Whether you're new to IDEA StatiCa or looking to unlock advanced workflows, we offer structured training and personalized consulting for engineering teams across the GCC.",
-                s1: "6 Training Modules", s2: "Online & In-Person", s3: "Arabic & English",
-                m1T: "Steel Onboarding", m1M: "2.5h • Online", m1L1: "CBFEM method basics", m1L2: "Modeling workflows", m1L3: "Reports and Q&A",
-                m2T: "Concrete Onboarding", m2M: "2.5h • Online", m2L1: "CSFM methodology", m2L2: "2D/3D anchoring", m2L3: "Reports and Q&A",
-                m3T: "Advanced Modeling Techniques", m3M: "Custom • Online/In-Person", m3L1: "Working with sketches", m3L2: "DXF import optimization", m3L3: "Custom materials & welds",
-                m4T: "Advanced Analysis & Output", m4M: "3.5h • Online/In-Person", m4L1: "Buckling analysis", m4L2: "Seismic design principles", m4L3: "BOM report generation",
-                m5T: "BIM Workflows", m5M: "3h • Online/In-Person", m5L1: "Checkbot setup", m5L2: "Establishing BIM links", m5L3: "Bulk output management",
-                m6T: "Advanced Anchoring", m6M: "2.5h • Online/In-Person", m6L1: "Custom pedestals", m6L2: "Complex rebar setups", m6L3: "Load application techniques",
-                cT: "Expert Consulting Services", cS: "Hourly paid expert consultancy for custom workflows.", cL1: "API integrations", cL2: "Parametric templates", cL3: "Data exchange optimization", cL4: "Advanced modeling guidance", cB: "Contact Us",
-                stripT: "New license holder? Register for a free onboarding session.", stripB: "Register Now",
-                fDesc: "The certified IDEA StatiCa reseller for UAE and GCC.", fL1: "Products", fL2: "Company", fL3: "Contact"
+                logoText: "GSD IDEA", navSteel: "STEEL", navConcrete: "CONCRETE", navBim: "BIM", navTraining: "TRAINING", navInsights: "INSIGHTS",
+                heroTitle: "GET TRAINING, WORKSHOP AND", heroSub: "Maximize your and your team's IDEA StatiCa skills with our training, workshop, and consulting services.", heroDesc: "Get fully onboarded, take your IDEA StatiCa know-how to the next level, or request personalized consulting services. We are standing by to ensure you always get the help you need to make the most of your IDEA StatiCa's state-of-the-art technology.",
+                schTitle: "Onboarding training", schText: "New to IDEA StatiCa, have active maintenance, and need to get your team up to speed? Sign up for an online steel or concrete onboarding session below to kick off your IDEA StatiCa experience the right way! \n(*note, only available for commercial IDEA StatiCa license holders with valid Maintenance)",
+                thDate: "Date", thTopic: "Topic", thFormat: "Format", thCap: "Available Capacity", thLink: "Link",
+                r1Date: "Thursday 12th March, 10 A.M.", r1Topic: "Steel Onboarding Training – 2.5h + 0.5h FAQ", r1Format: "Training", btnReg: "Register",
+                r2Date: "Thursday 26th March, 10 A.M.", r2Topic: "Concrete Onboarding Training – 2.5h + 0.5h FAQ", r2Format: "Training",
+                secOnb: "ONBOARDING TRAINING", secAdv: "ADVANCED WORKSHOP",
+                m1T: "STEEL", m1D: "Join this 2.5 hour, online joint session to learn how to design and analyze steel connections with IDEA StatiCa. This session introduces key modeling techniques, connection design principles, and reporting.", m1L1: "Understand the CBFEM Method and its applications", m1L2: "Learn best practices for connection modeling and assumptions", m1L3: "Perform checks and generate comprehensive reports", m1L4: "Explore additional tools like the Viewer and Connection Library", m1L5: "Dedicated Q&A session to address your questions", btnFind: "Find A SESSION",
+                m2T: "CONCRETE", m2D: "Join this 2.5 hour, online joint session to learn how to master reinforced concrete design with IDEA StatiCa. This session covers both 2D and 3D anchoring approaches to optimize workflows.", m2L1: "Apply CSFM Assumptions to design accurate 2D details", m2L2: "Model 3D anchoring and transfer designs from Connection to Detail", m2L3: "Perform structural checks and generate reports", m2L4: "Optimize workflows and reduce manual effort", m2L5: "Dedicated Q&A session to address your questions",
+                m3T: "ADVANCED MODELING TECHNIQUES", m3D: "Join this online (or optionally in-person) hands-on session to take your team's connection modeling to the next level with advanced workflows and efficiency-driven techniques.", m3L1: "Utilize Sketches, gallery usage", m3L2: "Creation of custom materials and cross-sections", m3L3: "Utilize dxf import and gain an in-depth understanding of manufacturing operations (welds, bolts, contacts, anchors, stiffening members)", m3L4: "Autodesign of welds, cost estimation", m3L5: "Leverage the Connection Library for repetitive design", m3L6: "Practical hands-on experience with real-world modeling challenges.", btnReq: "REQUEST TRAINING",
+                m4T: "ADVANCED ANALYSIS & OUTPUT MANAGEMENT", m4D: "Join this 3.5 hour, online (or optionally in-person) hands-on session to enhance your team's understanding of complex analysis types and optimize result interpretation.", m4L1: "Conduct linear buckling, stiffness, and GMNA analysis", m4L2: "Seismic design", m4L3: "Use advanced user settings to refine outputs", m4L4: "Manage Bill of Materials (BOM) and reports", m4L5: "Optimize analysis accuracy for better workflow efficiency",
+                m5T: "BIM WORKFLOWS", m5D: "Join this 3 hour, online (or optionally in-person) hands-on session to teach your team how to streamline collaboration with seamless BIM integration and automated workflows.", m5L1: "Utilize BIM links for smooth data exchange", m5L2: "Work efficiently with Checkbot and secondary synchronization", m5L3: "Manage loads, combinations, and bulk connection designs", m5L4: "Bulk output management (report, IFC export)", m5L5: "Learn practical tips to optimize your BIM workflow",
+                m6T: "ANCHORING", m6D: "Join this 2.5 hour, online (or optionally in-person) hands-on session to teach your team how to use IDEA StatiCa to model and analyze custom concrete pedestals and embedded connections, with a focus on anchor failures like concrete cone breakout and reinforcement-based solutions.", m6L1: "Custom pedestal and embedment modeling", m6L2: "Rebar layout and detailing", m6L3: "Load application and analysis", m6L4: "Result interpretation and reporting",
+                m7T: "DESIGN OF STABILITY-SENSITIVE MEMBERS", m7D: "Join this 2.5 hour, online (or optionally in-person) hands-on session to teach your team how to analyze stability challenges in structural members using advanced nonlinear techniques.", m7L1: "Understand different types of stability analysis", m7L2: "Perform buckling and materially nonlinear analysis", m7L3: "Import geometry from third-party software via the BIM link", m7L4: "Generate reports with critical stability insights",
+                secCons: "EXPERT CONSULTING SERVICES", consText: "Unlock the full potential of IDEA StatiCa with hourly paid expert consultancy. From custom API development, parametric templates, or workflow automation to hands-on guidance for optimizing your processes.", cL1: "Develop custom API integrations to automate tasks and streamline data workflows", cL2: "Create parametric templates for consistent, reusable designs", cL3: "Optimize data exchange between IDEA StatiCa and third-party software", cL4: "Enhance advanced modeling and analysis techniques for complex projects", btnCont: "CONTACT US",
+                footerDesc: "The certified IDEA StatiCa, GEO5, and ZWSOFT reseller for the UAE and GCC region.", fL1: "Products", fL2: "Company", fL3: "Contact"
             },
             ar: {
-                logoText: "جي إس دي أيديا", navSteel: "الصلب", navConcrete: "الخرسانة", navBim: "نمذجة المعلومات", navTraining: "التدريب",
-                h1Title: "التدريب و", h1Sub: "احصل على تأهيل كامل، طور مهارات فريقك، أو اطلب استشارة خبراء مصممة خصيصاً لسوق الخليج.",
-                introT: "سواء كنت مستخدماً جديداً لبرنامج IDEA StatiCa أو تتطلع إلى فتح سير عمل متقدم، فإننا نقدم تدريباً منظماً واستشارات مخصصة للفرق الهندسية في جميع أنحاء دول الخليج.",
-                s1: "6 وحدات تدريبية", s2: "عبر الإنترنت وشخصياً", s3: "اللغة العربية والإنجليزية",
-                m1T: "تأهيل الصلب", m1M: "2.5 ساعة • عبر الإنترنت", m1L1: "أساسيات طريقة CBFEM", m1L2: "سير عمل النمذجة", m1L3: "التقارير والأسئلة والأجوبة",
-                m2T: "تأهيل الخرسانة", m2M: "2.5 ساعة • عبر الإنترنت", m2L1: "منهجية CSFM", m2L2: "تثبيت ثنائي وثلاثي الأبعاد", m2L3: "التقارير والأسئلة والأجوبة",
-                m3T: "تقنيات النمذجة المتقدمة", m3M: "مخصص • متصل/شخصي", m3L1: "العمل مع الرسومات", m3L2: "تحسين استيراد DXF", m3L3: "مواد ولحامات مخصصة",
-                m4T: "التحليل المتقدم والمخرجات", m4M: "3.5 ساعة • متصل/شخصي", m4L1: "تحليل الانبعاج", m4L2: "مبادئ التصميم الزلزالي", m4L3: "إنشاء تقرير جدول الكميات",
-                m5T: "سير عمل BIM", m5M: "3 ساعات • متصل/شخصي", m5L1: "إعداد Checkbot", m5L2: "إنشاء روابط BIM", m5L3: "إدارة المخرجات المجمعة",
-                m6T: "التثبيت المتقدم", m6M: "2.5 ساعة • متصل/شخصي", m6L1: "قواعد مخصصة", m6L2: "إعدادات حديد التسليح المعقدة", m6L3: "تقنيات تطبيق الحمل",
-                cT: "خدمات الاستشارات المتخصصة", cS: "استشارات خبراء مدفوعة بالساعة لسير العمل المخصص.", cL1: "تكامل API", cL2: "قوالب بارامترية", cL3: "تحسين تبادل البيانات", cL4: "إرشادات النمذجة المتقدمة", cB: "تواصل معنا",
-                stripT: "هل أنت صاحب ترخيص جديد؟ سجل في جلسة تأهيل مجانية.", stripB: "سجل الآن",
-                fDesc: "الموزع المعتمد لبرامج IDEA StatiCa في الإمارات ودول الخليج.", fL1: "المنتجات", fL2: "الشركة", fL3: "تواصل معنا"
+                logoText: "جي إس دي أيديا", navSteel: "الصلب", navConcrete: "الخرسانة", navBim: "نمذجة المعلومات", navTraining: "التدريب", navInsights: "الرؤى",
+                heroTitle: "احصل على التدريب وورش العمل و", heroSub: "عزز مهارات فريقك في IDEA StatiCa من خلال خدمات التدريب وورش العمل والاستشارات.", heroDesc: "احصل على تأهيل كامل، وانتقل بمعرفتك في IDEA StatiCa إلى المستوى التالي، أو اطلب خدمات استشارية مخصصة. نحن على استعداد لضمان حصولك دائمًا على المساعدة التي تحتاجها لتحقيق أقصى استفادة من التكنولوجيا المتطورة.",
+                schTitle: "تدريب التأهيل", schText: "هل أنت جديد على IDEA StatiCa، ولديك صيانة نشطة، وتحتاج إلى إعداد فريقك بسرعة؟ قم بالتسجيل في جلسة تأهيل للصلب أو الخرسانة عبر الإنترنت أدناه لبدء تجربتك بالطريقة الصحيحة! (*ملاحظة، متاح فقط لأصحاب تراخيص IDEA StatiCa التجارية ذات الصيانة السارية)",
+                thDate: "التاريخ", thTopic: "الموضوع", thFormat: "التنسيق", thCap: "السعة المتاحة", thLink: "الرابط",
+                r1Date: "الخميس 12 مارس، 10 صباحاً", r1Topic: "تدريب تأهيل الصلب – 2.5 ساعة + 0.5 ساعة أسئلة", r1Format: "تدريب", btnReg: "سجل",
+                r2Date: "الخميس 26 مارس، 10 صباحاً", r2Topic: "تدريب تأهيل الخرسانة – 2.5 ساعة + 0.5 ساعة أسئلة", r2Format: "تدريب",
+                secOnb: "تدريب التأهيل", secAdv: "ورش عمل متقدمة",
+                m1T: "الصلب", m1D: "انضم إلى هذه الجلسة المشتركة عبر الإنترنت لمدة 2.5 ساعة لتعلم كيفية تصميم وتحليل وصلات الصلب باستخدام IDEA StatiCa. تقدم هذه الجلسة تقنيات النمذجة الرئيسية ومبادئ التصميم والتقارير.", m1L1: "فهم طريقة CBFEM وتطبيقاتها", m1L2: "تعلم أفضل الممارسات لنمذجة الوصلات والافتراضات", m1L3: "إجراء الفحوصات وإنشاء تقارير شاملة", m1L4: "استكشاف أدوات إضافية مثل العارض ومكتبة الوصلات", m1L5: "جلسة أسئلة وأجوبة مخصصة لمعالجة استفساراتك", btnFind: "ابحث عن جلسة",
+                m2T: "الخرسانة", m2D: "انضم إلى هذه الجلسة المشتركة عبر الإنترنت لمدة 2.5 ساعة لتعلم إتقان تصميم الخرسانة المسلحة باستخدام IDEA StatiCa. تغطي هذه الجلسة نهج التثبيت ثنائي وثلاثي الأبعاد.", m2L1: "تطبيق افتراضات CSFM لتصميم تفاصيل ثنائية الأبعاد دقيقة", m2L2: "نمذجة التثبيت ثلاثي الأبعاد ونقل التصميمات من الوصلة إلى التفاصيل", m2L3: "إجراء فحوصات إنشائية وإنشاء تقارير", m2L4: "تحسين سير العمل وتقليل الجهد اليدوي", m2L5: "جلسة أسئلة وأجوبة مخصصة لمعالجة استفساراتك",
+                m3T: "تقنيات النمذجة المتقدمة", m3D: "انضم إلى هذه الجلسة العملية عبر الإنترنت (أو شخصياً بشكل اختياري) للارتقاء بنمذجة وصلات فريقك إلى المستوى التالي من خلال سير عمل متقدم وتقنيات تعتمد على الكفاءة.", m3L1: "استخدام الرسومات التخطيطية والمعرض", m3L2: "إنشاء مواد ومقاطع عرضية مخصصة", m3L3: "استخدام استيراد dxf وفهم عمليات التصنيع بعمق", m3L4: "التصميم التلقائي للحامات وتقدير التكلفة", m3L5: "الاستفادة من مكتبة الوصلات للتصميم المتكرر", m3L6: "خبرة عملية في مواجهة تحديات النمذجة الواقعية.", btnReq: "اطلب تدريب",
+                m4T: "التحليل المتقدم وإدارة المخرجات", m4D: "انضم إلى هذه الجلسة العملية لمدة 3.5 ساعة لتعزيز فهم فريقك لأنواع التحليل المعقدة وتحسين تفسير النتائج.", m4L1: "إجراء تحليل الانبعاج الخطي والصلابة وتحليل GMNA", m4L2: "التصميم الزلزالي", m4L3: "استخدام إعدادات المستخدم المتقدمة لتحسين المخرجات", m4L4: "إدارة جدول الكميات (BOM) والتقارير", m4L5: "تحسين دقة التحليل لكفاءة سير عمل أفضل",
+                m5T: "سير عمل BIM", m5D: "انضم إلى هذه الجلسة العملية لمدة 3 ساعات لتعليم فريقك كيفية تبسيط التعاون من خلال التكامل السلس لـ BIM وسير العمل الآلي.", m5L1: "استخدام روابط BIM لتبادل البيانات بسلاسة", m5L2: "العمل بكفاءة مع Checkbot والمزامنة الثانوية", m5L3: "إدارة الأحمال والمجموعات وتصميم الوصلات بالجملة", m5L4: "إدارة المخرجات بالجملة (التقرير، تصدير IFC)", m5L5: "تعلم نصائح عملية لتحسين سير عمل BIM الخاص بك",
+                m6T: "التثبيت", m6D: "انضم إلى هذه الجلسة لتعليم فريقك كيفية استخدام IDEA StatiCa لنمذجة وتحليل قواعد الخرسانة المخصصة والوصلات المدمجة، مع التركيز على فشل التثبيت وحلول التسليح.", m6L1: "نمذجة القواعد المخصصة والدمج", m6L2: "تخطيط حديد التسليح وتفاصيله", m6L3: "تطبيق الأحمال وتحليلها", m6L4: "تفسير النتائج وإعداد التقارير",
+                m7T: "تصميم العناصر الحساسة للاستقرار", m7D: "انضم إلى هذه الجلسة لتعليم فريقك كيفية تحليل تحديات الاستقرار في العناصر الإنشائية باستخدام تقنيات غير خطية متقدمة.", m7L1: "فهم الأنواع المختلفة لتحليل الاستقرار", m7L2: "إجراء تحليل الانبعاج والتحليل غير الخطي للمواد", m7L3: "استيراد الهندسة من برامج الطرف الثالث عبر رابط BIM", m7L4: "إنشاء تقارير مع رؤى نقدية للاستقرار",
+                secCons: "خدمات الاستشارات المتخصصة", consText: "أطلق العنان للإمكانات الكاملة لـ IDEA StatiCa من خلال استشارات الخبراء المدفوعة بالساعة. من تطوير API المخصص أو أتمتة سير العمل إلى التوجيه العملي.", cL1: "تطوير تكاملات API مخصصة لأتمتة المهام وتبسيط سير البيانات", cL2: "إنشاء قوالب بارامترية لتصميمات متسقة وقابلة لإعادة الاستخدام", cL3: "تحسين تبادل البيانات بين IDEA StatiCa وبرامج الطرف الثالث", cL4: "تعزيز تقنيات النمذجة والتحليل المتقدمة للمشاريع المعقدة", btnCont: "تواصل معنا",
+                footerDesc: "الموزع المعتمد لبرامج IDEA StatiCa و GEO5 و ZWSOFT في الإمارات ودول الخليج.", fL1: "المنتجات", fL2: "الشركة", fL3: "تواصل معنا"
             }
         };
+
         let currentLang = 'en';
         function toggleLang() {
             currentLang = currentLang === 'en' ? 'ar' : 'en';
@@ -175,10 +344,20 @@
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 if(t[currentLang][el.getAttribute('data-i18n')]) el.innerText = t[currentLang][el.getAttribute('data-i18n')];
             });
-            document.querySelector('h1[data-i18n="h1Title"]').innerHTML = currentLang === 'en' ? 'TRAINING & <span class="orange-text">CONSULTING</span>' : 'التدريب و <span class="orange-text">الاستشارات</span>';
+            document.querySelector('h1[data-i18n="heroTitle"]').innerHTML = currentLang === 'en' ? 'GET TRAINING, WORKSHOP AND <span class="orange-text">CONSULTING SERVICES</span>' : 'احصل على التدريب وورش العمل و <span class="orange-text">الخدمات الاستشارية</span>';
         }
+
         window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50); });
-        const observer = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }); });
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
 </body>
