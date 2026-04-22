@@ -218,10 +218,10 @@
         </a>
         <div class="nav-links">
             <a href="steel.html" data-i18n="navSteel">STEEL</a>
-            <a href="#" data-i18n="navConcrete">CONCRETE</a>
-            <a href="#" data-i18n="navBim">BIM</a>
-            <a href="#" data-i18n="navSupport">SUPPORT ▾</a>
-            <a href="#" data-i18n="navInsights">INSIGHTS ▾</a>
+            <a href="concrete.html" data-i18n="navConcrete">CONCRETE</a>
+            <a href="bim.html" data-i18n="navBim">BIM</a>
+            <a href="training.html" data-i18n="navSupport">SUPPORT ▾</a>
+            <a href="blog.html" data-i18n="navInsights">INSIGHTS ▾</a>
             <div class="lang-toggle" onclick="toggleLang()">EN | AR</div>
             <a href="#cta" class="btn btn-primary" data-i18n="navDemo">Book a Demo</a>
         </div>
@@ -232,11 +232,13 @@
         <div class="badge fade-in" data-i18n="heroBadge">Official IDEA StatiCa Reseller — UAE & GCC</div>
         <h1 class="fade-in delay-1" data-i18n="heroTitle">YOUR STRUCTURAL DESIGN SOFTWARE PARTNER IN THE GCC</h1>
         <p class="fade-in delay-2" data-i18n="heroSub">Advanced engineering tools for steel connections, concrete design, and seamless BIM integration.</p>
+        
         <div class="hero-btns fade-in delay-3">
-            <a href="#products-scrolly" class="btn btn-outline" data-i18n="btnSteel">Explore Steel ↓</a>
-            <a href="#products-scrolly" class="btn btn-outline" data-i18n="btnConcrete">Explore Concrete ↓</a>
-            <a href="#products-scrolly" class="btn btn-outline" data-i18n="btnBim">Explore BIM ↓</a>
+            <a href="#products-scrolly" onclick="scrollToProduct(event, 0)" class="btn btn-outline" data-i18n="btnSteel">Explore Steel ↓</a>
+            <a href="#products-scrolly" onclick="scrollToProduct(event, 0.35)" class="btn btn-outline" data-i18n="btnConcrete">Explore Concrete ↓</a>
+            <a href="#products-scrolly" onclick="scrollToProduct(event, 0.68)" class="btn btn-outline" data-i18n="btnBim">Explore BIM ↓</a>
         </div>
+        
         <div class="scroll-down">↓</div>
     </header>
 
@@ -289,7 +291,7 @@
                         <li data-i18n="prod2F2">Crack width & deflection checks</li>
                         <li data-i18n="prod2F3">Prestressed concrete support</li>
                     </ul>
-                    <a href="#" class="btn btn-primary" data-i18n="discoverMore">Discover More</a>
+                    <a href="concrete.html" class="btn btn-primary" data-i18n="discoverMore">Discover More</a>
                 </div>
                 <div class="product-content" id="content-2">
                     <h2 data-i18n="prod3Title">BIM</h2>
@@ -299,7 +301,7 @@
                         <li data-i18n="prod3F2">SAP2000, ETABS, STAAD Pro</li>
                         <li data-i18n="prod3F3">No data loss during transfer</li>
                     </ul>
-                    <a href="#" class="btn btn-primary" data-i18n="discoverMore">Discover More</a>
+                    <a href="bim.html" class="btn btn-primary" data-i18n="discoverMore">Discover More</a>
                 </div>
             </div>
             
@@ -375,19 +377,19 @@
                 <span class="tag">Tutorial</span>
                 <h3>Designing and Verifying All Steel Hall Connections in Under an Hour</h3>
                 <p>Learn the workflow to rapidly assess complex steel warehouse structures.</p>
-                <a href="#" class="read-more">Read More →</a>
+                <a href="blog.html" class="read-more">Read More →</a>
             </div>
             <div class="blog-card">
                 <span class="tag">Case Study</span>
                 <h3>Optimizing Connections at COEX Centre, Dubai Expo 2020</h3>
                 <p>How advanced CBFEM analysis saved tonnage in a massive local project.</p>
-                <a href="#" class="read-more">Read More →</a>
+                <a href="blog.html" class="read-more">Read More →</a>
             </div>
             <div class="blog-card">
                 <span class="tag">Guide</span>
                 <h3>Solving RFIs Fast: Retrofitting and On-Site Fixes</h3>
                 <p>Use software to quickly prove that on-site contractor modifications are safe.</p>
-                <a href="#" class="read-more">Read More →</a>
+                <a href="blog.html" class="read-more">Read More →</a>
             </div>
         </div>
     </section>
@@ -418,16 +420,16 @@
                 <h4 data-i18n="fLinks1">Products</h4>
                 <ul>
                     <li><a href="steel.html">IDEA StatiCa Steel</a></li>
-                    <li><a href="#">IDEA StatiCa Concrete</a></li>
-                    <li><a href="#">BIM Links</a></li>
+                    <li><a href="concrete.html">IDEA StatiCa Concrete</a></li>
+                    <li><a href="bim.html">BIM Links</a></li>
                 </ul>
             </div>
             <div class="footer-links">
-                <h4 data-i18n="fLinks2">Support</h4>
+                <h4 data-i18n="fLinks2">Company</h4>
                 <ul>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Training</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="training.html">Training</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </div>
             <div class="footer-links">
@@ -462,7 +464,7 @@
                 why1T: "Certified Expertise", why1D: "Official certified reseller ensuring you get accurate technical guidance directly from the source.", why2T: "Local Support (EN & AR)", why2D: "We speak your language. Get immediate technical support in both English and Arabic from our Dubai office.", why3T: "GCC-Focused Training", why3D: "Custom onboarding and masterclasses tailored to the specific codes and practices of the Gulf region.", why4T: "University-Verified", why4D: "Promoting methodologies that are strictly tested and verified by leading technical universities.",
                 testTitle: "Trusted by Global Engineers", blogTitle: "Latest Insights from the Gulf",
                 ctaTitle: "Ready to Optimize Your Structural Designs?", ctaBtn1: "Download 14-Day Trial", ctaBtn2: "Book a Demo",
-                footerDesc: "The certified IDEA StatiCa, GEO5, and ZWSOFT reseller for the UAE and GCC region.", fLinks1: "Products", fLinks2: "Support", fLinks3: "Contact"
+                footerDesc: "The certified IDEA StatiCa, GEO5, and ZWSOFT reseller for the UAE and GCC region.", fLinks1: "Products", fLinks2: "Company", fLinks3: "Contact"
             },
             ar: {
                 logoText: "جي إس دي أيديا", navSteel: "الصلب", navConcrete: "الخرسانة", navBim: "نمذجة المعلومات", navSupport: "الدعم ▾", navInsights: "رؤى ▾", navDemo: "احجز عرضاً تجريبياً",
@@ -478,7 +480,7 @@
                 why1T: "خبرة معتمدة", why1D: "موزع رسمي معتمد يضمن حصولك على توجيه فني دقيق مباشرة من المصدر.", why2T: "دعم محلي (إنجليزي وعربي)", why2D: "نحن نتحدث لغتك. احصل على دعم فني فوري باللغتين الإنجليزية والعربية من مكتبنا في دبي.", why3T: "تدريب مخصص للخليج", why3D: "تأهيل مخصص ودروس متقدمة مصممة وفقاً للقوانين والممارسات الخاصة بمنطقة الخليج.", why4T: "تم التحقق منه جامعياً", why4D: "تعزيز المنهجيات التي تم اختبارها والتحقق منها بدقة من قبل الجامعات التقنية الرائدة.",
                 testTitle: "موثوق به من قبل المهندسين العالميين", blogTitle: "أحدث الرؤى من الخليج",
                 ctaTitle: "هل أنت مستعد لتحسين تصميماتك الإنشائية؟", ctaBtn1: "حمل النسخة التجريبية 14 يوماً", ctaBtn2: "احجز عرضاً تجريبياً",
-                footerDesc: "الموزع المعتمد لبرامج IDEA StatiCa و GEO5 و ZWSOFT في الإمارات ودول الخليج.", fLinks1: "المنتجات", fLinks2: "الدعم", fLinks3: "تواصل معنا"
+                footerDesc: "الموزع المعتمد لبرامج IDEA StatiCa و GEO5 و ZWSOFT في الإمارات ودول الخليج.", fLinks1: "المنتجات", fLinks2: "الشركة", fLinks3: "تواصل معنا"
             }
         };
 
@@ -555,6 +557,28 @@
             dots.forEach((d, i) => d.classList.toggle('active', i === activeIndex));
             imgs.forEach((img, i) => img.classList.toggle('active', i === activeIndex));
         });
+
+        // ADDED SCRIPT: Function to scroll to the exact product percentage in the scrollytelling section
+        function scrollToProduct(e, percentage) {
+            e.preventDefault(); // Prevent standard anchor jump
+            const container = document.getElementById('products-scrolly');
+            if (!container) return;
+            
+            // Get the container's position relative to the viewport
+            const rect = container.getBoundingClientRect();
+            
+            // Calculate the total scrollable height inside the container
+            const totalScrollable = rect.height - window.innerHeight;
+            
+            // Target position = Current scroll + distance to section top + percentage offset
+            const targetScroll = window.scrollY + rect.top + (totalScrollable * percentage);
+            
+            // Smooth scroll to that exact pixel
+            window.scrollTo({
+                top: targetScroll,
+                behavior: 'smooth'
+            });
+        }
     </script>
 </body>
 </html>
