@@ -78,13 +78,12 @@
     <script>
         const VIDEOS_DATA = [
             { id: "v1", titleEn: "How to Design Steel Connections in IDEA StatiCa", titleAr: "كيفية تصميم وصلات الصلب في IDEA StatiCa", descEn: "A step-by-step walkthrough of designing and verifying a complex steel hall connection.", descAr: "شرح تفصيلي خطوة بخطوة لتصميم والتحقق من وصلة قاعة صلب معقدة.", youtubeId: "REPLACE_WITH_REAL_ID", category: "tutorial", date: "2025-04-01" },
-            { id: "v2", titleEn: "BIM Workflow: From Revit to IDEA StatiCa", titleAr: "سير عمل BIM: من Revit إلى IDEA StatiCa", descEn: "Connecting your BIM model directly to structural analysis — no manual re-entry.", descAr: "ربط نموذج BIM مباشرة بالتحليل الإنشائي — دون إدخال يدوي.", youtubeId: "REPLACE_WITH_REAL_ID", category: "workflow", date: "2025-03-15" },
-            { id: "v3", titleEn: "Concrete D-Region Design Explained", titleAr: "شرح تصميم مناطق D في الخرسانة", descEn: "Using IDEA StatiCa Concrete to design and check complex D-regions with code compliance.", descAr: "استخدام IDEA StatiCa للخرسانة لتصميم والتحقق من مناطق D المعقدة وفق متطلبات الكود.", youtubeId: "REPLACE_WITH_REAL_ID", category: "tutorial", date: "2025-02-20" }
+            { id: "v2", titleEn: "BIM Workflow: From Revit to IDEA StatiCa", titleAr: "سير عمل BIM: من Revit إلى IDEA StatiCa", descEn: "Connecting your BIM model directly to structural analysis — no manual re-entry.", descAr: "ربط نموذج BIM مباشرة بالتحليل الإنشائي — دون إدخال يدوي.", youtubeId: "REPLACE_WITH_REAL_ID", category: "workflow", date: "2025-03-15" }
         ];
     </script>
 
     <nav id="navbar">
-        <a href="index.html" class="logo-container"><img id="nav-logo" src="gsd%20logo.png" alt="GSD IDEA" style="height: 40px; width: auto;"></a>
+        <a href="index.html" class="logo-container"><img id="nav-logo" src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 40px; width: auto;"></a>
         <div class="nav-links">
             <a href="steel.html" data-i18n="navSteel">STEEL</a>
             <a href="concrete.html" data-i18n="navConcrete">CONCRETE</a>
@@ -94,6 +93,7 @@
             <a href="training.html" data-i18n="navTraining">TRAINING</a>
             <a href="blog.html" data-i18n="navInsights">INSIGHTS</a>
             <div class="lang-toggle" onclick="toggleLang()">EN | AR</div>
+            <a href="#cta" class="btn btn-primary" data-i18n="navDemo" style="padding: 10px 20px; border-radius: 100px;">Book a Demo</a>
         </div>
     </nav>
 
@@ -107,7 +107,7 @@
         <div class="video-grid fade-in" id="video-grid"></div>
     </section>
 
-    <section class="cta-section fade-in">
+    <section class="cta-section fade-in" id="cta">
         <h2 data-i18n="ctaTitle">Want to See a Specific Topic?</h2>
         <p data-i18n="ctaSub" style="margin-bottom:30px;">Request a tutorial and our engineers will create it.</p>
         <a href="mailto:info@gsdidea.ae" class="btn btn-outline-white" data-i18n="ctaBtn">Request a Video →</a>
@@ -115,7 +115,7 @@
 
     <footer>
         <div class="footer-grid">
-            <div><img src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 32px; background: white; padding: 6px 12px; border-radius: 6px;"><p data-i18n="fDesc" style="color:var(--muted); margin-top:15px;">The certified IDEA StatiCa reseller for UAE and GCC.</p></div>
+            <div><a href="index.html" class="logo-container"><img src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 32px; width: auto;"></a><p data-i18n="fDesc" style="color:var(--muted); margin-top:15px;">The certified IDEA StatiCa reseller for UAE and GCC.</p></div>
             <div class="footer-links"><h4 data-i18n="fL1">Products</h4><ul><li><a href="steel.html">Steel</a></li><li><a href="concrete.html">Concrete</a></li><li><a href="bim.html">BIM</a></li></ul></div>
             <div class="footer-links"><h4 data-i18n="fL2">Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="training.html">Training</a></li><li><a href="apps.html">Our Apps</a></li></ul></div>
             <div class="footer-links"><h4 data-i18n="fL3">Contact</h4><ul style="color:var(--muted);"><li>Dubai, UAE</li><li>support@gsdidea.ae</li></ul></div>
@@ -129,8 +129,8 @@
 
     <script>
         const t = {
-            en: { navSteel: "STEEL", navConcrete: "CONCRETE", navBim: "BIM", navApps: "APPS", navVideos: "VIDEOS", navTraining: "TRAINING", navInsights: "INSIGHTS", heroTitle: "VIDEO LIBRARY", heroSub: "Tutorials, webinars, and case studies from our engineering team.", filterAll: "All", filterTut: "Tutorials", filterWork: "Workflows", filterWeb: "Webinars", cat_tutorial: "Tutorial", cat_workflow: "Workflow", cat_webinar: "Webinar", watchBtn: "Watch →", ctaTitle: "Want to See a Specific Topic?", ctaSub: "Request a tutorial and our engineers will create it.", ctaBtn: "Request a Video →", fDesc: "The certified IDEA StatiCa reseller.", fL1: "Products", fL2: "Company", fL3: "Contact" },
-            ar: { navSteel: "الصلب", navConcrete: "الخرسانة", navBim: "نمذجة المعلومات", navApps: "تطبيقاتنا", navVideos: "فيديوهات", navTraining: "التدريب", navInsights: "الرؤى", heroTitle: "مكتبة الفيديوهات", heroSub: "دروس تعليمية وندوات إلكترونية ودراسات حالة من فريقنا الهندسي.", filterAll: "الكل", filterTut: "دروس تعليمية", filterWork: "سير العمل", filterWeb: "ندوات", cat_tutorial: "درس تعليمي", cat_workflow: "سير العمل", cat_webinar: "ندوة", watchBtn: "شاهد ←", ctaTitle: "هل تريد رؤية موضوع معين؟", ctaSub: "اطلب درساً تعليمياً وسيقوم مهندسونا بإنشائه.", ctaBtn: "اطلب فيديو ←", fDesc: "الموزع المعتمد لبرامج IDEA StatiCa.", fL1: "المنتجات", fL2: "الشركة", fL3: "تواصل معنا" }
+            en: { navSteel: "STEEL", navConcrete: "CONCRETE", navBim: "BIM", navApps: "APPS", navVideos: "VIDEOS", navTraining: "TRAINING", navInsights: "INSIGHTS", navDemo: "Book a Demo", heroTitle: "VIDEO LIBRARY", heroSub: "Tutorials, webinars, and case studies from our engineering team.", filterAll: "All", filterTut: "Tutorials", filterWork: "Workflows", filterWeb: "Webinars", cat_tutorial: "Tutorial", cat_workflow: "Workflow", cat_webinar: "Webinar", watchBtn: "Watch →", ctaTitle: "Want to See a Specific Topic?", ctaSub: "Request a tutorial and our engineers will create it.", ctaBtn: "Request a Video →", fDesc: "The certified IDEA StatiCa reseller.", fL1: "Products", fL2: "Company", fL3: "Contact" },
+            ar: { navSteel: "الصلب", navConcrete: "الخرسانة", navBim: "نمذجة المعلومات", navApps: "تطبيقاتنا", navVideos: "فيديوهات", navTraining: "التدريب", navInsights: "الرؤى", navDemo: "احجز عرضاً تجريبياً", heroTitle: "مكتبة الفيديوهات", heroSub: "دروس تعليمية وندوات إلكترونية ودراسات حالة من فريقنا الهندسي.", filterAll: "الكل", filterTut: "دروس تعليمية", filterWork: "سير العمل", filterWeb: "ندوات", cat_tutorial: "درس تعليمي", cat_workflow: "سير العمل", cat_webinar: "ندوة", watchBtn: "شاهد ←", ctaTitle: "هل تريد رؤية موضوع معين؟", ctaSub: "اطلب درساً تعليمياً وسيقوم مهندسونا بإنشائه.", ctaBtn: "اطلب فيديو ←", fDesc: "الموزع المعتمد لبرامج IDEA StatiCa.", fL1: "المنتجات", fL2: "الشركة", fL3: "تواصل معنا" }
         };
 
         let currentLang = 'en'; let currentFilter = 'all';
@@ -164,8 +164,8 @@
 
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar'); const logo = document.getElementById('nav-logo');
-            if (window.scrollY > 50) { nav.classList.add('scrolled'); if(logo) logo.src = 'gsd%20logo%20black.png'; } 
-            else { nav.classList.remove('scrolled'); if(logo) logo.src = 'gsd%20logo.png'; }
+            if (window.scrollY > 50) { nav.classList.add('scrolled'); if(logo) logo.src = 'gsd%20logo.png'; } 
+            else { nav.classList.remove('scrolled'); if(logo) logo.src = 'gsd%20logo%20black.png'; }
         });
         const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } else { e.target.classList.remove('visible'); } }); }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
