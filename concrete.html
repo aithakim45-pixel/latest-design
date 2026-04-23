@@ -14,7 +14,7 @@
         ul { list-style: none; }
         h1, h2, h3 { font-weight: 700; line-height: 1.2; }
         p { color: var(--muted); font-size: 1.1rem; margin-bottom: 1rem; }
-        .btn { display: inline-block; padding: 12px 28px; border-radius: 100px; font-weight: 600; transition: 0.3s; cursor: pointer; text-align: center; border: 2px solid transparent; }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 100px; font-weight: 600; transition: 0.3s; cursor: pointer; text-align: center; }
         .btn-primary { background: var(--primary); color: var(--white); }
         .btn-outline-white { border-color: var(--white); color: var(--white); }
         
@@ -27,15 +27,14 @@
         .nav-links a:hover { color: var(--primary) !important; }
         .lang-toggle { cursor: pointer; background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 100px; font-weight: 700; }
         nav.scrolled .lang-toggle { background: var(--light-grey); }
-
+        
         .hero { background: var(--dark); color: var(--white); height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 5%; }
         .hero h1 { font-size: 4rem; text-transform: uppercase; margin-bottom: 20px; }
         .orange-text { color: var(--primary); }
         .hero p { color: #A0AABF; max-width: 800px; font-size: 1.25rem; }
         
         .intro-strip { padding: 80px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; background: var(--white); }
-        
-        .scrolly-container { height: 300vh; position: relative; background: var(--light-grey); }
+        .scrolly-container { height: 400vh; position: relative; background: var(--light-grey); }
         .scrolly-inner { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; padding: 0 5%; }
         .scrolly-left { flex: 1; height: 70vh; background: var(--white); border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center; position: relative; }
         .scrolly-right { flex: 1; padding-left: 50px; }
@@ -49,8 +48,7 @@
         footer { background: #050505; color: var(--white); padding: 80px 5% 30px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 50px; margin-bottom: 60px; }
         .footer-links h4 { margin-bottom: 20px; }
-        .footer-links a { color: var(--muted); transition: 0.3s;}
-        .footer-links a:hover { color: var(--primary); }
+        .footer-links a { color: var(--muted); }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: space-between; color: var(--muted); font-size: 0.9rem; }
         .fade-in { opacity: 0; transform: translateY(30px); transition: 0.8s; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -58,7 +56,9 @@
 </head>
 <body>
     <nav id="navbar">
-        <a href="index.html" class="logo-container"><img id="nav-logo" src="gsd%20logo.png" alt="GSD IDEA" style="height: 40px; width: auto;"></a>
+        <a href="index.html" class="logo-container">
+            <img id="nav-logo" src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 40px; width: auto;">
+        </a>
         <div class="nav-links">
             <a href="steel.html" data-i18n="navSteel">STEEL</a>
             <a href="concrete.html" data-i18n="navConcrete" style="color: var(--primary) !important;">CONCRETE</a>
@@ -68,6 +68,7 @@
             <a href="training.html" data-i18n="navTraining">TRAINING</a>
             <a href="blog.html" data-i18n="navInsights">INSIGHTS</a>
             <div class="lang-toggle" onclick="toggleLang()">EN | AR</div>
+            <a href="#cta" class="btn btn-primary" data-i18n="navDemo" style="padding: 10px 20px; border-radius: 100px;">Book a Demo</a>
         </div>
     </nav>
 
@@ -97,14 +98,19 @@
         </div>
     </section>
 
-    <section class="cta-section">
+    <section class="cta-section" id="cta">
         <h2 class="fade-in" data-i18n="ctaTitle">Ready to master concrete design?</h2>
         <div style="margin-top:30px;"><a href="#" class="btn btn-outline-white" data-i18n="btnTrial">Download Trial</a></div>
     </section>
 
     <footer>
         <div class="footer-grid">
-            <div><img src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 32px; background: white; padding: 6px 12px; border-radius: 6px;"><p data-i18n="fDesc" style="color:var(--muted); margin-top:15px;">The certified IDEA StatiCa reseller for UAE and GCC.</p></div>
+            <div>
+                <a href="index.html" class="logo-container">
+                    <img src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 32px; width: auto;">
+                </a>
+                <p data-i18n="fDesc" style="color:var(--muted); margin-top:15px;">The certified IDEA StatiCa reseller for UAE and GCC.</p>
+            </div>
             <div class="footer-links"><h4 data-i18n="fL1">Products</h4><ul><li><a href="steel.html">Steel</a></li><li><a href="concrete.html">Concrete</a></li><li><a href="bim.html">BIM</a></li></ul></div>
             <div class="footer-links"><h4 data-i18n="fL2">Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="training.html">Training</a></li><li><a href="apps.html">Our Apps</a></li></ul></div>
             <div class="footer-links"><h4 data-i18n="fL3">Contact</h4><ul style="color:var(--muted);"><li>Dubai, UAE</li><li>support@gsdidea.ae</li></ul></div>
@@ -114,8 +120,8 @@
 
     <script>
         const t = {
-            en: { navSteel: "STEEL", navConcrete: "CONCRETE", navBim: "BIM", navApps: "APPS", navVideos: "VIDEOS", navTraining: "TRAINING", navInsights: "INSIGHTS", heroTitle: "IDEA STATICA", heroSub: "Design concrete walls, D-regions of any geometry and loading, and steel-to-concrete anchoring.", p1T: "ULS/SLS Checks", p1D: "Comprehensive checks for ultimate and serviceability states.", p2T: "Real Reinforcement Modeling", p2D: "Model actual rebar layouts instead of simplified assumptions.", p3T: "Code-Compliant Results", p3D: "Results strictly follow global concrete design standards.", f1T: "Concrete Walls & D-Regions", f1D: "Design walls of any geometry and loading safely and efficiently.", f2T: "Steel-to-Concrete Anchoring", f2D: "Model anchor bolts and reinforcement embedded directly in blocks.", f3T: "Reinforcement Optimization", f3D: "Reduce material waste with automated precise crack width calculations.", ctaTitle: "Ready to master concrete design?", btnTrial: "Download Trial", fDesc: "The certified IDEA StatiCa reseller for UAE and GCC.", fL1: "Products", fL2: "Company", fL3: "Contact" },
-            ar: { navSteel: "الصلب", navConcrete: "الخرسانة", navBim: "نمذجة المعلومات", navApps: "تطبيقاتنا", navVideos: "فيديوهات", navTraining: "التدريب", navInsights: "الرؤى", heroTitle: "أيديا ستاتيكا", heroSub: "تصميم الجدران الخرسانية وتثبيت الصلب بالخرسانة مع تسليح حقيقي.", p1T: "فحوصات ULS/SLS", p1D: "فحوصات شاملة للحالات القصوى وحالات التشغيل.", p2T: "نمذجة التسليح الحقيقي", p2D: "نمذجة تخطيطات حديد التسليح الفعلية بدلاً من الافتراضات المبسطة.", p3T: "نتائج مطابقة للكود", p3D: "تتبع النتائج بدقة معايير تصميم الخرسانة العالمية.", f1T: "الجدران الخرسانية ومناطق الانقطاع", f1D: "تصميم الجدران بأي شكل هندسي وأحمال بأمان وكفاءة.", f2T: "تثبيت الصلب بالخرسانة", f2D: "نمذجة مسامير التثبيت والتسليح الإنشائي المدمج مباشرة في الكتل الخرسانية.", f3T: "تحسين التسليح", f3D: "تقليل هدر المواد من خلال حسابات عرض الشقوق الدقيقة.", ctaTitle: "هل أنت مستعد لاحتراف تصميم الخرسانة؟", btnTrial: "حمل النسخة التجريبية", fDesc: "الموزع المعتمد لبرامج IDEA StatiCa.", fL1: "المنتجات", fL2: "الشركة", fL3: "تواصل معنا" }
+            en: { navSteel: "STEEL", navConcrete: "CONCRETE", navBim: "BIM", navApps: "APPS", navVideos: "VIDEOS", navTraining: "TRAINING", navInsights: "INSIGHTS", navDemo: "Book a Demo", heroTitle: "IDEA STATICA", heroSub: "Design concrete walls, D-regions of any geometry and loading, and steel-to-concrete anchoring.", p1T: "ULS/SLS Checks", p1D: "Comprehensive checks for ultimate and serviceability states.", p2T: "Real Reinforcement Modeling", p2D: "Model actual rebar layouts instead of simplified assumptions.", p3T: "Code-Compliant Results", p3D: "Results strictly follow global concrete design standards.", f1T: "Concrete Walls & D-Regions", f1D: "Design walls of any geometry and loading safely and efficiently.", f2T: "Steel-to-Concrete Anchoring", f2D: "Model anchor bolts and reinforcement embedded directly in blocks.", f3T: "Reinforcement Optimization", f3D: "Reduce material waste with automated precise crack width calculations.", ctaTitle: "Ready to master concrete design?", btnTrial: "Download Trial", fDesc: "The certified IDEA StatiCa reseller for UAE and GCC.", fL1: "Products", fL2: "Company", fL3: "Contact" },
+            ar: { navSteel: "الصلب", navConcrete: "الخرسانة", navBim: "نمذجة المعلومات", navApps: "تطبيقاتنا", navVideos: "فيديوهات", navTraining: "التدريب", navInsights: "الرؤى", navDemo: "احجز عرضاً تجريبياً", heroTitle: "أيديا ستاتيكا", heroSub: "تصميم الجدران الخرسانية وتثبيت الصلب بالخرسانة مع تسليح حقيقي.", p1T: "فحوصات ULS/SLS", p1D: "فحوصات شاملة للحالات القصوى وحالات التشغيل.", p2T: "نمذجة التسليح الحقيقي", p2D: "نمذجة تخطيطات حديد التسليح الفعلية بدلاً من الافتراضات المبسطة.", p3T: "نتائج مطابقة للكود", p3D: "تتبع النتائج بدقة معايير تصميم الخرسانة العالمية.", f1T: "الجدران الخرسانية ومناطق الانقطاع", f1D: "تصميم الجدران بأي شكل هندسي وأحمال بأمان وكفاءة.", f2T: "تثبيت الصلب بالخرسانة", f2D: "نمذجة مسامير التثبيت والتسليح الإنشائي المدمج مباشرة في الكتل الخرسانية.", f3T: "تحسين التسليح", f3D: "تقليل هدر المواد من خلال حسابات عرض الشقوق الدقيقة.", ctaTitle: "هل أنت مستعد لاحتراف تصميم الخرسانة؟", btnTrial: "حمل النسخة التجريبية", fDesc: "الموزع المعتمد لبرامج IDEA StatiCa.", fL1: "المنتجات", fL2: "الشركة", fL3: "تواصل معنا" }
         };
         let currentLang = 'en';
         function toggleLang() {
@@ -124,11 +130,13 @@
             if(currentLang === 'en') { document.querySelector('h1[data-i18n="heroTitle"]').innerHTML = 'IDEA STATICA <span class="orange-text">CONCRETE</span>'; }
             else { document.querySelector('h1[data-i18n="heroTitle"]').innerHTML = 'أيديا ستاتيكا <span class="orange-text">للخرسانة</span>'; }
         }
+        
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar'); const logo = document.getElementById('nav-logo');
-            if (window.scrollY > 50) { nav.classList.add('scrolled'); if(logo) logo.src = 'gsd%20logo%20black.png'; } 
-            else { nav.classList.remove('scrolled'); if(logo) logo.src = 'gsd%20logo.png'; }
+            if (window.scrollY > 50) { nav.classList.add('scrolled'); if(logo) logo.src = 'gsd%20logo.png'; } 
+            else { nav.classList.remove('scrolled'); if(logo) logo.src = 'gsd%20logo%20black.png'; }
         });
+
         const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } else { e.target.classList.remove('visible'); } }); }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         const scrollyContainer = document.getElementById('features-scrolly'); const contents = document.querySelectorAll('.feature-content'); const imgs = document.querySelectorAll('.placeholder');
