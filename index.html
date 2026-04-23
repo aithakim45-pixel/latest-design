@@ -3,205 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gulf Structural Design (GSD IDEA) is the certified IDEA StatiCa reseller for UAE and GCC. Advanced structural engineering software for steel, concrete, and BIM.">
-    <meta name="keywords" content="IDEA StatiCa UAE, structural engineering software UAE, steel connection design GCC, IDEA StatiCa reseller Dubai">
-    <title>Gulf Structural Design | IDEA StatiCa Certified Reseller UAE & GCC</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Gulf Structural Design | IDEA StatiCa Certified Reseller</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": ["LocalBusiness","Organization"],
-      "name": "Gulf Structural Design",
-      "url": "https://gsdidea.ae",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "6th floor, Concord Tower, Media City, Al Sufouh 2",
-        "addressLocality": "Dubai",
-        "addressCountry": "AE"
-      },
-      "telephone": "+971504550485",
-      "email": "support@gsdidea.ae",
-      "areaServed": ["AE","SA","KW","QA","BH","OM"]
-    }
-    </script>
-
     <style>
-        :root {
-            --primary: #E85D04; --primary-hover: #C44E03; --dark: #0C0C0C; --light-grey: #F4F5F7; --muted: #6B7280; --white: #FFFFFF;
-            --font-en: 'Outfit', sans-serif; --font-ar: 'Cairo', sans-serif;
-        }
-
+        :root { --primary: #E85D04; --dark: #0C0C0C; --light-grey: #F4F5F7; --muted: #6B7280; --white: #FFFFFF; --font-en: 'Outfit', sans-serif; --font-ar: 'Cairo', sans-serif; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-en); color: var(--dark); background-color: var(--white); line-height: 1.6; overflow-x: hidden; }
+        body { font-family: var(--font-en); color: var(--dark); background: var(--white); line-height: 1.6; overflow-x: hidden; }
         [dir="rtl"] body { font-family: var(--font-ar); }
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
-        h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; }
-        h1 { font-size: 3.5rem; text-transform: uppercase; letter-spacing: -1px; }
-        h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+        h1, h2, h3 { font-weight: 700; line-height: 1.2; }
         p { color: var(--muted); font-size: 1.1rem; margin-bottom: 1rem; }
-
-        .btn { display: inline-block; padding: 12px 28px; border-radius: 100px; font-weight: 600; transition: all 0.3s ease; cursor: pointer; text-align: center; border: 2px solid transparent; }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 100px; font-weight: 600; transition: 0.3s; cursor: pointer; text-align: center; border: 2px solid transparent; }
         .btn-primary { background: var(--primary); color: var(--white); }
-        .btn-primary:hover { background: var(--primary-hover); }
         .btn-outline { border-color: var(--dark); color: var(--dark); }
-        .btn-outline:hover { background: var(--dark); color: var(--white); }
         .btn-outline-white { border-color: var(--white); color: var(--white); }
-        .btn-outline-white:hover { background: var(--white); color: var(--dark); }
-
-        nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease; }
-        nav.scrolled { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.05); padding: 15px 5%; }
+        
+        nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; background: var(--dark); color: var(--white); }
+        nav a { color: var(--white); }
+        nav.scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.05); color: var(--dark); }
+        nav.scrolled a { color: var(--dark); }
         .logo-container { display: flex; align-items: center; gap: 10px; }
-        .nav-links { display: flex; gap: 30px; align-items: center; font-weight: 600; }
-        .nav-links a:hover { color: var(--primary); }
-        .lang-toggle { cursor: pointer; background: var(--light-grey); padding: 5px 15px; border-radius: 100px; font-weight: 700; }
+        .nav-links { display: flex; gap: 20px; align-items: center; font-weight: 600; font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--primary) !important; }
+        .lang-toggle { cursor: pointer; background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 100px; font-weight: 700; }
+        nav.scrolled .lang-toggle { background: var(--light-grey); }
 
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background-color: var(--white); background-image: radial-gradient(var(--light-grey) 2px, transparent 2px); background-size: 40px 40px; padding: 0 5%; position: relative; }
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: var(--dark); padding: 0 5%; position: relative; color: var(--white); }
         .badge { background: rgba(232, 93, 4, 0.1); color: var(--primary); padding: 8px 16px; border-radius: 100px; font-weight: 700; margin-bottom: 20px; display: inline-block; }
-        .hero h1 { max-width: 900px; margin-bottom: 20px; }
-        .hero p { max-width: 600px; font-size: 1.25rem; margin-bottom: 40px; }
+        .hero h1 { max-width: 900px; margin-bottom: 20px; font-size: 3.5rem; }
+        .hero p { max-width: 600px; font-size: 1.25rem; margin-bottom: 40px; color: #A0AABF;}
         .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-        .scroll-down { position: absolute; bottom: 30px; animation: bounce 2s infinite; opacity: 0.5; }
-        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-10px); } 60% { transform: translateY(-5px); } }
-
-        .partners { background: var(--light-grey); padding: 40px 5%; text-align: center; }
-        .partner-logos { display: flex; justify-content: center; gap: 60px; margin-top: 20px; flex-wrap: wrap; align-items: center; font-size: 1.5rem; font-weight: 800; color: var(--muted); }
+        
         .stats { padding: 100px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center; }
         .stat-num { font-size: 3.5rem; font-weight: 800; color: var(--primary); }
-        .stat-label { font-weight: 600; color: var(--dark); font-size: 1.1rem; }
 
         .scrolly-container { height: 300vh; position: relative; background: var(--white); }
         .scrolly-inner { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; padding: 0 5%; }
         .scrolly-left { flex: 1; padding-right: 50px; }
         [dir="rtl"] .scrolly-left { padding-right: 0; padding-left: 50px; }
         .scrolly-right { flex: 1; height: 60vh; background: var(--light-grey); border-radius: 16px; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden; }
-        .product-content { position: absolute; opacity: 0; transform: translateY(20px); transition: all 0.5s ease; pointer-events: none; }
+        .product-content { position: absolute; opacity: 0; transform: translateY(20px); transition: 0.5s; pointer-events: none; }
         .product-content.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; }
         .product-content h2 { color: var(--primary); font-size: 3rem; margin-bottom: 10px; }
-        .product-content ul { margin: 20px 0; }
         .product-content li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-weight: 600; }
         .product-content li::before { content: "✓"; color: var(--primary); }
-        .progress-dots { position: absolute; right: 5%; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 15px; }
-        [dir="rtl"] .progress-dots { right: auto; left: 5%; }
-        .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--light-grey); transition: 0.3s; }
-        .dot.active { background: var(--primary); transform: scale(1.3); }
-        .placeholder-img { width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.5s; position: absolute; }
+        .placeholder-img { width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: 0.5s; position: absolute; }
         .placeholder-img.active { opacity: 1; }
 
         .why-gsd { background: var(--dark); color: var(--white); padding: 100px 5%; }
-        .why-gsd p { color: #A0AABF; }
         .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 50px; }
-        .card { background: rgba(255,255,255,0.05); padding: 40px 30px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); transition: transform 0.3s; }
-        .card:hover { transform: translateY(-10px); }
-        .card-icon { width: 50px; height: 50px; background: rgba(232, 93, 4, 0.2); border-radius: 12px; display: flex; justify-content: center; align-items: center; color: var(--primary); font-size: 1.5rem; margin-bottom: 20px; }
+        .card { background: rgba(255,255,255,0.05); padding: 40px 30px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); }
         
-        .testimonials { padding: 100px 5%; background: var(--white); }
-        .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-        .test-card { padding: 40px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); background: var(--white); }
-        .stars { color: var(--primary); margin-bottom: 20px; font-size: 1.2rem; }
-        .quote { font-size: 1.1rem; font-style: italic; color: var(--dark); margin-bottom: 20px; }
-        .author { font-weight: 700; color: var(--dark); }
-        .company { font-size: 0.9rem; color: var(--muted); }
-
-        .blog { padding: 100px 5%; background: var(--light-grey); }
+        .blog { padding: 100px 5%; background: var(--white); }
         .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-        .blog-card { background: var(--white); padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
-        .tag { color: var(--primary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 10px; display: inline-block; }
-        .blog-card h3 { margin-bottom: 15px; font-size: 1.3rem; }
-        .read-more { color: var(--primary); font-weight: 700; margin-top: 20px; display: inline-block; }
+        .blog-card { background: var(--light-grey); padding: 30px; border-radius: 16px; }
+
+        /* Latest Video Section */
+        .latest-video { padding: 100px 5%; background: var(--light-grey); }
+        .lv-container { max-width: 1200px; margin: 0 auto; }
+        .lv-label { color: var(--primary); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 30px; letter-spacing: 1px; text-align: center; }
+        .lv-content { display: flex; gap: 50px; align-items: center; }
+        .lv-left { flex: 1; min-width: 300px; }
+        .lv-left iframe { width: 100%; aspect-ratio: 16/9; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: none; }
+        .lv-right { flex: 1; display: flex; flex-direction: column; align-items: flex-start; }
+        .lv-right .badge { display: inline-block; background: rgba(232, 93, 4, 0.1); color: var(--primary); padding: 6px 14px; border-radius: 6px; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 15px; }
+        .lv-right h2 { font-size: 2.5rem; margin-bottom: 15px; color: var(--dark); line-height: 1.2; }
+        .lv-right p { font-size: 1.1rem; color: var(--muted); margin-bottom: 30px; }
+        .lv-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+        .lv-link { color: var(--primary); font-weight: 700; text-decoration: underline; }
 
         .cta-section { background: var(--dark); padding: 100px 5%; text-align: center; color: var(--white); }
-        .cta-section h2 { font-size: 3rem; max-width: 800px; margin: 0 auto 40px; }
-        .cta-btns { display: flex; gap: 20px; justify-content: center; position: relative; }
-        .cta-btns::after { content: ''; position: absolute; width: 200px; height: 100px; background: var(--primary); filter: blur(80px); opacity: 0.3; z-index: 0; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-        .cta-btns .btn { position: relative; z-index: 1; }
-
         footer { background: #050505; color: var(--white); padding: 80px 5% 30px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 50px; margin-bottom: 60px; }
-        .footer-links h4 { margin-bottom: 20px; color: var(--white); }
-        .footer-links ul li { margin-bottom: 10px; }
+        .footer-links h4 { margin-bottom: 20px; }
         .footer-links a { color: var(--muted); transition: 0.3s; }
         .footer-links a:hover { color: var(--primary); }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: space-between; color: var(--muted); font-size: 0.9rem; }
-
-        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        
+        .fade-in { opacity: 0; transform: translateY(30px); transition: 0.8s; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
-        .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
-
-        .hamburger { display: none; cursor: pointer; font-size: 1.5rem; }
-        @media (max-width: 900px) {
-            .nav-links { display: none; }
-            .hamburger { display: block; }
-            h1 { font-size: 2.5rem; }
-            .scrolly-inner { flex-direction: column; padding-top: 100px; }
-            .scrolly-left, .scrolly-right { width: 100%; padding: 0; }
-            .scrolly-right { height: 40vh; margin-top: 30px; }
-            .footer-grid { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 900px) { .lv-content { flex-direction: column; } .nav-links{display:none;} }
     </style>
 </head>
 <body>
 
     <nav id="navbar">
         <a href="index.html" class="logo-container">
-            <img src="gsd%20logo.png" alt="GSD IDEA" style="height: 40px; width: auto;">
+            <img id="nav-logo" src="gsd%20logo.png" alt="GSD IDEA" style="height: 40px; width: auto;">
         </a>
         <div class="nav-links">
             <a href="steel.html" data-i18n="navSteel">STEEL</a>
             <a href="concrete.html" data-i18n="navConcrete">CONCRETE</a>
             <a href="bim.html" data-i18n="navBim">BIM</a>
+            <a href="apps.html" data-i18n="navApps">APPS</a>
+            <a href="videos.html" data-i18n="navVideos">VIDEOS</a>
             <a href="training.html" data-i18n="navTraining">TRAINING</a>
             <a href="blog.html" data-i18n="navInsights">INSIGHTS</a>
             <div class="lang-toggle" onclick="toggleLang()">EN | AR</div>
             <a href="#cta" class="btn btn-primary" data-i18n="navDemo">Book a Demo</a>
         </div>
-        <div class="hamburger">☰</div>
     </nav>
 
     <header class="hero">
         <div class="badge fade-in" data-i18n="heroBadge">Official IDEA StatiCa Reseller — UAE & GCC</div>
-        <h1 class="fade-in delay-1" data-i18n="heroTitle">YOUR STRUCTURAL DESIGN SOFTWARE PARTNER IN THE GCC</h1>
-        <p class="fade-in delay-2" data-i18n="heroSub">Advanced engineering tools for steel connections, concrete design, and seamless BIM integration.</p>
-        
-        <div class="hero-btns fade-in delay-3">
-            <a href="#products-scrolly" onclick="scrollToProduct(event, 0)" class="btn btn-outline" data-i18n="btnSteel">Explore Steel ↓</a>
-            <a href="#products-scrolly" onclick="scrollToProduct(event, 0.35)" class="btn btn-outline" data-i18n="btnConcrete">Explore Concrete ↓</a>
-            <a href="#products-scrolly" onclick="scrollToProduct(event, 0.68)" class="btn btn-outline" data-i18n="btnBim">Explore BIM ↓</a>
+        <h1 class="fade-in" data-i18n="heroTitle">YOUR STRUCTURAL DESIGN SOFTWARE PARTNER IN THE GCC</h1>
+        <p class="fade-in" data-i18n="heroSub">Advanced engineering tools for steel connections, concrete design, and seamless BIM integration.</p>
+        <div class="hero-btns fade-in">
+            <a href="#products-scrolly" onclick="scrollToProduct(event, 0)" class="btn btn-outline-white" data-i18n="btnSteel">Explore Steel ↓</a>
+            <a href="#products-scrolly" onclick="scrollToProduct(event, 0.35)" class="btn btn-outline-white" data-i18n="btnConcrete">Explore Concrete ↓</a>
+            <a href="#products-scrolly" onclick="scrollToProduct(event, 0.68)" class="btn btn-outline-white" data-i18n="btnBim">Explore BIM ↓</a>
         </div>
-        
-        <div class="scroll-down">↓</div>
     </header>
 
-    <section class="partners">
-        <p class="fade-in" data-i18n="partnerLabel">Official Software Partners:</p>
-        <div class="partner-logos fade-in delay-1">
-            <span>IDEA StatiCa</span>
-            <span>GEO5</span>
-            <span>ZWSOFT</span>
-        </div>
-    </section>
-
     <section class="stats fade-in">
-        <div>
-            <div class="stat-num" data-target="128">0</div>
-            <div class="stat-label" data-i18n="stat1">+ Countries using IDEA StatiCa</div>
-        </div>
-        <div>
-            <div class="stat-num" data-target="20000">0</div>
-            <div class="stat-label" data-i18n="stat2">+ Engineers worldwide</div>
-        </div>
-        <div>
-            <div class="stat-num" data-target="40000">0</div>
-            <div class="stat-label" data-i18n="stat3">+ Projects verified</div>
-        </div>
-        <div>
-            <div class="stat-num" data-target="1">0</div>
-            <div class="stat-label" data-i18n="stat4">GCC's #1 Reseller</div>
-        </div>
+        <div><div class="stat-num" data-target="128">0</div><div class="stat-label" data-i18n="stat1">+ Countries</div></div>
+        <div><div class="stat-num" data-target="20000">0</div><div class="stat-label" data-i18n="stat2">+ Engineers</div></div>
+        <div><div class="stat-num" data-target="40000">0</div><div class="stat-label" data-i18n="stat3">+ Projects</div></div>
+        <div><div class="stat-num" data-target="1">0</div><div class="stat-label" data-i18n="stat4">GCC's #1 Reseller</div></div>
     </section>
 
     <section id="products-scrolly" class="scrolly-container">
@@ -210,41 +129,23 @@
                 <div class="product-content active" id="content-0">
                     <h2 data-i18n="prod1Title">STEEL</h2>
                     <p data-i18n="prod1Desc">Perform accurate steel connection and member design of any complexity. Verified by universities and built for engineers.</p>
-                    <ul>
-                        <li data-i18n="prod1F1">CBFEM Method for safe designs</li>
-                        <li data-i18n="prod1F2">Complex topologies in minutes</li>
-                        <li data-i18n="prod1F3">AISC, Eurocode & local standards</li>
-                    </ul>
+                    <ul><li data-i18n="prod1F1">CBFEM Method for safe designs</li><li data-i18n="prod1F2">Complex topologies in minutes</li><li data-i18n="prod1F3">AISC, Eurocode & local standards</li></ul>
                     <a href="steel.html" class="btn btn-primary" data-i18n="discoverMore">Discover More</a>
                 </div>
                 <div class="product-content" id="content-1">
                     <h2 data-i18n="prod2Title">CONCRETE</h2>
                     <p data-i18n="prod2Desc">Design concrete walls, details, and cross-sections. Solve complex discontinuity regions safely.</p>
-                    <ul>
-                        <li data-i18n="prod2F1">CSFM Method verification</li>
-                        <li data-i18n="prod2F2">Crack width & deflection checks</li>
-                        <li data-i18n="prod2F3">Prestressed concrete support</li>
-                    </ul>
+                    <ul><li data-i18n="prod2F1">CSFM Method verification</li><li data-i18n="prod2F2">Crack width & deflection checks</li></ul>
                     <a href="concrete.html" class="btn btn-primary" data-i18n="discoverMore">Discover More</a>
                 </div>
                 <div class="product-content" id="content-2">
                     <h2 data-i18n="prod3Title">BIM</h2>
                     <p data-i18n="prod3Desc">Link your models seamlessly. Export connections and members directly from your structural analysis software.</p>
-                    <ul>
-                        <li data-i18n="prod3F1">Tekla Structures Integration</li>
-                        <li data-i18n="prod3F2">SAP2000, ETABS, STAAD Pro</li>
-                        <li data-i18n="prod3F3">No data loss during transfer</li>
-                    </ul>
+                    <ul><li data-i18n="prod3F1">Tekla Structures Integration</li><li data-i18n="prod3F2">SAP2000, ETABS, STAAD Pro</li></ul>
                     <a href="bim.html" class="btn btn-primary" data-i18n="discoverMore">Discover More</a>
                 </div>
             </div>
-            
             <div class="scrolly-right">
-                <div class="progress-dots">
-                    <div class="dot active" id="dot-0"></div>
-                    <div class="dot" id="dot-1"></div>
-                    <div class="dot" id="dot-2"></div>
-                </div>
                 <img src="placeholder-steel.png" alt="Steel Design" class="placeholder-img active" id="img-0">
                 <img src="placeholder-concrete.png" alt="Concrete Design" class="placeholder-img" id="img-1">
                 <img src="placeholder-bim.png" alt="BIM Link" class="placeholder-img" id="img-2">
@@ -254,160 +155,83 @@
 
     <section class="why-gsd">
         <h2 class="fade-in" data-i18n="whyTitle">Why Choose Gulf Structural Design?</h2>
-        <p class="fade-in" data-i18n="whySub">Your local experts for structural engineering software implementation.</p>
-        
         <div class="cards-grid">
-            <div class="card fade-in delay-1">
-                <div class="card-icon">★</div>
-                <h3 data-i18n="why1T">Certified Expertise</h3>
-                <p data-i18n="why1D">Official certified reseller ensuring you get accurate technical guidance directly from the source.</p>
-            </div>
-            <div class="card fade-in delay-2">
-                <div class="card-icon">💬</div>
-                <h3 data-i18n="why2T">Local Support (EN & AR)</h3>
-                <p data-i18n="why2D">We speak your language. Get immediate technical support in both English and Arabic from our Dubai office.</p>
-            </div>
-            <div class="card fade-in delay-3">
-                <div class="card-icon">🎓</div>
-                <h3 data-i18n="why3T">GCC-Focused Training</h3>
-                <p data-i18n="why3D">Custom onboarding and masterclasses tailored to the specific codes and practices of the Gulf region.</p>
-            </div>
-            <div class="card fade-in delay-3">
-                <div class="card-icon">🏛️</div>
-                <h3 data-i18n="why4T">University-Verified</h3>
-                <p data-i18n="why4D">Promoting methodologies that are strictly tested and verified by leading technical universities.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials fade-in">
-        <h2 data-i18n="testTitle" style="text-align: center;">Trusted by Global Engineers</h2>
-        <div class="test-grid">
-            <div class="test-card">
-                <div class="stars">★★★★★</div>
-                <p class="quote">"IDEA StatiCa's capabilities were essential in our design process..."</p>
-                <div class="author">Lars Olaf Møller-Hansen</div>
-                <div class="company">Lead Structural Engineer</div>
-            </div>
-            <div class="test-card">
-                <div class="stars">★★★★★</div>
-                <p class="quote">"We had a very swift automation process which saved us incredible amounts of time."</p>
-                <div class="author">Dallas Lee</div>
-                <div class="company">BIM Manager</div>
-            </div>
-            <div class="test-card">
-                <div class="stars">★★★★★</div>
-                <p class="quote">"It was valuable to do this verification in IDEA StatiCa Detail to ensure absolute structural integrity."</p>
-                <div class="author">Dr. Martin Bimschas</div>
-                <div class="company">Senior Consultant</div>
-            </div>
+            <div class="card fade-in"><h3 data-i18n="why1T">Certified Expertise</h3><p data-i18n="why1D" style="color:#A0AABF;">Official certified reseller ensuring you get accurate technical guidance.</p></div>
+            <div class="card fade-in"><h3 data-i18n="why2T">Local Support (EN & AR)</h3><p data-i18n="why2D" style="color:#A0AABF;">Get immediate technical support in both English and Arabic from our Dubai office.</p></div>
+            <div class="card fade-in"><h3 data-i18n="why3T">GCC-Focused Training</h3><p data-i18n="why3D" style="color:#A0AABF;">Custom onboarding tailored to the specific codes of the Gulf region.</p></div>
         </div>
     </section>
 
     <section class="blog fade-in">
         <h2 data-i18n="blogTitle" style="text-align: center;">Latest Insights from the Gulf</h2>
         <div class="blog-grid">
-            <div class="blog-card">
-                <span class="tag">Tutorial</span>
-                <h3>Designing and Verifying All Steel Hall Connections in Under an Hour</h3>
-                <p>Learn the workflow to rapidly assess complex steel warehouse structures.</p>
-                <a href="blog.html" class="read-more">Read More →</a>
-            </div>
-            <div class="blog-card">
-                <span class="tag">Case Study</span>
-                <h3>Optimizing Connections at COEX Centre, Dubai Expo 2020</h3>
-                <p>How advanced CBFEM analysis saved tonnage in a massive local project.</p>
-                <a href="blog.html" class="read-more">Read More →</a>
-            </div>
-            <div class="blog-card">
-                <span class="tag">Guide</span>
-                <h3>Solving RFIs Fast: Retrofitting and On-Site Fixes</h3>
-                <p>Use software to quickly prove that on-site contractor modifications are safe.</p>
-                <a href="blog.html" class="read-more">Read More →</a>
+            <div class="blog-card"><span style="color:var(--primary); font-weight:bold;">Tutorial</span><h3>Designing Steel Hall Connections</h3><a href="blog.html" style="color:var(--primary); font-weight:bold;">Read More →</a></div>
+            <div class="blog-card"><span style="color:var(--primary); font-weight:bold;">Case Study</span><h3>Optimizing Connections at COEX Centre</h3><a href="blog.html" style="color:var(--primary); font-weight:bold;">Read More →</a></div>
+            <div class="blog-card"><span style="color:var(--primary); font-weight:bold;">Guide</span><h3>Solving RFIs Fast: Retrofitting</h3><a href="blog.html" style="color:var(--primary); font-weight:bold;">Read More →</a></div>
+        </div>
+    </section>
+
+    <section class="latest-video fade-in" id="latest-video-section">
+        <div class="lv-container">
+            <div class="lv-label" data-i18n="latestVideoLabel">LATEST VIDEO</div>
+            <div class="lv-content">
+                <div class="lv-left"><iframe id="lv-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+                <div class="lv-right">
+                    <span class="badge" id="lv-category">Category</span>
+                    <h2 id="lv-title">Video Title</h2>
+                    <p id="lv-desc">Video description goes here.</p>
+                    <div class="lv-actions">
+                        <a href="#" id="lv-watch-btn" target="_blank" class="btn btn-primary" data-i18n="watchYoutube">Watch on YouTube →</a>
+                        <a href="videos.html" class="lv-link" data-i18n="seeAllVideos">See All Videos →</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="cta" class="cta-section">
         <h2 class="fade-in" data-i18n="ctaTitle">Ready to Optimize Your Structural Designs?</h2>
-        <div class="cta-btns fade-in delay-1">
-            <a href="#" class="btn btn-outline-white" data-i18n="ctaBtn1">Download 14-Day Trial</a>
-            <a href="#" class="btn btn-primary" data-i18n="ctaBtn2">Book a Demo</a>
-        </div>
+        <div style="margin-top:30px;"><a href="#" class="btn btn-outline-white" data-i18n="ctaBtn1">Download 14-Day Trial</a> <a href="#" class="btn btn-primary" data-i18n="ctaBtn2" style="margin-left:15px;">Book a Demo</a></div>
     </section>
 
     <footer>
         <div class="footer-grid">
-            <div>
-                <a href="index.html" class="logo-container footer-logo">
-                    <img src="gsd%20logo.png" alt="GSD IDEA" style="height: 32px; width: auto; background-color: white; padding: 6px 12px; border-radius: 6px;">
-                </a>
-                <p data-i18n="footerDesc" style="margin-top: 15px;">The certified IDEA StatiCa, GEO5, and ZWSOFT reseller for the UAE and GCC region.</p>
-            </div>
-            <div class="footer-links">
-                <h4 data-i18n="fLinks1">Products</h4>
-                <ul>
-                    <li><a href="steel.html">IDEA StatiCa Steel</a></li>
-                    <li><a href="concrete.html">IDEA StatiCa Concrete</a></li>
-                    <li><a href="bim.html">BIM Links</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4 data-i18n="fLinks2">Company</h4>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="training.html">Training</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4 data-i18n="fLinks3">Contact</h4>
-                <ul style="color: var(--muted);">
-                    <li>Concord Tower, Media City, Dubai</li>
-                    <li>support@gsdidea.ae</li>
-                    <li>+971 50 455 0485</li>
-                </ul>
-            </div>
+            <div><img src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 32px; background: white; padding: 6px 12px; border-radius: 6px;"><p data-i18n="fDesc" style="color:var(--muted); margin-top:15px;">The certified IDEA StatiCa reseller for UAE and GCC.</p></div>
+            <div class="footer-links"><h4 data-i18n="fL1">Products</h4><ul><li><a href="steel.html">Steel</a></li><li><a href="concrete.html">Concrete</a></li><li><a href="bim.html">BIM</a></li></ul></div>
+            <div class="footer-links"><h4 data-i18n="fL2">Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="training.html">Training</a></li><li><a href="apps.html">Our Apps</a></li></ul></div>
+            <div class="footer-links"><h4 data-i18n="fL3">Contact</h4><ul style="color:var(--muted);"><li>Dubai, UAE</li><li>support@gsdidea.ae</li></ul></div>
         </div>
-        <div class="footer-bottom">
-            <span>© 2026 Gulf Structural Design.</span>
-            <span>Privacy Policy · Trade License</span>
-        </div>
+        <div class="footer-bottom"><span>© 2026 Gulf Structural Design.</span></div>
     </footer>
 
     <script>
+        const VIDEOS_DATA = [
+            { id: "v1", titleEn: "How to Design Steel Connections in IDEA StatiCa", titleAr: "كيفية تصميم وصلات الصلب في IDEA StatiCa", descEn: "A step-by-step walkthrough of designing and verifying a complex steel hall connection.", descAr: "شرح تفصيلي خطوة بخطوة لتصميم والتحقق من وصلة قاعة صلب معقدة.", youtubeId: "REPLACE_WITH_REAL_ID", category: "tutorial", date: "2025-04-01" },
+            { id: "v2", titleEn: "BIM Workflow: From Revit to IDEA StatiCa", titleAr: "سير عمل BIM: من Revit إلى IDEA StatiCa", descEn: "Connecting your BIM model directly to structural analysis — no manual re-entry.", descAr: "ربط نموذج BIM مباشرة بالتحليل الإنشائي — دون إدخال يدوي.", youtubeId: "REPLACE_WITH_REAL_ID", category: "workflow", date: "2025-03-15" }
+        ];
+
         const t = {
             en: {
-                navSteel: "STEEL", navConcrete: "CONCRETE", navBim: "BIM", navTraining: "TRAINING", navInsights: "INSIGHTS", navDemo: "Book a Demo",
-                heroBadge: "Official IDEA StatiCa Reseller — UAE & GCC", heroTitle: "YOUR STRUCTURAL DESIGN SOFTWARE PARTNER IN THE GCC", heroSub: "Advanced engineering tools for steel connections, concrete design, and seamless BIM integration.",
-                btnSteel: "Explore Steel ↓", btnConcrete: "Explore Concrete ↓", btnBim: "Explore BIM ↓",
-                partnerLabel: "Official Software Partners:",
-                stat1: "+ Countries using IDEA StatiCa", stat2: "+ Engineers worldwide", stat3: "+ Projects verified", stat4: "GCC's #1 Reseller",
-                prod1Title: "STEEL", prod1Desc: "Perform accurate steel connection and member design of any complexity. Verified by universities and built for engineers.", prod1F1: "CBFEM Method for safe designs", prod1F2: "Complex topologies in minutes", prod1F3: "AISC, Eurocode & local standards",
-                prod2Title: "CONCRETE", prod2Desc: "Design concrete walls, details, and cross-sections. Solve complex discontinuity regions safely.", prod2F1: "CSFM Method verification", prod2F2: "Crack width & deflection checks", prod2F3: "Prestressed concrete support",
-                prod3Title: "BIM", prod3Desc: "Link your models seamlessly. Export connections and members directly from your structural analysis software.", prod3F1: "Tekla Structures Integration", prod3F2: "SAP2000, ETABS, STAAD Pro", prod3F3: "No data loss during transfer",
-                discoverMore: "Discover More",
-                whyTitle: "Why Choose Gulf Structural Design?", whySub: "Your local experts for structural engineering software implementation.",
-                why1T: "Certified Expertise", why1D: "Official certified reseller ensuring you get accurate technical guidance directly from the source.", why2T: "Local Support (EN & AR)", why2D: "We speak your language. Get immediate technical support in both English and Arabic from our Dubai office.", why3T: "GCC-Focused Training", why3D: "Custom onboarding and masterclasses tailored to the specific codes and practices of the Gulf region.", why4T: "University-Verified", why4D: "Promoting methodologies that are strictly tested and verified by leading technical universities.",
-                testTitle: "Trusted by Global Engineers", blogTitle: "Latest Insights from the Gulf",
-                ctaTitle: "Ready to Optimize Your Structural Designs?", ctaBtn1: "Download 14-Day Trial", ctaBtn2: "Book a Demo",
-                footerDesc: "The certified IDEA StatiCa, GEO5, and ZWSOFT reseller for the UAE and GCC region.", fLinks1: "Products", fLinks2: "Company", fLinks3: "Contact"
+                navSteel: "STEEL", navConcrete: "CONCRETE", navBim: "BIM", navApps: "APPS", navVideos: "VIDEOS", navTraining: "TRAINING", navInsights: "INSIGHTS", navDemo: "Book a Demo",
+                heroBadge: "Official IDEA StatiCa Reseller — UAE & GCC", heroTitle: "YOUR STRUCTURAL DESIGN SOFTWARE PARTNER IN THE GCC", heroSub: "Advanced engineering tools for steel connections, concrete design, and seamless BIM integration.", btnSteel: "Explore Steel ↓", btnConcrete: "Explore Concrete ↓", btnBim: "Explore BIM ↓",
+                stat1: "+ Countries", stat2: "+ Engineers", stat3: "+ Projects", stat4: "GCC's #1 Reseller",
+                prod1Title: "STEEL", prod1Desc: "Perform accurate steel connection design.", prod1F1: "CBFEM Method", prod1F2: "Complex topologies", prod1F3: "AISC & Eurocode",
+                prod2Title: "CONCRETE", prod2Desc: "Design concrete walls and details.", prod2F1: "CSFM Method", prod2F2: "Crack width checks",
+                prod3Title: "BIM", prod3Desc: "Link your models seamlessly.", prod3F1: "Tekla Integration", prod3F2: "SAP2000, ETABS", discoverMore: "Discover More",
+                whyTitle: "Why Choose Us?", why1T: "Certified Expertise", why1D: "Official certified reseller.", why2T: "Local Support", why2D: "Technical support in Dubai.", why3T: "GCC-Focused", why3D: "Custom onboarding.",
+                blogTitle: "Latest Insights", latestVideoLabel: "LATEST VIDEO", watchYoutube: "Watch on YouTube →", seeAllVideos: "See All Videos →", cat_tutorial: "Tutorial", cat_workflow: "Workflow",
+                ctaTitle: "Ready to Optimize?", ctaBtn1: "Download Trial", ctaBtn2: "Book a Demo", fDesc: "The certified IDEA StatiCa reseller.", fL1: "Products", fL2: "Company", fL3: "Contact"
             },
             ar: {
-                navSteel: "الصلب", navConcrete: "الخرسانة", navBim: "نمذجة المعلومات", navTraining: "التدريب", navInsights: "الرؤى", navDemo: "احجز عرضاً تجريبياً",
-                heroBadge: "الموزع الرسمي المعتمد لبرنامج IDEA StatiCa في الإمارات ودول الخليج", heroTitle: "شريكك في برامج التصميم الإنشائي في منطقة الخليج", heroSub: "أدوات هندسية متقدمة لتوصيلات الصلب، تصميم الخرسانة، والتكامل السلس مع BIM.",
-                btnSteel: "استكشف الصلب ↓", btnConcrete: "استكشف الخرسانة ↓", btnBim: "استكشف BIM ↓",
-                partnerLabel: "شركاء البرمجيات الرسميون:",
-                stat1: "+ دولة تستخدم IDEA StatiCa", stat2: "+ مهندس حول العالم", stat3: "+ مشروع تم التحقق منه", stat4: "الموزع الأول في الخليج",
-                prod1Title: "الصلب", prod1Desc: "قم بتصميم دقيق لوصلات وعناصر الصلب مهما كانت معقدة. تم التحقق منه من قبل الجامعات ومصمم للمهندسين.", prod1F1: "طريقة CBFEM لتصميمات آمنة", prod1F2: "طوبولوجيا معقدة في دقائق", prod1F3: "معايير AISC، الكود الأوروبي والمحلية",
-                prod2Title: "الخرسانة", prod2Desc: "تصميم الجدران الخرسانية والتفاصيل والمقاطع العرضية. حل مناطق الانقطاع المعقدة بأمان.", prod2F1: "التحقق بطريقة CSFM", prod2F2: "فحوصات عرض الشقوق والانحراف", prod2F3: "دعم الخرسانة مسبقة الإجهاد",
-                prod3Title: "BIM", prod3Desc: "اربط نماذجك بسلاسة. قم بتصدير الوصلات والعناصر مباشرة من برنامج التحليل الإنشائي الخاص بك.", prod3F1: "تكامل مع Tekla Structures", prod3F2: "SAP2000, ETABS, STAAD Pro", prod3F3: "لا يوجد فقدان للبيانات أثناء النقل",
-                discoverMore: "اكتشف المزيد",
-                whyTitle: "لماذا تختار جلف ستركتشرال ديزاين؟", whySub: "خبراؤك المحليون لتنفيذ برامج الهندسة الإنشائية.",
-                why1T: "خبرة معتمدة", why1D: "موزع رسمي معتمد يضمن حصولك على توجيه فني دقيق مباشرة من المصدر.", why2T: "دعم محلي (إنجليزي وعربي)", why2D: "نحن نتحدث لغتك. احصل على دعم فني فوري باللغتين الإنجليزية والعربية من مكتبنا في دبي.", why3T: "تدريب مخصص للخليج", why3D: "تأهيل مخصص ودروس متقدمة مصممة وفقاً للقوانين والممارسات الخاصة بمنطقة الخليج.", why4T: "تم التحقق منه جامعياً", why4D: "تعزيز المنهجيات التي تم اختبارها والتحقق منها بدقة من قبل الجامعات التقنية الرائدة.",
-                testTitle: "موثوق به من قبل المهندسين العالميين", blogTitle: "أحدث الرؤى من الخليج",
-                ctaTitle: "هل أنت مستعد لتحسين تصميماتك الإنشائية؟", ctaBtn1: "حمل النسخة التجريبية 14 يوماً", ctaBtn2: "احجز عرضاً تجريبياً",
-                footerDesc: "الموزع المعتمد لبرامج IDEA StatiCa و GEO5 و ZWSOFT في الإمارات ودول الخليج.", fLinks1: "المنتجات", fLinks2: "الشركة", fLinks3: "تواصل معنا"
+                navSteel: "الصلب", navConcrete: "الخرسانة", navBim: "نمذجة المعلومات", navApps: "تطبيقاتنا", navVideos: "فيديوهات", navTraining: "التدريب", navInsights: "الرؤى", navDemo: "احجز عرضاً تجريبياً",
+                heroBadge: "الموزع الرسمي في الإمارات ودول الخليج", heroTitle: "شريكك في التصميم الإنشائي", heroSub: "أدوات هندسية متقدمة.", btnSteel: "استكشف الصلب ↓", btnConcrete: "استكشف الخرسانة ↓", btnBim: "استكشف BIM ↓",
+                stat1: "+ دول", stat2: "+ مهندسين", stat3: "+ مشاريع", stat4: "الموزع الأول",
+                prod1Title: "الصلب", prod1Desc: "تصميم دقيق لوصلات الصلب.", prod1F1: "طريقة CBFEM", prod1F2: "طوبولوجيا معقدة", prod1F3: "أكواد عالمية",
+                prod2Title: "الخرسانة", prod2Desc: "تصميم الجدران الخرسانية.", prod2F1: "طريقة CSFM", prod2F2: "فحص التشققات",
+                prod3Title: "BIM", prod3Desc: "اربط نماذجك بسلاسة.", prod3F1: "تكامل Tekla", prod3F2: "SAP2000, ETABS", discoverMore: "اكتشف المزيد",
+                whyTitle: "لماذا نحن؟", why1T: "خبرة معتمدة", why1D: "موزع رسمي.", why2T: "دعم محلي", why2D: "دعم فني في دبي.", why3T: "تدريب للخليج", why3D: "تأهيل مخصص.",
+                blogTitle: "أحدث الرؤى", latestVideoLabel: "أحدث فيديو", watchYoutube: "شاهد على يوتيوب ←", seeAllVideos: "مشاهدة جميع الفيديوهات ←", cat_tutorial: "درس تعليمي", cat_workflow: "سير العمل",
+                ctaTitle: "هل أنت مستعد؟", ctaBtn1: "نسخة تجريبية", ctaBtn2: "احجز عرضاً", fDesc: "الموزع المعتمد.", fL1: "المنتجات", fL2: "الشركة", fL3: "تواصل معنا"
             }
         };
 
@@ -416,71 +240,48 @@
             currentLang = currentLang === 'en' ? 'ar' : 'en';
             document.documentElement.lang = currentLang;
             document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if(t[currentLang][key]) el.innerText = t[currentLang][key];
-            });
+            document.querySelectorAll('[data-i18n]').forEach(el => { if(t[currentLang][el.getAttribute('data-i18n')]) el.innerText = t[currentLang][el.getAttribute('data-i18n')]; });
+            renderLatestVideo();
         }
 
+        function renderLatestVideo() {
+            if(!VIDEOS_DATA || VIDEOS_DATA.length === 0) return;
+            const video = VIDEOS_DATA[0];
+            document.getElementById('lv-iframe').src = `https://www.youtube.com/embed/${video.youtubeId}`;
+            document.getElementById('lv-category').innerText = t[currentLang][`cat_${video.category}`] || video.category;
+            document.getElementById('lv-title').innerText = currentLang === 'en' ? video.titleEn : video.titleAr;
+            document.getElementById('lv-desc').innerText = currentLang === 'en' ? video.descEn : video.descAr;
+            document.getElementById('lv-watch-btn').href = `https://www.youtube.com/watch?v=${video.youtubeId}`;
+        }
+        document.addEventListener('DOMContentLoaded', renderLatestVideo);
+
         window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) nav.classList.add('scrolled');
-            else nav.classList.remove('scrolled');
+            const nav = document.getElementById('navbar'); const logo = document.getElementById('nav-logo');
+            if (window.scrollY > 50) { nav.classList.add('scrolled'); if(logo) logo.src = 'gsd%20logo%20black.png'; } 
+            else { nav.classList.remove('scrolled'); if(logo) logo.src = 'gsd%20logo.png'; }
         });
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    if(entry.target.classList.contains('stats') && !entry.target.dataset.counted) {
-                        entry.target.dataset.counted = "true";
-                        document.querySelectorAll('.stat-num').forEach(num => {
-                            const target = +num.getAttribute('data-target');
-                            const increment = target / (2000 / 16);
-                            let current = 0;
-                            const updateCount = () => {
-                                current += increment;
-                                if(current < target) { num.innerText = Math.ceil(current).toLocaleString(); requestAnimationFrame(updateCount); }
-                                else { num.innerText = target.toLocaleString(); }
-                            };
-                            updateCount();
-                        });
-                    }
-                } else {
-                    entry.target.classList.remove('visible');
-                }
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); } 
+                else { entry.target.classList.remove('visible'); }
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
         const scrollyContainer = document.getElementById('products-scrolly');
-        const contents = document.querySelectorAll('.product-content');
-        const dots = document.querySelectorAll('.dot');
-        const imgs = document.querySelectorAll('.placeholder-img');
-
+        const contents = document.querySelectorAll('.product-content'); const imgs = document.querySelectorAll('.placeholder-img');
         window.addEventListener('scroll', () => {
             if(!scrollyContainer) return;
             const rect = scrollyContainer.getBoundingClientRect();
-            const totalScrollable = rect.height - window.innerHeight;
-            const scrolled = Math.max(0, -rect.top);
-            let percentage = scrolled / totalScrollable;
-            let activeIndex = 0;
-            if (percentage >= 0.33 && percentage < 0.66) activeIndex = 1;
-            else if (percentage >= 0.66) activeIndex = 2;
-
-            contents.forEach((c, i) => c.classList.toggle('active', i === activeIndex));
-            dots.forEach((d, i) => d.classList.toggle('active', i === activeIndex));
-            imgs.forEach((img, i) => img.classList.toggle('active', i === activeIndex));
+            let pct = Math.max(0, -rect.top) / (rect.height - window.innerHeight);
+            let idx = pct >= 0.66 ? 2 : (pct >= 0.33 ? 1 : 0);
+            contents.forEach((c, i) => c.classList.toggle('active', i === idx)); imgs.forEach((img, i) => img.classList.toggle('active', i === idx));
         });
 
-        function scrollToProduct(e, percentage) {
-            e.preventDefault(); 
-            const container = document.getElementById('products-scrolly');
-            if (!container) return;
-            const rect = container.getBoundingClientRect();
-            const totalScrollable = rect.height - window.innerHeight;
-            const targetScroll = window.scrollY + rect.top + (totalScrollable * percentage);
-            window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+        function scrollToProduct(e, pct) {
+            e.preventDefault(); const c = document.getElementById('products-scrolly');
+            window.scrollTo({ top: window.scrollY + c.getBoundingClientRect().top + ((c.getBoundingClientRect().height - window.innerHeight) * pct), behavior: 'smooth' });
         }
     </script>
 </body>
