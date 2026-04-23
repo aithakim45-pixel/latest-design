@@ -19,7 +19,6 @@
         .btn-outline { border-color: var(--dark); color: var(--dark); }
         .btn-outline-white { border-color: var(--white); color: var(--white); }
         
-        /* Global Navbar (Starts Black, Scrolls to White) */
         nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; background: var(--dark); color: var(--white); }
         nav a { color: var(--white); }
         nav.scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.05); color: var(--dark); }
@@ -90,7 +89,7 @@
 
     <nav id="navbar">
         <a href="index.html" class="logo-container">
-            <img id="nav-logo" src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 40px; width: auto;">
+            <img id="nav-logo" src="gsd%20logo.png" alt="GSD IDEA" style="height: 40px; width: auto;">
         </a>
         <div class="nav-links">
             <a href="steel.html" data-i18n="navSteel">STEEL</a>
@@ -197,7 +196,9 @@
     <footer>
         <div class="footer-grid">
             <div>
-                <a href="index.html" class="logo-container"><img src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 32px; width: auto;"></a>
+                <a href="index.html" class="logo-container footer-logo">
+                    <img src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 32px; width: auto;">
+                </a>
                 <p data-i18n="fDesc" style="color:var(--muted); margin-top:15px;">The certified IDEA StatiCa reseller for UAE and GCC.</p>
             </div>
             <div class="footer-links"><h4 data-i18n="fL1">Products</h4><ul><li><a href="steel.html">Steel</a></li><li><a href="concrete.html">Concrete</a></li><li><a href="bim.html">BIM</a></li></ul></div>
@@ -258,23 +259,41 @@
         }
         document.addEventListener('DOMContentLoaded', renderLatestVideo);
 
-        // WHITE/NORMAL LOGO ON WHITE BACKGROUND, BLACK/WHITE-TEXT LOGO ON BLACK BACKGROUND
+        // Logo scroll logic
         window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar'); 
-            const logo = document.getElementById('nav-logo');
-            if (window.scrollY > 50) { 
-                nav.classList.add('scrolled'); 
-                if(logo) logo.src = 'gsd%20logo.png'; // Scrolled to White bg -> Normal logo
-            } else { 
-                nav.classList.remove('scrolled'); 
-                if(logo) logo.src = 'gsd%20logo%20black.png'; // Top is Black bg -> Black/Light logo
-            }
+            const nav = document.getElementById('navbar'); const logo = document.getElementById('nav-logo');
+            if (window.scrollY > 50) { nav.classList.add('scrolled'); if(logo) logo.src = 'gsd%20logo%20black.png'; } 
+            else { nav.classList.remove('scrolled'); if(logo) logo.src = 'gsd%20logo.png'; }
         });
 
+        // REPAIRED: This logic now successfully counts the numbers up to the target over 2 seconds!
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) { entry.target.classList.add('visible'); } 
-                else { entry.target.classList.remove('visible'); }
+                if (entry.isIntersecting) { 
+                    entry.target.classList.add('visible'); 
+                    // Counting stats trigger
+                    if(entry.target.classList.contains('stats') && !entry.target.dataset.counted) {
+                        entry.target.dataset.counted = "true";
+                        document.querySelectorAll('.stat-num').forEach(num => {
+                            const target = +num.getAttribute('data-target');
+                            const increment = target / (2000 / 16);
+                            let current = 0;
+                            const updateCount = () => {
+                                current += increment;
+                                if(current < target) { 
+                                    num.innerText = Math.ceil(current).toLocaleString(); 
+                                    requestAnimationFrame(updateCount); 
+                                } else { 
+                                    num.innerText = target.toLocaleString(); 
+                                }
+                            };
+                            updateCount();
+                        });
+                    }
+                } 
+                else { 
+                    entry.target.classList.remove('visible'); 
+                }
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
