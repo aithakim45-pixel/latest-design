@@ -14,8 +14,8 @@
         ul { list-style: none; }
         h1, h2, h3 { font-weight: 700; line-height: 1.2; }
         p { color: var(--muted); font-size: 1.1rem; margin-bottom: 1rem; }
-        .btn { display: inline-block; padding: 12px 28px; border-radius: 100px; font-weight: 600; transition: 0.3s; cursor: pointer; text-align: center; border: 2px solid transparent;}
-        .btn-outline-white { border-color: var(--white); color: var(--white); }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 100px; font-weight: 600; transition: 0.3s; cursor: pointer; text-align: center; }
+        .btn-outline-white { border: 2px solid var(--white); color: var(--white); }
         
         nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; background: var(--dark); color: var(--white); }
         nav a { color: var(--white); }
@@ -50,8 +50,7 @@
         footer { background: #050505; color: var(--white); padding: 80px 5% 30px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 50px; margin-bottom: 60px; }
         .footer-links h4 { margin-bottom: 20px; }
-        .footer-links a { color: var(--muted); transition: 0.3s;}
-        .footer-links a:hover { color: var(--primary); }
+        .footer-links a { color: var(--muted); }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: space-between; color: var(--muted); font-size: 0.9rem; }
         .fade-in { opacity: 0; transform: translateY(30px); transition: 0.8s; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -59,7 +58,9 @@
 </head>
 <body>
     <nav id="navbar">
-        <a href="index.html" class="logo-container"><img id="nav-logo" src="gsd%20logo.png" alt="GSD IDEA" style="height: 40px; width: auto;"></a>
+        <a href="index.html" class="logo-container">
+            <img id="nav-logo" src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 40px; width: auto;">
+        </a>
         <div class="nav-links">
             <a href="steel.html" data-i18n="navSteel">STEEL</a>
             <a href="concrete.html" data-i18n="navConcrete">CONCRETE</a>
@@ -69,6 +70,7 @@
             <a href="training.html" data-i18n="navTraining">TRAINING</a>
             <a href="blog.html" data-i18n="navInsights">INSIGHTS</a>
             <div class="lang-toggle" onclick="toggleLang()">EN | AR</div>
+            <a href="#cta" class="btn btn-primary" data-i18n="navDemo" style="padding: 10px 20px; border-radius: 100px;">Book a Demo</a>
         </div>
     </nav>
 
@@ -86,9 +88,15 @@
     <section id="features-scrolly" class="scrolly-container">
         <div class="scrolly-inner">
             <div class="scrolly-left">
-                <div class="feature-content active" id="feat-0"><h2 data-i18n="f1T">BIM Links</h2><p data-i18n="f1D">Direct connections to ETABS, SAP2000, STAAD Pro, Tekla, Robot, and RFEM without data loss.</p></div>
-                <div class="feature-content" id="feat-1"><h2 data-i18n="f2T">Checkbot</h2><p data-i18n="f2D">Bulk design and verification of all connections in one unified project workflow application.</p></div>
-                <div class="feature-content" id="feat-2"><h2 data-i18n="f3T">3D Visualization</h2><p data-i18n="f3D">View imported loads, internal forces, members, and geometry in a full 3D interactive environment.</p></div>
+                <div class="feature-content active" id="feat-0">
+                    <h2 data-i18n="f1T">BIM Links</h2><p data-i18n="f1D">Direct connections to ETABS, SAP2000, STAAD Pro, Tekla, Robot, and RFEM without data loss.</p>
+                </div>
+                <div class="feature-content" id="feat-1">
+                    <h2 data-i18n="f2T">Checkbot</h2><p data-i18n="f2D">Bulk design and verification of all connections in one unified project workflow application.</p>
+                </div>
+                <div class="feature-content" id="feat-2">
+                    <h2 data-i18n="f3T">3D Visualization</h2><p data-i18n="f3D">View imported loads, internal forces, members, and geometry in a full 3D interactive environment.</p>
+                </div>
             </div>
             <div class="scrolly-right">
                 <div class="placeholder active" id="img-0">BIM Links Visual</div>
@@ -98,14 +106,19 @@
         </div>
     </section>
 
-    <section class="cta-section">
+    <section class="cta-section" id="cta">
         <h2 class="fade-in" data-i18n="ctaTitle">Streamline your BIM workflow today</h2>
         <div style="margin-top:30px;"><a href="#" class="btn btn-outline-white" data-i18n="btnTrial">Download Trial</a></div>
     </section>
 
     <footer>
         <div class="footer-grid">
-            <div><img src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 32px; background: white; padding: 6px 12px; border-radius: 6px;"><p data-i18n="fDesc" style="color:var(--muted); margin-top:15px;">The certified IDEA StatiCa reseller for UAE and GCC.</p></div>
+            <div>
+                <a href="index.html" class="logo-container">
+                    <img src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 32px; width: auto;">
+                </a>
+                <p data-i18n="fDesc" style="color:var(--muted); margin-top:15px;">The certified IDEA StatiCa reseller for UAE and GCC.</p>
+            </div>
             <div class="footer-links"><h4 data-i18n="fL1">Products</h4><ul><li><a href="steel.html">Steel</a></li><li><a href="concrete.html">Concrete</a></li><li><a href="bim.html">BIM</a></li></ul></div>
             <div class="footer-links"><h4 data-i18n="fL2">Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="training.html">Training</a></li><li><a href="apps.html">Our Apps</a></li></ul></div>
             <div class="footer-links"><h4 data-i18n="fL3">Contact</h4><ul style="color:var(--muted);"><li>Dubai, UAE</li><li>support@gsdidea.ae</li></ul></div>
@@ -115,8 +128,8 @@
 
     <script>
         const t = {
-            en: { navSteel: "STEEL", navConcrete: "CONCRETE", navBim: "BIM", navApps: "APPS", navVideos: "VIDEOS", navTraining: "TRAINING", navInsights: "INSIGHTS", heroTitle: "ADVANCED", heroSub: "Visualize imported loads and members in 3D, manage load combinations, and control the import from your analysis software.", i1: "1. Import", i1D: "Pull geometry and loads directly from FEA software.", i2: "2. Sync", i2D: "Update designs automatically when the global model changes.", i3: "3. Export", i3D: "Send detailed connection data to CAD detailing software.", f1T: "BIM Links", f1D: "Direct connections to ETABS, SAP2000, STAAD Pro, Tekla, Robot, and RFEM without data loss.", f2T: "Checkbot", f2D: "Bulk design and verification of all connections in one unified project workflow application.", f3T: "3D Visualization", f3D: "View imported loads, internal forces, members, and geometry in a full 3D interactive environment.", ctaTitle: "Streamline your BIM workflow today", btnTrial: "Download Trial", fDesc: "The certified IDEA StatiCa reseller for UAE and GCC.", fL1: "Products", fL2: "Company", fL3: "Contact" },
-            ar: { navSteel: "الصلب", navConcrete: "الخرسانة", navBim: "نمذجة المعلومات", navApps: "تطبيقاتنا", navVideos: "فيديوهات", navTraining: "التدريب", navInsights: "الرؤى", heroTitle: "متقدمة", heroSub: "قم بتصور الأحمال والعناصر المستوردة في صورة ثلاثية الأبعاد، وإدارة مجموعات الأحمال، والتحكم في الاستيراد من برنامج التحليل الخاص بك.", i1: "1. استيراد", i1D: "سحب الهندسة والأحمال مباشرة من برامج التحليل.", i2: "2. مزامنة", i2D: "تحديث التصميمات تلقائياً عند تغير النموذج العام.", i3: "3. تصدير", i3D: "إرسال بيانات الوصلات التفصيلية إلى برامج الرسم.", f1T: "روابط BIM", f1D: "اتصالات مباشرة مع ETABS و SAP2000 و STAAD Pro و Tekla و Robot و RFEM دون فقد البيانات.", f2T: "Checkbot", f2D: "تصميم والتحقق من جميع الوصلات دفعة واحدة في تطبيق عمل موحد.", f3T: "تصور ثلاثي الأبعاد", f3D: "عرض الأحمال المستوردة والقوى الداخلية والعناصر والهندسة في بيئة تفاعلية ثلاثية الأبعاد.", ctaTitle: "قم بتبسيط سير عمل BIM الخاص بك اليوم", btnTrial: "حمل النسخة التجريبية", fDesc: "الموزع المعتمد لبرامج IDEA StatiCa.", fL1: "المنتجات", fL2: "الشركة", fL3: "تواصل معنا" }
+            en: { navSteel: "STEEL", navConcrete: "CONCRETE", navBim: "BIM", navApps: "APPS", navVideos: "VIDEOS", navTraining: "TRAINING", navInsights: "INSIGHTS", navDemo: "Book a Demo", heroTitle: "ADVANCED", heroSub: "Visualize imported loads and members in 3D, manage load combinations.", i1: "1. Import", i1D: "Pull geometry and loads directly from FEA software.", i2: "2. Sync", i2D: "Update designs automatically when the global model changes.", i3: "3. Export", i3D: "Send detailed connection data to CAD detailing software.", f1T: "BIM Links", f1D: "Direct connections to ETABS, SAP2000, STAAD Pro, Tekla, Robot.", f2T: "Checkbot", f2D: "Bulk design and verification of all connections in one unified workflow.", f3T: "3D Visualization", f3D: "View imported loads, internal forces, members, and geometry in 3D.", ctaTitle: "Streamline your BIM workflow today", btnTrial: "Download Trial", fDesc: "The certified IDEA StatiCa reseller for UAE and GCC.", fL1: "Products", fL2: "Company", fL3: "Contact" },
+            ar: { navSteel: "الصلب", navConcrete: "الخرسانة", navBim: "نمذجة المعلومات", navApps: "تطبيقاتنا", navVideos: "فيديوهات", navTraining: "التدريب", navInsights: "الرؤى", navDemo: "احجز عرضاً تجريبياً", heroTitle: "متقدمة", heroSub: "قم بتصور الأحمال والعناصر المستوردة في صورة ثلاثية الأبعاد، وإدارة المجموعات.", i1: "1. استيراد", i1D: "سحب الهندسة والأحمال مباشرة من برامج التحليل.", i2: "2. مزامنة", i2D: "تحديث التصميمات تلقائياً عند تغير النموذج العام.", i3: "3. تصدير", i3D: "إرسال بيانات الوصلات التفصيلية إلى برامج الرسم.", f1T: "روابط BIM", f1D: "اتصالات مباشرة مع ETABS و SAP2000 و STAAD Pro و Tekla.", f2T: "Checkbot", f2D: "تصميم والتحقق من جميع الوصلات دفعة واحدة في تطبيق موحد.", f3T: "تصور ثلاثي الأبعاد", f3D: "عرض الأحمال المستوردة والقوى الداخلية والعناصر في بيئة تفاعلية.", ctaTitle: "قم بتبسيط سير عمل BIM الخاص بك اليوم", btnTrial: "حمل النسخة التجريبية", fDesc: "الموزع المعتمد لبرامج IDEA StatiCa.", fL1: "المنتجات", fL2: "الشركة", fL3: "تواصل معنا" }
         };
         let currentLang = 'en';
         function toggleLang() {
@@ -125,11 +138,13 @@
             if(currentLang === 'en') { document.querySelector('h1[data-i18n="heroTitle"]').innerHTML = 'ADVANCED <span class="orange-text">BIM WORKFLOWS</span>'; }
             else { document.querySelector('h1[data-i18n="heroTitle"]').innerHTML = 'سير عمل BIM <span class="orange-text">المتقدمة</span>'; }
         }
+        
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar'); const logo = document.getElementById('nav-logo');
-            if (window.scrollY > 50) { nav.classList.add('scrolled'); if(logo) logo.src = 'gsd%20logo%20black.png'; } 
-            else { nav.classList.remove('scrolled'); if(logo) logo.src = 'gsd%20logo.png'; }
+            if (window.scrollY > 50) { nav.classList.add('scrolled'); if(logo) logo.src = 'gsd%20logo.png'; } 
+            else { nav.classList.remove('scrolled'); if(logo) logo.src = 'gsd%20logo%20black.png'; }
         });
+
         const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } else { e.target.classList.remove('visible'); } }); }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         const scrollyContainer = document.getElementById('features-scrolly'); const contents = document.querySelectorAll('.feature-content'); const imgs = document.querySelectorAll('.placeholder');
