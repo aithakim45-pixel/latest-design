@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Library | Gulf Structural Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #E85D04; --dark: #0C0C0C; --light-grey: #F4F5F7; --muted: #6B7280; --white: #FFFFFF; --font-en: 'Outfit', sans-serif; --font-ar: 'Cairo', sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-en); color: var(--dark); background: var(--light-grey); line-height: 1.6; overflow-x: hidden; }
+        [dir="rtl"] body { font-family: var(--font-ar); }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        h1, h2, h3 { font-weight: 700; line-height: 1.2; }
+        p { color: var(--muted); font-size: 1.1rem; margin-bottom: 1rem; }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 100px; font-weight: 600; transition: 0.3s; cursor: pointer; text-align: center; border: 2px solid transparent; }
+        .btn-outline-white { border-color: var(--white); color: var(--white); }
+        .btn-outline-white:hover { background: var(--white); color: var(--dark); }
+        
+        nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; background: var(--dark); color: var(--white); }
+        nav a { color: var(--white); }
+        nav.scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.05); color: var(--dark); }
+        nav.scrolled a { color: var(--dark); }
+        .logo-container { display: flex; align-items: center; gap: 10px; }
+        .nav-links { display: flex; gap: 20px; align-items: center; font-weight: 600; font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--primary) !important; }
+        .lang-toggle { cursor: pointer; background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 100px; font-weight: 700; }
+        nav.scrolled .lang-toggle { background: var(--light-grey); }
+        
+        .hero { background: var(--dark); color: var(--white); padding: 180px 5% 100px; text-align: center; }
+        .hero h1 { font-size: 4rem; text-transform: uppercase; margin-bottom: 20px; }
+        .hero p { color: #A0AABF; max-width: 800px; font-size: 1.25rem; margin: 0 auto;}
+
+        .video-container { padding: 60px 5% 100px; max-width: 1400px; margin: 0 auto; }
+        .filters { display: flex; justify-content: center; gap: 15px; margin-bottom: 50px; flex-wrap: wrap; }
+        .filter-btn { background: var(--white); border: 1px solid #ddd; padding: 10px 24px; border-radius: 100px; font-weight: 600; cursor: pointer; transition: 0.3s; font-family: inherit; color: var(--dark); }
+        .filter-btn:hover { border-color: var(--primary); color: var(--primary); }
+        .filter-btn.active { background: var(--primary); color: var(--white); border-color: var(--primary); }
+
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
+        .video-card { background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.04); transition: transform 0.3s; display: flex; flex-direction: column; }
+        .video-card:hover { transform: translateY(-5px); }
+        .video-thumb { position: relative; width: 100%; aspect-ratio: 16/9; background: #e0e0e0; cursor: pointer; overflow: hidden; }
+        .video-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .video-card:hover .video-thumb img { transform: scale(1.05); }
+        .play-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.4); display: flex; justify-content: center; align-items: center; opacity: 0; transition: 0.3s; }
+        .video-card:hover .play-overlay { opacity: 1; }
+        .play-icon { width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: var(--white); font-size: 1.5rem; transform: scale(0.8); transition: transform 0.3s; }
+        .video-card:hover .play-icon { transform: scale(1); }
+
+        .video-info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .v-meta { color: var(--primary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 10px; display: flex; justify-content: space-between; }
+        .v-date { color: var(--muted); font-weight: 400; }
+        .video-info h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--dark); line-height: 1.4;}
+        .video-info p { font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
+        .watch-link { color: var(--primary); font-weight: 700; display: inline-block; font-size: 1rem; }
+
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000; justify-content: center; align-items: center; padding: 20px; opacity: 0; transition: opacity 0.3s; }
+        .modal.active { display: flex; opacity: 1; }
+        .modal-content { width: 100%; max-width: 900px; aspect-ratio: 16/9; position: relative; background: #000; }
+        .modal-close { position: absolute; top: -40px; right: 0; color: white; font-size: 2rem; cursor: pointer; border: none; background: none; }
+        [dir="rtl"] .modal-close { right: auto; left: 0; }
+        iframe { width: 100%; height: 100%; border: none; }
+
+        .cta-section { background: var(--dark); padding: 100px 5%; text-align: center; color: var(--white); }
+        footer { background: #050505; color: var(--white); padding: 80px 5% 30px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 50px; margin-bottom: 60px; }
+        .footer-links h4 { margin-bottom: 20px; }
+        .footer-links a { color: var(--muted); transition: 0.3s; }
+        .footer-links a:hover { color: var(--primary); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: space-between; color: var(--muted); font-size: 0.9rem; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: 0.8s; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <script>
+        const VIDEOS_DATA = [
+            { id: "v1", titleEn: "How to Design Steel Connections in IDEA StatiCa", titleAr: "كيفية تصميم وصلات الصلب في IDEA StatiCa", descEn: "A step-by-step walkthrough of designing and verifying a complex steel hall connection.", descAr: "شرح تفصيلي خطوة بخطوة لتصميم والتحقق من وصلة قاعة صلب معقدة.", youtubeId: "REPLACE_WITH_REAL_ID", category: "tutorial", date: "2025-04-01" },
+            { id: "v2", titleEn: "BIM Workflow: From Revit to IDEA StatiCa", titleAr: "سير عمل BIM: من Revit إلى IDEA StatiCa", descEn: "Connecting your BIM model directly to structural analysis — no manual re-entry.", descAr: "ربط نموذج BIM مباشرة بالتحليل الإنشائي — دون إدخال يدوي.", youtubeId: "REPLACE_WITH_REAL_ID", category: "workflow", date: "2025-03-15" },
+            { id: "v3", titleEn: "Concrete D-Region Design Explained", titleAr: "شرح تصميم مناطق D في الخرسانة", descEn: "Using IDEA StatiCa Concrete to design and check complex D-regions with code compliance.", descAr: "استخدام IDEA StatiCa للخرسانة لتصميم والتحقق من مناطق D المعقدة وفق متطلبات الكود.", youtubeId: "REPLACE_WITH_REAL_ID", category: "tutorial", date: "2025-02-20" }
+        ];
+    </script>
+
+    <nav id="navbar">
+        <a href="index.html" class="logo-container"><img id="nav-logo" src="gsd%20logo.png" alt="GSD IDEA" style="height: 40px; width: auto;"></a>
+        <div class="nav-links">
+            <a href="steel.html" data-i18n="navSteel">STEEL</a>
+            <a href="concrete.html" data-i18n="navConcrete">CONCRETE</a>
+            <a href="bim.html" data-i18n="navBim">BIM</a>
+            <a href="apps.html" data-i18n="navApps">APPS</a>
+            <a href="videos.html" data-i18n="navVideos" style="color: var(--primary) !important;">VIDEOS</a>
+            <a href="training.html" data-i18n="navTraining">TRAINING</a>
+            <a href="blog.html" data-i18n="navInsights">INSIGHTS</a>
+            <div class="lang-toggle" onclick="toggleLang()">EN | AR</div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1 class="fade-in" data-i18n="heroTitle">VIDEO LIBRARY</h1>
+        <p class="fade-in" data-i18n="heroSub">Tutorials, webinars, and case studies from our engineering team.</p>
+    </header>
+
+    <section class="video-container">
+        <div class="filters fade-in" id="filter-container"></div>
+        <div class="video-grid fade-in" id="video-grid"></div>
+    </section>
+
+    <section class="cta-section fade-in">
+        <h2 data-i18n="ctaTitle">Want to See a Specific Topic?</h2>
+        <p data-i18n="ctaSub" style="margin-bottom:30px;">Request a tutorial and our engineers will create it.</p>
+        <a href="mailto:info@gsdidea.ae" class="btn btn-outline-white" data-i18n="ctaBtn">Request a Video →</a>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div><img src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 32px; background: white; padding: 6px 12px; border-radius: 6px;"><p data-i18n="fDesc" style="color:var(--muted); margin-top:15px;">The certified IDEA StatiCa reseller for UAE and GCC.</p></div>
+            <div class="footer-links"><h4 data-i18n="fL1">Products</h4><ul><li><a href="steel.html">Steel</a></li><li><a href="concrete.html">Concrete</a></li><li><a href="bim.html">BIM</a></li></ul></div>
+            <div class="footer-links"><h4 data-i18n="fL2">Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="training.html">Training</a></li><li><a href="apps.html">Our Apps</a></li></ul></div>
+            <div class="footer-links"><h4 data-i18n="fL3">Contact</h4><ul style="color:var(--muted);"><li>Dubai, UAE</li><li>support@gsdidea.ae</li></ul></div>
+        </div>
+        <div class="footer-bottom"><span>© 2026 Gulf Structural Design.</span></div>
+    </footer>
+
+    <div id="video-modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content"><button class="modal-close" onclick="closeModal(event)">×</button><iframe id="youtube-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+    </div>
+
+    <script>
+        const t = {
+            en: { navSteel: "STEEL", navConcrete: "CONCRETE", navBim: "BIM", navApps: "APPS", navVideos: "VIDEOS", navTraining: "TRAINING", navInsights: "INSIGHTS", heroTitle: "VIDEO LIBRARY", heroSub: "Tutorials, webinars, and case studies from our engineering team.", filterAll: "All", filterTut: "Tutorials", filterWork: "Workflows", filterWeb: "Webinars", cat_tutorial: "Tutorial", cat_workflow: "Workflow", cat_webinar: "Webinar", watchBtn: "Watch →", ctaTitle: "Want to See a Specific Topic?", ctaSub: "Request a tutorial and our engineers will create it.", ctaBtn: "Request a Video →", fDesc: "The certified IDEA StatiCa reseller.", fL1: "Products", fL2: "Company", fL3: "Contact" },
+            ar: { navSteel: "الصلب", navConcrete: "الخرسانة", navBim: "نمذجة المعلومات", navApps: "تطبيقاتنا", navVideos: "فيديوهات", navTraining: "التدريب", navInsights: "الرؤى", heroTitle: "مكتبة الفيديوهات", heroSub: "دروس تعليمية وندوات إلكترونية ودراسات حالة من فريقنا الهندسي.", filterAll: "الكل", filterTut: "دروس تعليمية", filterWork: "سير العمل", filterWeb: "ندوات", cat_tutorial: "درس تعليمي", cat_workflow: "سير العمل", cat_webinar: "ندوة", watchBtn: "شاهد ←", ctaTitle: "هل تريد رؤية موضوع معين؟", ctaSub: "اطلب درساً تعليمياً وسيقوم مهندسونا بإنشائه.", ctaBtn: "اطلب فيديو ←", fDesc: "الموزع المعتمد لبرامج IDEA StatiCa.", fL1: "المنتجات", fL2: "الشركة", fL3: "تواصل معنا" }
+        };
+
+        let currentLang = 'en'; let currentFilter = 'all';
+        function buildFilters() {
+            document.getElementById('filter-container').innerHTML = `
+                <button class="filter-btn ${currentFilter === 'all' ? 'active' : ''}" onclick="setFilter('all')">${t[currentLang].filterAll}</button>
+                <button class="filter-btn ${currentFilter === 'tutorial' ? 'active' : ''}" onclick="setFilter('tutorial')">${t[currentLang].filterTut}</button>
+                <button class="filter-btn ${currentFilter === 'workflow' ? 'active' : ''}" onclick="setFilter('workflow')">${t[currentLang].filterWork}</button>
+                <button class="filter-btn ${currentFilter === 'webinar' ? 'active' : ''}" onclick="setFilter('webinar')">${t[currentLang].filterWeb}</button>`;
+        }
+        function setFilter(category) { currentFilter = category; buildFilters(); renderVideos(); }
+        function renderVideos() {
+            const grid = document.getElementById('video-grid'); grid.innerHTML = '';
+            const filteredData = currentFilter === 'all' ? VIDEOS_DATA : VIDEOS_DATA.filter(v => v.category === currentFilter);
+            filteredData.forEach(video => {
+                const title = currentLang === 'en' ? video.titleEn : video.titleAr;
+                const desc = currentLang === 'en' ? video.descEn : video.descAr;
+                const catLabel = t[currentLang][`cat_${video.category}`] || video.category;
+                grid.innerHTML += `<div class="video-card"><div class="video-thumb" onclick="openModal('${video.youtubeId}')"><img src="https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg" alt="${title}"><div class="play-overlay"><div class="play-icon">▶</div></div></div><div class="video-info"><div class="v-meta"><span>${catLabel}</span><span class="v-date">${video.date}</span></div><h3>${title}</h3><p>${desc}</p><a href="https://www.youtube.com/watch?v=${video.youtubeId}" target="_blank" class="watch-link">${t[currentLang].watchBtn}</a></div></div>`;
+            });
+        }
+        function openModal(id) { document.getElementById('youtube-iframe').src = `https://www.youtube.com/embed/${id}?autoplay=1`; document.getElementById('video-modal').classList.add('active'); }
+        function closeModal(e) { if (e.target.id === 'video-modal' || e.target.classList.contains('modal-close')) { document.getElementById('youtube-iframe').src = ""; document.getElementById('video-modal').classList.remove('active'); } }
+
+        function toggleLang() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en'; document.documentElement.lang = currentLang; document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.querySelectorAll('[data-i18n]').forEach(el => { if(t[currentLang][el.getAttribute('data-i18n')]) el.innerHTML = t[currentLang][el.getAttribute('data-i18n')]; });
+            buildFilters(); renderVideos();
+        }
+        buildFilters(); renderVideos();
+
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar'); const logo = document.getElementById('nav-logo');
+            if (window.scrollY > 50) { nav.classList.add('scrolled'); if(logo) logo.src = 'gsd%20logo%20black.png'; } 
+            else { nav.classList.remove('scrolled'); if(logo) logo.src = 'gsd%20logo.png'; }
+        });
+        const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } else { e.target.classList.remove('visible'); } }); }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
