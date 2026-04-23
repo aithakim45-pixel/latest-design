@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIM Workflows | Gulf Structural Design</title>
+    <title>About Us | Gulf Structural Design</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #E85D04; --dark: #0C0C0C; --light-grey: #F4F5F7; --muted: #6B7280; --white: #FFFFFF; --font-en: 'Outfit', sans-serif; --font-ar: 'Cairo', sans-serif; }
@@ -16,7 +16,6 @@
         p { color: var(--muted); font-size: 1.1rem; margin-bottom: 1rem; }
         .btn { display: inline-block; padding: 12px 28px; border-radius: 100px; font-weight: 600; transition: 0.3s; cursor: pointer; text-align: center; }
         .btn-primary { background: var(--primary); color: var(--white); }
-        .btn-outline-white { border: 2px solid var(--white); color: var(--white); }
         
         nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
         nav.scrolled { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.05); padding: 15px 5%; }
@@ -24,36 +23,33 @@
         .nav-links { display: flex; gap: 30px; align-items: center; font-weight: 600; }
         .lang-toggle { cursor: pointer; background: var(--light-grey); padding: 5px 15px; border-radius: 100px; font-weight: 700; }
         
-        .hero { background: var(--dark); color: var(--white); height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 5%; }
-        .hero h1 { font-size: 4rem; text-transform: uppercase; margin-bottom: 20px; }
-        .orange-text { color: var(--primary); }
-        .hero p { color: #A0AABF; max-width: 800px; font-size: 1.25rem; }
+        .hero { background: var(--white); color: var(--dark); padding: 150px 5% 80px; text-align: center; }
+        .hero h1 { font-size: 3.5rem; text-transform: uppercase; border-bottom: 6px solid var(--primary); display: inline-block; padding-bottom: 10px; margin-bottom: 20px; }
+        .hero p { max-width: 800px; font-size: 1.25rem; margin: 0 auto; }
 
-        .bim-intro { background: var(--light-grey); padding: 60px 5%; display: flex; justify-content: center; gap: 50px; text-align: center; flex-wrap: wrap; }
-        .bim-intro div { flex: 1; min-width: 200px; }
-        .bim-icon { font-size: 2rem; color: var(--primary); margin-bottom: 10px; }
+        .story { padding: 80px 5%; display: flex; gap: 50px; align-items: center; background: var(--light-grey); flex-wrap: wrap;}
+        .pull-quote { flex: 1; font-size: 2rem; font-weight: 700; color: var(--primary); line-height: 1.3; min-width: 300px; border-left: 4px solid var(--dark); padding-left: 20px;}
+        [dir="rtl"] .pull-quote { border-left: none; border-right: 4px solid var(--dark); padding-left: 0; padding-right: 20px; }
+        .story-text { flex: 1; font-size: 1.1rem; min-width: 300px; }
 
-        .scrolly-container { height: 400vh; position: relative; background: var(--white); }
-        .scrolly-inner { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; padding: 0 5%; }
-        .scrolly-left { flex: 1; padding-right: 50px; }
-        [dir="rtl"] .scrolly-left { padding-right: 0; padding-left: 50px; }
-        .scrolly-right { flex: 1; height: 60vh; background: var(--light-grey); border-radius: 16px; display: flex; align-items: center; justify-content: center; position: relative; }
-        .feature-content { position: absolute; opacity: 0; transform: translateY(20px); transition: 0.5s; pointer-events: none; }
-        .feature-content.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; }
-        .feature-content h2 { font-size: 2.5rem; margin-bottom: 15px; }
-        .placeholder { width: 100%; height: 100%; border-radius: 16px; background: linear-gradient(135deg, #ddd, #eee); position: absolute; opacity: 0; transition: 0.5s; display:flex; align-items:center; justify-content:center; font-weight:bold; color:var(--muted);}
-        .placeholder.active { opacity: 1; }
+        .services { padding: 100px 5%; background: var(--white); }
+        .serv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .serv-card { padding: 30px; border-radius: 16px; border: 1px solid #eee; transition: 0.3s; }
+        .serv-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.05); transform: translateY(-5px); }
+        .s-icon { color: var(--primary); font-size: 2rem; margin-bottom: 15px; }
 
-        .software { padding: 100px 5%; background: var(--light-grey); text-align: center; }
-        .sw-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 40px; }
-        .sw-card { background: var(--white); padding: 20px 40px; border-radius: 8px; font-weight: 700; font-size: 1.2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .team { padding: 80px 5%; background: var(--light-grey); text-align: center; }
+        .team-grid { display: flex; justify-content: center; gap: 40px; margin-top: 50px; flex-wrap: wrap; }
+        .team-card { background: var(--white); padding: 40px; border-radius: 16px; width: 280px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+        .t-photo { width: 120px; height: 120px; border-radius: 50%; background: #ddd; margin: 0 auto 20px; }
 
-        .workflow { padding: 100px 5%; background: var(--white); text-align: center; }
-        .wf-diagram { display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 50px; flex-wrap: wrap; }
-        .wf-step { background: var(--light-grey); padding: 30px; border-radius: 16px; border-top: 4px solid var(--primary); width: 250px; }
-        .wf-arrow { font-size: 2rem; color: var(--primary); font-weight: bold; }
+        .certs { padding: 50px 5%; text-align: center; font-weight: bold; }
+        .badge { display: inline-block; padding: 5px 15px; border: 2px solid var(--primary); border-radius: 100px; margin: 5px 10px; color: var(--dark); }
+        .map { padding: 80px 5%; background: var(--white); text-align: center; }
+        .map-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; max-width: 600px; margin: 40px auto; }
+        .country-pill { background: var(--light-grey); padding: 15px; border-radius: 100px; font-weight: 600; }
 
-        .cta-section { background: var(--dark); padding: 100px 5%; text-align: center; color: var(--white); }
+        .cta-section { background: var(--dark); padding: 80px 5%; text-align: center; color: var(--white); }
         
         footer { background: #050505; color: var(--white); padding: 80px 5% 30px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 50px; margin-bottom: 60px; }
@@ -63,6 +59,7 @@
         
         .fade-in { opacity: 0; transform: translateY(30px); transition: 0.8s; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
+        @media (max-width: 700px) { .map-grid { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
@@ -73,78 +70,63 @@
         <div class="nav-links">
             <a href="steel.html" data-i18n="navSteel">STEEL</a>
             <a href="concrete.html" data-i18n="navConcrete">CONCRETE</a>
-            <a href="bim.html" data-i18n="navBim" style="color: var(--primary);">BIM</a>
-            <a href="training.html" data-i18n="navTraining">TRAINING</a>
-            <a href="blog.html" data-i18n="navInsights">INSIGHTS</a>
+            <a href="bim.html" data-i18n="navBim">BIM</a>
+            <a href="about.html" data-i18n="navCompany" style="color: var(--primary);">COMPANY</a>
             <div class="lang-toggle" onclick="toggleLang()">EN | AR</div>
         </div>
     </nav>
 
-    <header class="hero">
-        <h1 class="fade-in" data-i18n="heroTitle">ADVANCED <span class="orange-text">BIM WORKFLOWS</span></h1>
-        <p class="fade-in" data-i18n="heroSub">Visualize imported loads and members in 3D, manage load combinations, and control the import from your analysis or BIM software.</p>
+    <header class="hero fade-in">
+        <h1 data-i18n="h1">ABOUT GULF STRUCTURAL DESIGN</h1>
+        <p data-i18n="sub">The GCC's certified partner for advanced structural engineering software.</p>
     </header>
 
-    <section class="bim-intro fade-in">
-        <div><div class="bim-icon">📥</div><h3 data-i18n="i1">1. Import</h3><p data-i18n="i1D">Pull geometry and loads directly from FEA software.</p></div>
-        <div><div class="bim-icon">🔄</div><h3 data-i18n="i2">2. Sync</h3><p data-i18n="i2D">Update designs automatically when the global model changes.</p></div>
-        <div><div class="bim-icon">📤</div><h3 data-i18n="i3">3. Export</h3><p data-i18n="i3D">Send detailed connection data to CAD detailing software.</p></div>
+    <section class="story fade-in">
+        <div class="pull-quote" data-i18n="quote">"We believe every structural engineer in the Gulf deserves access to world-class design tools, with local support."</div>
+        <div class="story-text" data-i18n="storyP">Gulf Structural Design was founded to bring IDEA StatiCa's university-verified structural analysis technology to engineers across the UAE, Saudi Arabia, Kuwait, Qatar, Bahrain, and Oman. As the region's only certified reseller, we combine deep technical expertise with hands-on local support.</div>
     </section>
 
-    <section id="features-scrolly" class="scrolly-container">
-        <div class="scrolly-inner">
-            <div class="scrolly-left">
-                <div class="feature-content active" id="feat-0">
-                    <h2 data-i18n="f1T">BIM Links</h2>
-                    <p data-i18n="f1D">Direct connections to ETABS, SAP2000, STAAD Pro, Tekla, Robot, and RFEM without data loss.</p>
-                </div>
-                <div class="feature-content" id="feat-1">
-                    <h2 data-i18n="f2T">Checkbot</h2>
-                    <p data-i18n="f2D">Bulk design and verification of all connections in one unified project workflow application.</p>
-                </div>
-                <div class="feature-content" id="feat-2">
-                    <h2 data-i18n="f3T">3D Visualization</h2>
-                    <p data-i18n="f3D">View imported loads, internal forces, members, and geometry in a full 3D interactive environment.</p>
-                </div>
-                <div class="feature-content" id="feat-3">
-                    <h2 data-i18n="f4T">SAF Format</h2>
-                    <p data-i18n="f4D">Utilize the Structural Analysis Format (SAF) for open and seamless data exchange between platforms.</p>
-                </div>
-            </div>
-            <div class="scrolly-right">
-                <div class="placeholder active" id="img-0">BIM Links Visual</div>
-                <div class="placeholder" id="img-1">Checkbot Interface</div>
-                <div class="placeholder" id="img-2">3D Load Visualizer</div>
-                <div class="placeholder" id="img-3">SAF Format Exchange</div>
-            </div>
+    <section class="services fade-in">
+        <h2 data-i18n="sT" style="text-align: center;">What We Do</h2>
+        <div class="serv-grid">
+            <div class="serv-card"><div class="s-icon">🛒</div><h3 data-i18n="sc1">Software Sales</h3><p data-i18n="sc1D">IDEA StatiCa licenses for steel and concrete.</p></div>
+            <div class="serv-card"><div class="s-icon">🎓</div><h3 data-i18n="sc2">Training</h3><p data-i18n="sc2D">Onboarding, advanced modeling, BIM workflows.</p></div>
+            <div class="serv-card"><div class="s-icon">💼</div><h3 data-i18n="sc3">Consulting</h3><p data-i18n="sc3D">Expert hourly consulting and API development.</p></div>
+            <div class="serv-card"><div class="s-icon">🎧</div><h3 data-i18n="sc4">Support</h3><p data-i18n="sc4D">Local Arabic & English technical support.</p></div>
         </div>
     </section>
 
-    <section class="software fade-in">
-        <h2 data-i18n="swTitle">Compatible Software</h2>
-        <div class="sw-grid">
-            <div class="sw-card">ETABS</div><div class="sw-card">SAP2000</div><div class="sw-card">STAAD Pro</div>
-            <div class="sw-card">Tekla Structures</div><div class="sw-card">Autodesk Robot</div><div class="sw-card">RFEM/RSTAB</div><div class="sw-card">Revit</div>
+    <section class="team fade-in">
+        <h2 data-i18n="teamT">Meet the Team</h2>
+        <p data-i18n="teamS">Certified structural engineers and software specialists.</p>
+        <div class="team-grid">
+            <div class="team-card"><div class="t-photo"></div><h3>Name Placeholder</h3><p>Title Placeholder</p></div>
+            <div class="team-card"><div class="t-photo"></div><h3>Name Placeholder</h3><p>Title Placeholder</p></div>
+            <div class="team-card"><div class="t-photo"></div><h3>Name Placeholder</h3><p>Title Placeholder</p></div>
         </div>
     </section>
 
-    <section class="workflow fade-in">
-        <h2 data-i18n="wfTitle">The Seamless Workflow</h2>
-        <div class="wf-diagram">
-            <div class="wf-step"><h3 data-i18n="ws1">1. Import from FEA</h3></div>
-            <div class="wf-arrow">→</div>
-            <div class="wf-step"><h3 data-i18n="ws2">2. Design in IDEA StatiCa</h3></div>
-            <div class="wf-arrow">→</div>
-            <div class="wf-step"><h3 data-i18n="ws3">3. Export & Report</h3></div>
+    <section class="certs fade-in">
+        <span data-i18n="cert">Certified by:</span>
+        <span class="badge">IDEA StatiCa</span> <span class="badge">GEO5</span> <span class="badge">ZWSOFT</span>
+    </section>
+
+    <section class="map fade-in">
+        <h2 data-i18n="mapT">Serving the GCC Region</h2>
+        <div class="map-grid">
+            <div class="country-pill" data-i18n="uae">🇦🇪 UAE</div>
+            <div class="country-pill" data-i18n="ksa">🇸🇦 Saudi Arabia</div>
+            <div class="country-pill" data-i18n="kwt">🇰🇼 Kuwait</div>
+            <div class="country-pill" data-i18n="qat">🇶🇦 Qatar</div>
+            <div class="country-pill" data-i18n="bhr">🇧🇭 Bahrain</div>
+            <div class="country-pill" data-i18n="omn">🇴🇲 Oman</div>
         </div>
     </section>
 
     <section class="cta-section fade-in">
-        <h2 data-i18n="ctaTitle">Streamline your BIM workflow today</h2>
-        <div style="margin-top:30px; display:flex; gap:20px; justify-content:center;">
-            <a href="#" class="btn btn-outline-white" data-i18n="btnTrial">Download Trial</a>
-            <a href="#" class="btn btn-primary" data-i18n="btnDemo">Book a Demo</a>
-        </div>
+        <h2 data-i18n="ctaT">Ready to talk to a local expert?</h2>
+        <p style="margin-bottom:30px;">+971 50 455 0485</p>
+        <a href="mailto:support@gsdidea.ae" class="btn btn-primary" data-i18n="ctaB">Contact Us</a>
     </section>
 
     <footer>
@@ -155,18 +137,9 @@
                 </a>
                 <p data-i18n="fDesc" style="color:var(--muted); margin-top:15px;">The certified IDEA StatiCa reseller for UAE and GCC.</p>
             </div>
-            <div class="footer-links">
-                <h4 data-i18n="fL1">Products</h4>
-                <ul><li><a href="steel.html">Steel</a></li><li><a href="concrete.html">Concrete</a></li><li><a href="bim.html">BIM</a></li></ul>
-            </div>
-            <div class="footer-links">
-                <h4 data-i18n="fL2">Company</h4>
-                <ul><li><a href="about.html">About Us</a></li><li><a href="training.html">Training</a></li><li><a href="blog.html">Blog</a></li></ul>
-            </div>
-            <div class="footer-links">
-                <h4 data-i18n="fL3">Contact</h4>
-                <ul style="color:var(--muted);"><li>Dubai, UAE</li><li>support@gsdidea.ae</li></ul>
-            </div>
+            <div class="footer-links"><h4 data-i18n="fL1">Products</h4><ul><li><a href="steel.html">Steel</a></li><li><a href="concrete.html">Concrete</a></li><li><a href="bim.html">BIM</a></li></ul></div>
+            <div class="footer-links"><h4 data-i18n="fL2">Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="training.html">Training</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+            <div class="footer-links"><h4 data-i18n="fL3">Contact</h4><ul style="color:var(--muted);"><li>Dubai, UAE</li><li>support@gsdidea.ae</li></ul></div>
         </div>
         <div class="footer-bottom"><span>© 2026 Gulf Structural Design.</span></div>
     </footer>
@@ -174,25 +147,28 @@
     <script>
         const t = {
             en: {
-                navSteel: "STEEL", navConcrete: "CONCRETE", navBim: "BIM", navTraining: "TRAINING", navInsights: "INSIGHTS",
-                heroTitle: "ADVANCED", heroSub: "Visualize imported loads and members in 3D, manage load combinations, and control the import from your analysis or BIM software.",
-                i1: "1. Import", i1D: "Pull geometry and loads directly from FEA software.", i2: "2. Sync", i2D: "Update designs automatically when the global model changes.", i3: "3. Export", i3D: "Send detailed connection data to CAD detailing software.",
-                f1T: "BIM Links", f1D: "Direct connections to ETABS, SAP2000, STAAD Pro, Tekla, Robot, and RFEM without data loss.", f2T: "Checkbot", f2D: "Bulk design and verification of all connections in one unified project workflow application.", f3T: "3D Visualization", f3D: "View imported loads, internal forces, members, and geometry in a full 3D interactive environment.", f4T: "SAF Format", f4D: "Utilize the Structural Analysis Format (SAF) for open and seamless data exchange between platforms.",
-                swTitle: "Compatible Software", wfTitle: "The Seamless Workflow", ws1: "1. Import from FEA", ws2: "2. Design in IDEA StatiCa", ws3: "3. Export & Report",
-                ctaTitle: "Streamline your BIM workflow today", btnTrial: "Download Trial", btnDemo: "Book a Demo",
+                navSteel: "STEEL", navConcrete: "CONCRETE", navBim: "BIM", navCompany: "COMPANY",
+                h1: "ABOUT GULF STRUCTURAL DESIGN", sub: "The GCC's certified partner for advanced structural engineering software.",
+                quote: "\"We believe every structural engineer in the Gulf deserves access to world-class design tools, with local support.\"",
+                storyP: "Gulf Structural Design was founded to bring IDEA StatiCa's university-verified structural analysis technology to engineers across the UAE, Saudi Arabia, Kuwait, Qatar, Bahrain, and Oman. As the region's only certified reseller, we combine deep technical expertise with hands-on local support.",
+                sT: "What We Do", sc1: "Software Sales", sc1D: "IDEA StatiCa licenses for steel and concrete.", sc2: "Training", sc2D: "Onboarding, advanced modeling, BIM workflows.", sc3: "Consulting", sc3D: "Expert hourly consulting and API development.", sc4: "Support", sc4D: "Local Arabic & English technical support.",
+                teamT: "Meet the Team", teamS: "Certified structural engineers and software specialists.", cert: "Certified by:",
+                mapT: "Serving the GCC Region", uae: "🇦🇪 UAE", ksa: "🇸🇦 Saudi Arabia", kwt: "🇰🇼 Kuwait", qat: "🇶🇦 Qatar", bhr: "🇧🇭 Bahrain", omn: "🇴🇲 Oman",
+                ctaT: "Ready to talk to a local expert?", ctaB: "Contact Us",
                 fDesc: "The certified IDEA StatiCa reseller for UAE and GCC.", fL1: "Products", fL2: "Company", fL3: "Contact"
             },
             ar: {
-                navSteel: "الصلب", navConcrete: "الخرسانة", navBim: "نمذجة المعلومات", navTraining: "التدريب", navInsights: "الرؤى",
-                heroTitle: "متقدمة", heroSub: "قم بتصور الأحمال والعناصر المستوردة في صورة ثلاثية الأبعاد، وإدارة مجموعات الأحمال، والتحكم في الاستيراد من برنامج التحليل الخاص بك.",
-                i1: "1. استيراد", i1D: "سحب الهندسة والأحمال مباشرة من برامج التحليل.", i2: "2. مزامنة", i2D: "تحديث التصميمات تلقائياً عند تغير النموذج العام.", i3: "3. تصدير", i3D: "إرسال بيانات الوصلات التفصيلية إلى برامج الرسم.",
-                f1T: "روابط BIM", f1D: "اتصالات مباشرة مع ETABS و SAP2000 و STAAD Pro و Tekla و Robot و RFEM دون فقد البيانات.", f2T: "Checkbot", f2D: "تصميم والتحقق من جميع الوصلات دفعة واحدة في تطبيق عمل موحد.", f3T: "تصور ثلاثي الأبعاد", f3D: "عرض الأحمال المستوردة والقوى الداخلية والعناصر والهندسة في بيئة تفاعلية ثلاثية الأبعاد.", f4T: "صيغة SAF", f4D: "استخدم صيغة التحليل الإنشائي (SAF) لتبادل البيانات المفتوح والسلس بين المنصات.",
-                swTitle: "البرامج المتوافقة", wfTitle: "سير العمل السلس", ws1: "1. استيراد من FEA", ws2: "2. التصميم في IDEA StatiCa", ws3: "3. تصدير وإصدار تقرير",
-                ctaTitle: "قم بتبسيط سير عمل BIM الخاص بك اليوم", btnTrial: "حمل النسخة التجريبية", btnDemo: "احجز عرضاً تجريبياً",
+                navSteel: "الصلب", navConcrete: "الخرسانة", navBim: "نمذجة المعلومات", navCompany: "الشركة",
+                h1: "عن جلف ستركتشرال ديزاين", sub: "الشريك المعتمد في دول الخليج لبرامج الهندسة الإنشائية المتقدمة.",
+                quote: "\"نحن نؤمن بأن كل مهندس إنشائي في الخليج يستحق الوصول إلى أدوات تصميم عالمية المستوى، مع دعم محلي.\"",
+                storyP: "تأسست جلف ستركتشرال ديزاين لجلب تكنولوجيا التحليل الإنشائي لبرنامج IDEA StatiCa المعتمدة من الجامعات للمهندسين في جميع أنحاء الإمارات والسعودية والكويت وقطر والبحرين وعمان. بصفتنا الموزع المعتمد الوحيد في المنطقة، فإننا نجمع بين الخبرة الفنية العميقة والدعم المحلي العملي.",
+                sT: "ماذا نفعل", sc1: "مبيعات البرامج", sc1D: "تراخيص IDEA StatiCa للصلب والخرسانة.", sc2: "التدريب", sc2D: "التأهيل، النمذجة المتقدمة، سير عمل BIM.", sc3: "الاستشارات", sc3D: "استشارات خبراء بالساعة وتطوير واجهة برمجة التطبيقات.", sc4: "الدعم", sc4D: "دعم فني محلي باللغتين العربية والإنجليزية.",
+                teamT: "تعرف على الفريق", teamS: "مهندسون إنشائيون معتمدون ومتخصصون في البرمجيات.", cert: "معتمدون من:",
+                mapT: "نخدم منطقة الخليج", uae: "🇦🇪 الإمارات", ksa: "🇸🇦 السعودية", kwt: "🇰🇼 الكويت", qat: "🇶🇦 قطر", bhr: "🇧🇭 البحرين", omn: "🇴🇲 عمان",
+                ctaT: "هل أنت مستعد للتحدث إلى خبير محلي؟", ctaB: "تواصل معنا",
                 fDesc: "الموزع المعتمد لبرامج IDEA StatiCa في الإمارات ودول الخليج.", fL1: "المنتجات", fL2: "الشركة", fL3: "تواصل معنا"
             }
         };
-
         let currentLang = 'en';
         function toggleLang() {
             currentLang = currentLang === 'en' ? 'ar' : 'en';
@@ -201,9 +177,8 @@
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 if(t[currentLang][el.getAttribute('data-i18n')]) el.innerText = t[currentLang][el.getAttribute('data-i18n')];
             });
-            document.querySelector('h1[data-i18n="heroTitle"]').innerHTML = currentLang === 'en' ? 'ADVANCED <span class="orange-text">BIM WORKFLOWS</span>' : 'سير عمل BIM <span class="orange-text">المتقدمة</span>';
         }
-
+        
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             const logo = document.getElementById('nav-logo');
@@ -214,20 +189,9 @@
                 nav.classList.remove('scrolled');
                 if(logo) logo.src = 'gsd%20logo%20black.png';
             }
-            
-            const s = document.getElementById('features-scrolly');
-            if(s) {
-                const rect = s.getBoundingClientRect();
-                const pct = Math.max(0, -rect.top) / (rect.height - window.innerHeight);
-                let idx = 0;
-                if(pct >= 0.25 && pct < 0.5) idx = 1; else if(pct >= 0.5 && pct < 0.75) idx = 2; else if(pct >= 0.75) idx = 3;
-                
-                document.querySelectorAll('.feature-content').forEach((c, i) => c.classList.toggle('active', i === idx));
-                document.querySelectorAll('.placeholder').forEach((p, i) => p.classList.toggle('active', i === idx));
-            }
         });
-
-        const observer = new IntersectionObserver(entries => {
+        
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) { entry.target.classList.add('visible'); } 
                 else { entry.target.classList.remove('visible'); }
