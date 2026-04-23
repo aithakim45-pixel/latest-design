@@ -6,15 +6,15 @@
     <title>IDEA StatiCa Steel | Gulf Structural Design</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #E85D04; --dark: #0C0C0C; --light-grey: #F4F5F7; --muted: #6B7280; --white: #FFFFFF; --font-en: 'Outfit', sans-serif; --font-ar: 'Cairo', sans-serif; }
+        :root { --primary: #E85D04; --primary-hover: #C44E03; --dark: #0C0C0C; --light-grey: #F4F5F7; --muted: #6B7280; --white: #FFFFFF; --font-en: 'Outfit', sans-serif; --font-ar: 'Cairo', sans-serif; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-en); color: var(--dark); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+        body { font-family: var(--font-en); color: var(--dark); background-color: var(--white); line-height: 1.6; overflow-x: hidden; }
         [dir="rtl"] body { font-family: var(--font-ar); }
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
         h1, h2, h3 { font-weight: 700; line-height: 1.2; }
         p { color: var(--muted); font-size: 1.1rem; margin-bottom: 1rem; }
-        .btn { display: inline-block; padding: 12px 28px; border-radius: 100px; font-weight: 600; transition: 0.3s; cursor: pointer; border: 2px solid transparent; text-align: center; }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 100px; font-weight: 600; transition: all 0.3s ease; cursor: pointer; border: 2px solid transparent; text-align: center; }
         .btn-primary { background: var(--primary); color: var(--white); }
         .btn-outline-white { border-color: var(--white); color: var(--white); }
         
@@ -61,7 +61,9 @@
 </head>
 <body>
     <nav id="navbar">
-        <a href="index.html" class="logo-container"><img id="nav-logo" src="gsd%20logo.png" alt="GSD IDEA" style="height: 40px; width: auto;"></a>
+        <a href="index.html" class="logo-container">
+            <img id="nav-logo" src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 40px; width: auto;">
+        </a>
         <div class="nav-links">
             <a href="steel.html" data-i18n="navSteel" style="color: var(--primary) !important;">STEEL</a>
             <a href="concrete.html" data-i18n="navConcrete">CONCRETE</a>
@@ -71,6 +73,7 @@
             <a href="training.html" data-i18n="navTraining">TRAINING</a>
             <a href="blog.html" data-i18n="navInsights">INSIGHTS</a>
             <div class="lang-toggle" onclick="toggleLang()">EN | AR</div>
+            <a href="#cta" class="btn btn-primary" data-i18n="navDemo" style="padding: 10px 20px; border-radius: 100px;">Book a Demo</a>
         </div>
     </nav>
 
@@ -105,14 +108,19 @@
         </div>
     </section>
 
-    <section class="cta-section">
+    <section class="cta-section" id="cta">
         <h2 class="fade-in" data-i18n="ctaTitle">Ready to Optimize Your Structural Designs?</h2>
         <div style="margin-top:30px;"><a href="#" class="btn btn-outline-white" data-i18n="ctaBtn1">Download 14-Day Trial</a></div>
     </section>
 
     <footer>
         <div class="footer-grid">
-            <div><img src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 32px; background: white; padding: 6px 12px; border-radius: 6px;"><p data-i18n="fDesc" style="color:var(--muted); margin-top:15px;">The certified IDEA StatiCa reseller for UAE and GCC.</p></div>
+            <div>
+                <a href="index.html" class="logo-container">
+                    <img src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 32px; width: auto;">
+                </a>
+                <p data-i18n="fDesc" style="color:var(--muted); margin-top:15px;">The certified IDEA StatiCa reseller for UAE and GCC.</p>
+            </div>
             <div class="footer-links"><h4 data-i18n="fL1">Products</h4><ul><li><a href="steel.html">Steel</a></li><li><a href="concrete.html">Concrete</a></li><li><a href="bim.html">BIM</a></li></ul></div>
             <div class="footer-links"><h4 data-i18n="fL2">Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="training.html">Training</a></li><li><a href="apps.html">Our Apps</a></li></ul></div>
             <div class="footer-links"><h4 data-i18n="fL3">Contact</h4><ul style="color:var(--muted);"><li>Dubai, UAE</li><li>support@gsdidea.ae</li></ul></div>
@@ -122,8 +130,8 @@
 
     <script>
         const t = {
-            en: { navSteel: "STEEL", navConcrete: "CONCRETE", navBim: "BIM", navApps: "APPS", navVideos: "VIDEOS", navTraining: "TRAINING", navInsights: "INSIGHTS", heroTitle: "IDEA STATICA", heroSub: "The absolute standard for steel connection design in the GCC.", introText: "\"Perform accurate steel connection and member design of any complexity in minutes.\"", f1Title: "Beam to Column", f1Desc: "Model standard and non-standard beam-to-column joints instantly.", f2Title: "Footings & Anchoring", f2Desc: "Solve complex base plates and concrete block interactions.", f3Title: "3D Loaded Connections", f3Desc: "Apply loads from any direction to find critical failure modes.", capTitle: "Advanced Capabilities", c1Title: "CBFEM Method", c1Desc: "A unique synergy verified by top universities globally.", c2Title: "BIM Integrations", c2Desc: "Seamlessly import forces and geometry from STAAD Pro, ETABS, and Tekla.", c3Title: "Code-Compliant Reports", c3Desc: "Generate detailed PDF calculation reports ready for submission.", ctaTitle: "Ready to Optimize Your Structural Designs?", ctaBtn1: "Download 14-Day Trial", fDesc: "The certified IDEA StatiCa reseller for UAE and GCC.", fL1: "Products", fL2: "Company", fL3: "Contact" },
-            ar: { navSteel: "الصلب", navConcrete: "الخرسانة", navBim: "نمذجة المعلومات", navApps: "تطبيقاتنا", navVideos: "فيديوهات", navTraining: "التدريب", navInsights: "الرؤى", heroTitle: "أيديا ستاتيكا", heroSub: "المعيار المطلق لتصميم وصلات الصلب في دول الخليج.", introText: "\"قم بتصميم دقيق لوصلات وعناصر الصلب مهما كانت معقدة في دقائق.\"", f1Title: "العمود إلى الكمرة", f1Desc: "نمذجة الوصلات القياسية وغير القياسية فوراً.", f2Title: "القواعد والتثبيت", f2Desc: "حل مشاكل ألواح القاعدة المعقدة وتفاعلات الكتل الخرسانية.", f3Title: "وصلات محملة ثلاثية الأبعاد", f3Desc: "تطبيق الأحمال من أي اتجاه للعثور على أوضاع الفشل.", capTitle: "قدرات متقدمة", c1Title: "طريقة CBFEM", c1Desc: "تآزر فريد معتمد من أفضل الجامعات عالمياً.", c2Title: "تكامل BIM", c2Desc: "استيراد القوى بسلاسة من STAAD Pro و ETABS.", c3Title: "تقارير مطابقة للكود", c3Desc: "إنشاء تقارير حسابية مفصلة جاهزة للتقديم.", ctaTitle: "هل أنت مستعد لتحسين تصميماتك الإنشائية؟", ctaBtn1: "حمل النسخة التجريبية 14 يوماً", fDesc: "الموزع المعتمد لبرامج IDEA StatiCa.", fL1: "المنتجات", fL2: "الشركة", fL3: "تواصل معنا" }
+            en: { navSteel: "STEEL", navConcrete: "CONCRETE", navBim: "BIM", navApps: "APPS", navVideos: "VIDEOS", navTraining: "TRAINING", navInsights: "INSIGHTS", navDemo: "Book a Demo", heroTitle: "IDEA STATICA", heroSub: "The absolute standard for steel connection design in the GCC.", introText: "\"Perform accurate steel connection and member design of any complexity in minutes.\"", f1Title: "Beam to Column", f1Desc: "Model standard and non-standard beam-to-column joints instantly.", f2Title: "Footings & Anchoring", f2Desc: "Solve complex base plates and concrete block interactions.", f3Title: "3D Loaded Connections", f3Desc: "Apply loads from any direction to find critical failure modes.", capTitle: "Advanced Capabilities", c1Title: "CBFEM Method", c1Desc: "A unique synergy verified by top universities globally.", c2Title: "BIM Integrations", c2Desc: "Seamlessly import forces and geometry from STAAD Pro, ETABS, and Tekla.", c3Title: "Code-Compliant Reports", c3Desc: "Generate detailed PDF calculation reports ready for submission.", ctaTitle: "Ready to Optimize Your Structural Designs?", ctaBtn1: "Download 14-Day Trial", fDesc: "The certified IDEA StatiCa reseller for UAE and GCC.", fL1: "Products", fL2: "Company", fL3: "Contact" },
+            ar: { navSteel: "الصلب", navConcrete: "الخرسانة", navBim: "نمذجة المعلومات", navApps: "تطبيقاتنا", navVideos: "فيديوهات", navTraining: "التدريب", navInsights: "الرؤى", navDemo: "احجز عرضاً تجريبياً", heroTitle: "أيديا ستاتيكا", heroSub: "المعيار المطلق لتصميم وصلات الصلب في دول الخليج.", introText: "\"قم بتصميم دقيق لوصلات وعناصر الصلب مهما كانت معقدة في دقائق.\"", f1Title: "العمود إلى الكمرة", f1Desc: "نمذجة الوصلات القياسية وغير القياسية فوراً.", f2Title: "القواعد والتثبيت", f2Desc: "حل مشاكل ألواح القاعدة المعقدة وتفاعلات الكتل الخرسانية.", f3Title: "وصلات محملة ثلاثية الأبعاد", f3Desc: "تطبيق الأحمال من أي اتجاه للعثور على أوضاع الفشل.", capTitle: "قدرات متقدمة", c1Title: "طريقة CBFEM", c1Desc: "تآزر فريد معتمد من أفضل الجامعات عالمياً.", c2Title: "تكامل BIM", c2Desc: "استيراد القوى بسلاسة من STAAD Pro و ETABS.", c3Title: "تقارير مطابقة للكود", c3Desc: "إنشاء تقارير حسابية مفصلة جاهزة للتقديم.", ctaTitle: "هل أنت مستعد لتحسين تصميماتك الإنشائية؟", ctaBtn1: "حمل النسخة التجريبية 14 يوماً", fDesc: "الموزع المعتمد لبرامج IDEA StatiCa.", fL1: "المنتجات", fL2: "الشركة", fL3: "تواصل معنا" }
         };
         let currentLang = 'en';
         function toggleLang() {
@@ -132,11 +140,13 @@
             if(currentLang === 'en') { document.querySelector('h1[data-i18n="heroTitle"]').innerHTML = 'IDEA STATICA <span class="orange-text">STEEL</span>'; }
             else { document.querySelector('h1[data-i18n="heroTitle"]').innerHTML = 'أيديا ستاتيكا <span class="orange-text">للصلب</span>'; }
         }
+
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar'); const logo = document.getElementById('nav-logo');
-            if (window.scrollY > 50) { nav.classList.add('scrolled'); if(logo) logo.src = 'gsd%20logo%20black.png'; } 
-            else { nav.classList.remove('scrolled'); if(logo) logo.src = 'gsd%20logo.png'; }
+            if (window.scrollY > 50) { nav.classList.add('scrolled'); if(logo) logo.src = 'gsd%20logo.png'; } 
+            else { nav.classList.remove('scrolled'); if(logo) logo.src = 'gsd%20logo%20black.png'; }
         });
+
         const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } else { e.target.classList.remove('visible'); } }); }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         const scrollyContainer = document.getElementById('features-scrolly'); const contents = document.querySelectorAll('.feature-content'); const imgs = document.querySelectorAll('.placeholder-img');
