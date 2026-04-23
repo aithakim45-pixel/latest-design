@@ -76,7 +76,7 @@
 </head>
 <body>
     <nav id="navbar">
-        <a href="index.html" class="logo-container"><img id="nav-logo" src="gsd%20logo.png" alt="GSD IDEA" style="height: 40px; width: auto;"></a>
+        <a href="index.html" class="logo-container"><img id="nav-logo" src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 40px; width: auto;"></a>
         <div class="nav-links">
             <a href="steel.html" data-i18n="navSteel">STEEL</a>
             <a href="concrete.html" data-i18n="navConcrete">CONCRETE</a>
@@ -86,6 +86,7 @@
             <a href="training.html" data-i18n="navTraining" style="color: var(--primary) !important;">TRAINING</a>
             <a href="blog.html" data-i18n="navInsights">INSIGHTS</a>
             <div class="lang-toggle" onclick="toggleLang()">EN | AR</div>
+            <a href="#cta" class="btn btn-primary" data-i18n="navDemo" style="padding: 10px 20px; border-radius: 100px;">Book a Demo</a>
         </div>
     </nav>
 
@@ -115,7 +116,7 @@
         </div>
     </section>
 
-    <section class="consulting fade-in">
+    <section class="consulting fade-in" id="cta">
         <h2 data-i18n="secCons">EXPERT CONSULTING SERVICES</h2>
         <p data-i18n="consText" style="margin-bottom:40px;">Unlock the full potential of IDEA StatiCa with hourly paid expert consultancy.</p>
         <a href="mailto:support@gsdidea.ae" class="btn btn-primary" style="border: 2px solid white; font-size: 1.1rem; padding: 15px 35px;" data-i18n="btnCont">CONTACT US</a>
@@ -123,7 +124,7 @@
 
     <footer>
         <div class="footer-grid">
-            <div><img src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 32px; background: white; padding: 6px 12px; border-radius: 6px;"><p data-i18n="fDesc" style="color:var(--muted); margin-top:15px;">The certified IDEA StatiCa reseller for UAE and GCC.</p></div>
+            <div><a href="index.html" class="logo-container"><img src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 32px; width: auto;"></a><p data-i18n="fDesc" style="color:var(--muted); margin-top:15px;">The certified IDEA StatiCa reseller for UAE and GCC.</p></div>
             <div class="footer-links"><h4 data-i18n="fL1">Products</h4><ul><li><a href="steel.html">Steel</a></li><li><a href="concrete.html">Concrete</a></li><li><a href="bim.html">BIM</a></li></ul></div>
             <div class="footer-links"><h4 data-i18n="fL2">Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="training.html">Training</a></li><li><a href="apps.html">Our Apps</a></li></ul></div>
             <div class="footer-links"><h4 data-i18n="fL3">Contact</h4><ul style="color:var(--muted);"><li>Dubai, UAE</li><li>support@gsdidea.ae</li></ul></div>
@@ -133,21 +134,23 @@
 
     <script>
         const t = {
-            en: { navSteel: "STEEL", navConcrete: "CONCRETE", navBim: "BIM", navApps: "APPS", navVideos: "VIDEOS", navTraining: "TRAINING", navInsights: "INSIGHTS", heroTitle: "GET TRAINING AND <span class='orange-text'>CONSULTING</span>", heroSub: "Maximize your skills.", schTitle: "Onboarding training", schText: "Sign up for an online session.", thDate: "Date", thTopic: "Topic", thFormat: "Format", thCap: "Capacity", r1Date: "Thursday 12th March", r1Topic: "Steel Onboarding", r1Format: "Training", secOnb: "ONBOARDING TRAINING", m1T: "STEEL", m1D: "Learn connection design.", m1L1: "Understand CBFEM Method", m2T: "CONCRETE", m2D: "Master reinforced concrete.", m2L1: "Apply CSFM Assumptions", secCons: "EXPERT CONSULTING", consText: "Hourly paid expert consultancy.", btnCont: "CONTACT US", fDesc: "The certified IDEA StatiCa reseller.", fL1: "Products", fL2: "Company", fL3: "Contact" },
-            ar: { navSteel: "الصلب", navConcrete: "الخرسانة", navBim: "نمذجة المعلومات", navApps: "تطبيقاتنا", navVideos: "فيديوهات", navTraining: "التدريب", navInsights: "الرؤى", heroTitle: "احصل على التدريب و<span class='orange-text'>الاستشارات</span>", heroSub: "عزز مهاراتك.", schTitle: "تدريب التأهيل", schText: "قم بالتسجيل في جلسة عبر الإنترنت.", thDate: "التاريخ", thTopic: "الموضوع", thFormat: "التنسيق", thCap: "السعة", r1Date: "الخميس 12 مارس", r1Topic: "تأهيل الصلب", r1Format: "تدريب", secOnb: "تدريب التأهيل", m1T: "الصلب", m1D: "تعلم تصميم الوصلات.", m1L1: "فهم طريقة CBFEM", m2T: "الخرسانة", m2D: "إتقان تصميم الخرسانة.", m2L1: "تطبيق افتراضات CSFM", secCons: "خدمات استشارية", consText: "استشارات خبراء مدفوعة بالساعة.", btnCont: "تواصل معنا", fDesc: "الموزع المعتمد.", fL1: "المنتجات", fL2: "الشركة", fL3: "تواصل معنا" }
+            en: { navSteel: "STEEL", navConcrete: "CONCRETE", navBim: "BIM", navApps: "APPS", navVideos: "VIDEOS", navTraining: "TRAINING", navInsights: "INSIGHTS", navDemo: "Book a Demo", heroTitle: "GET TRAINING AND <span class='orange-text'>CONSULTING</span>", heroSub: "Maximize your skills.", schTitle: "Onboarding training", schText: "Sign up for an online session.", thDate: "Date", thTopic: "Topic", thFormat: "Format", thCap: "Capacity", r1Date: "Thursday 12th March", r1Topic: "Steel Onboarding", r1Format: "Training", secOnb: "ONBOARDING TRAINING", m1T: "STEEL", m1D: "Learn connection design.", m1L1: "Understand CBFEM Method", m2T: "CONCRETE", m2D: "Master reinforced concrete.", m2L1: "Apply CSFM Assumptions", secCons: "EXPERT CONSULTING", consText: "Hourly paid expert consultancy.", btnCont: "CONTACT US", fDesc: "The certified IDEA StatiCa reseller.", fL1: "Products", fL2: "Company", fL3: "Contact" },
+            ar: { navSteel: "الصلب", navConcrete: "الخرسانة", navBim: "نمذجة المعلومات", navApps: "تطبيقاتنا", navVideos: "فيديوهات", navTraining: "التدريب", navInsights: "الرؤى", navDemo: "احجز عرضاً تجريبياً", heroTitle: "احصل على التدريب و<span class='orange-text'>الاستشارات</span>", heroSub: "عزز مهاراتك.", schTitle: "تدريب التأهيل", schText: "قم بالتسجيل في جلسة عبر الإنترنت.", thDate: "التاريخ", thTopic: "الموضوع", thFormat: "التنسيق", thCap: "السعة", r1Date: "الخميس 12 مارس", r1Topic: "تأهيل الصلب", r1Format: "تدريب", secOnb: "تدريب التأهيل", m1T: "الصلب", m1D: "تعلم تصميم الوصلات.", m1L1: "فهم طريقة CBFEM", m2T: "الخرسانة", m2D: "إتقان تصميم الخرسانة.", m2L1: "تطبيق افتراضات CSFM", secCons: "خدمات استشارية", consText: "استشارات خبراء مدفوعة بالساعة.", btnCont: "تواصل معنا", fDesc: "الموزع المعتمد.", fL1: "المنتجات", fL2: "الشركة", fL3: "تواصل معنا" }
         };
         let currentLang = 'en';
         function toggleLang() {
             currentLang = currentLang === 'en' ? 'ar' : 'en'; document.documentElement.lang = currentLang; document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-            document.querySelectorAll('[data-i18n]').forEach(el => { if(t[currentLang][el.getAttribute('data-i18n')]) el.innerHTML = t[currentLang][el.getAttribute('data-i18n')]; });
+            document.querySelectorAll('[data-i18n]').forEach(el => { if(t[currentLang][el.getAttribute('data-i18n')]) el.innerText = t[currentLang][el.getAttribute('data-i18n')]; });
             if(currentLang === 'en') { document.querySelector('h1[data-i18n="heroTitle"]').innerHTML = 'GET TRAINING AND <span class="orange-text">CONSULTING</span>'; }
             else { document.querySelector('h1[data-i18n="heroTitle"]').innerHTML = 'احصل على التدريب و<span class="orange-text">الاستشارات</span>'; }
         }
+        
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar'); const logo = document.getElementById('nav-logo');
-            if (window.scrollY > 50) { nav.classList.add('scrolled'); if(logo) logo.src = 'gsd%20logo%20black.png'; } 
-            else { nav.classList.remove('scrolled'); if(logo) logo.src = 'gsd%20logo.png'; }
+            if (window.scrollY > 50) { nav.classList.add('scrolled'); if(logo) logo.src = 'gsd%20logo.png'; } 
+            else { nav.classList.remove('scrolled'); if(logo) logo.src = 'gsd%20logo%20black.png'; }
         });
+
         const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } else { e.target.classList.remove('visible'); } }); }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
