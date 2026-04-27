@@ -67,7 +67,7 @@
 <body>
     <nav id="navbar">
         <a href="index.html" class="logo-container">
-            <img id="nav-logo" src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 40px; width: auto;">
+            <img id="nav-logo" src="gsd%20logo.png" alt="GSD IDEA" style="height: 40px; width: auto;">
         </a>
         <div class="nav-links">
             <a href="steel.html" data-i18n="navSteel">STEEL</a>
@@ -89,7 +89,7 @@
 
     <section class="apps-section">
         <div class="app-card fade-in">
-            <div class="app-icon">📋</div>
+            <div class="app-icon" style="font-size: 5rem;">📋</div>
             <div class="app-content">
                 <span class="badge" data-i18n="appBadge">Available Now</span>
                 <h2 data-i18n="appTitle">BOM Extractor</h2>
@@ -100,7 +100,7 @@
                     <li data-i18n="appF2">One-click export to Excel and PDF</li>
                     <li data-i18n="appF3">Bilingual output (English & Arabic)</li>
                 </ul>
-                <a href="mailto:info@gsdidea.ae" class="btn btn-primary" data-i18n="appBtn">Request Access</a>
+                <a href="bom.html" class="btn btn-primary" data-i18n="appBtn">Learn More</a>
             </div>
         </div>
     </section>
@@ -124,9 +124,7 @@
     <footer>
         <div class="footer-grid">
             <div>
-                <a href="index.html" class="logo-container">
-                    <img src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 32px; width: auto;">
-                </a>
+                <img src="gsd%20logo%20black.png" alt="GSD IDEA" style="height: 32px; width: auto;">
                 <p data-i18n="fDesc" style="color:var(--muted); margin-top:15px;">The certified IDEA StatiCa reseller for UAE and GCC.</p>
             </div>
             <div class="footer-links"><h4 data-i18n="fL1">Products</h4><ul><li><a href="steel.html">Steel</a></li><li><a href="concrete.html">Concrete</a></li><li><a href="bim.html">BIM</a></li></ul></div>
@@ -138,8 +136,24 @@
 
     <script>
         const t = {
-            en: { navSteel: "STEEL", navConcrete: "CONCRETE", navBim: "BIM", navApps: "APPS", navVideos: "VIDEOS", navTraining: "TRAINING", navInsights: "INSIGHTS", navDemo: "Book a Demo", heroTitle: "ENGINEERING TOOLS <span class='orange-text'>BUILT FOR THE GULF</span>", heroSub: "Practical apps designed by structural engineers, for structural engineers working in the UAE and wider GCC region.", appBadge: "Available Now", appTitle: "BOM Extractor", appSub: "Bill of Material Extractor", appDesc: "Automatically extract and organize bills of materials from your structural models. Save hours of manual work, eliminate errors, and export clean, formatted reports in seconds.", appF1: "Supports IDEA StatiCa Steel & Concrete models", appF2: "One-click export to Excel and PDF", appF3: "Bilingual output (English & Arabic)", appBtn: "Request Access", soonTitle: "More Apps Coming Soon", soonDesc: "We are constantly building new tools tailored to the needs of engineers in the GCC. Stay tuned.", soonBadge: "Coming Soon", ctaTitle: "Have an Idea for a Tool?", ctaSub: "Tell us what would make your workflow faster. We might build it.", ctaBtn: "Suggest a Tool →", fDesc: "The certified IDEA StatiCa reseller for UAE and GCC.", fL1: "Products", fL2: "Company", fL3: "Contact" },
-            ar: { navSteel: "الصلب", navConcrete: "الخرسانة", navBim: "نمذجة المعلومات", navApps: "تطبيقاتنا", navVideos: "فيديوهات", navTraining: "التدريب", navInsights: "الرؤى", navDemo: "احجز عرضاً تجريبياً", heroTitle: "أدوات هندسية <span class='orange-text'>مصممة للخليج</span>", heroSub: "تطبيقات عملية طورها مهندسون إنشائيون، للمهندسين العاملين في الإمارات ومنطقة الخليج.", appBadge: "متاح الآن", appTitle: "مستخرج جدول الكميات (BOM Extractor)", appSub: "أداة استخراج جدول الكميات", appDesc: "استخرج جداول الكميات ونظمها تلقائياً من النماذج الإنشائية. وفر ساعات من العمل اليدوي، تخلص من الأخطاء، وقم بتصدير تقارير منسقة ونظيفة في ثوانٍ.", appF1: "يدعم نماذج IDEA StatiCa للصلب والخرسانة", appF2: "تصدير بنقرة واحدة إلى Excel و PDF", appF3: "مخرجات ثنائية اللغة (عربي وإنجليزي)", appBtn: "اطلب الوصول", soonTitle: "المزيد من التطبيقات قريباً", soonDesc: "نعمل باستمرار على تطوير أدوات جديدة تلبي احتياجات المهندسين في منطقة الخليج. ترقبوا الجديد.", soonBadge: "قريباً", ctaTitle: "هل لديك فكرة لأداة جديدة؟", ctaSub: "أخبرنا بما قد يسرع سير عملك. ربما نقوم ببنائه.", ctaBtn: "اقترح أداة ←", fDesc: "الموزع المعتمد لبرامج IDEA StatiCa.", fL1: "المنتجات", fL2: "الشركة", fL3: "تواصل معنا" }
+            en: { 
+                navSteel: "STEEL", navConcrete: "CONCRETE", navBim: "BIM", navApps: "APPS", navVideos: "VIDEOS", navTraining: "TRAINING", navInsights: "INSIGHTS", navDemo: "Book a Demo", 
+                heroTitle: "ENGINEERING TOOLS <span class='orange-text'>BUILT FOR THE GULF</span>", heroSub: "Practical apps designed by structural engineers, for structural engineers working in the UAE and wider GCC region.", 
+                appBadge: "Available Now", appTitle: "BOM Extractor", appSub: "Bill of Material Extractor", appDesc: "Automatically extract and organize bills of materials from your structural models. Save hours of manual work, eliminate errors, and export clean, formatted reports in seconds.", appF1: "Supports IDEA StatiCa Steel & Concrete models", appF2: "One-click export to Excel and PDF", appF3: "Bilingual output (English & Arabic)", 
+                appBtn: "Learn More", 
+                soonTitle: "More Apps Coming Soon", soonDesc: "We are constantly building new tools tailored to the needs of engineers in the GCC. Stay tuned.", soonBadge: "Coming Soon", 
+                ctaTitle: "Have an Idea for a Tool?", ctaSub: "Tell us what would make your workflow faster. We might build it.", ctaBtn: "Suggest a Tool →", 
+                fDesc: "The certified IDEA StatiCa reseller.", fL1: "Products", fL2: "Company", fL3: "Contact" 
+            },
+            ar: { 
+                navSteel: "الصلب", navConcrete: "الخرسانة", navBim: "نمذجة المعلومات", navApps: "تطبيقاتنا", navVideos: "فيديوهات", navTraining: "التدريب", navInsights: "الرؤى", navDemo: "احجز عرضاً تجريبياً", 
+                heroTitle: "أدوات هندسية <span class='orange-text'>مصممة للخليج</span>", heroSub: "تطبيقات عملية طورها مهندسون إنشائيون، للمهندسين العاملين في الإمارات ومنطقة الخليج.", 
+                appBadge: "متاح الآن", appTitle: "مستخرج جدول الكميات (BOM Extractor)", appSub: "أداة استخراج جدول الكميات", appDesc: "استخرج جداول الكميات ونظمها تلقائياً من النماذج الإنشائية. وفر ساعات من العمل اليدوي، تخلص من الأخطاء، وقم بتصدير تقارير منسقة ونظيفة في ثوانٍ.", appF1: "يدعم نماذج IDEA StatiCa للصلب والخرسانة", appF2: "تصدير بنقرة واحدة إلى Excel و PDF", appF3: "مخرجات ثنائية اللغة (عربي وإنجليزي)", 
+                appBtn: "اعرف المزيد", 
+                soonTitle: "المزيد من التطبيقات قريباً", soonDesc: "نعمل باستمرار على تطوير أدوات جديدة تلبي احتياجات المهندسين في منطقة الخليج. ترقبوا الجديد.", soonBadge: "قريباً", 
+                ctaTitle: "هل لديك فكرة لأداة جديدة؟", ctaSub: "أخبرنا بما قد يسرع سير عملك. ربما نقوم ببنائه.", ctaBtn: "اقترح أداة ←", 
+                fDesc: "الموزع المعتمد.", fL1: "المنتجات", fL2: "الشركة", fL3: "تواصل معنا" 
+            }
         };
         let currentLang = 'en';
         function toggleLang() {
@@ -149,8 +163,13 @@
         
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar'); const logo = document.getElementById('nav-logo');
-            if (window.scrollY > 50) { nav.classList.add('scrolled'); if(logo) logo.src = 'gsd%20logo.png'; } 
-            else { nav.classList.remove('scrolled'); if(logo) logo.src = 'gsd%20logo%20black.png'; }
+            if (window.scrollY > 50) { 
+                nav.classList.add('scrolled'); 
+                if(logo) logo.src = 'gsd%20logo%20black.png'; // Scrolled white background -> Black logo
+            } else { 
+                nav.classList.remove('scrolled'); 
+                if(logo) logo.src = 'gsd%20logo.png'; // Top dark background -> White logo
+            }
         });
 
         const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } else { e.target.classList.remove('visible'); } }); }, { threshold: 0.1 });
