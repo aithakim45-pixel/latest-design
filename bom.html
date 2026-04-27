@@ -59,7 +59,7 @@
         .faq-section { padding: 100px 5%; background: var(--dark); color: var(--white); }
         .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 1200px; margin: 50px auto 0; }
         .faq-card { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
-        .faq-card h4 { color: var(--primary); font-size: 1.2rem; margin-bottom: 10px; }
+        .faq-card h4 { color: var(--primary); font-size: 1.15rem; margin-bottom: 15px; line-height: 1.4;}
         .faq-card p { color: #A0AABF; font-size: 1rem; margin: 0; }
 
         /* CTA */
@@ -127,8 +127,8 @@
             <div class="feat-card fade-in">
                 <h3 data-i18n="f1T">Target Audience</h3>
                 <ul style="margin-bottom: 20px;">
-                    <li style="margin-bottom:10px; font-weight:bold;">📐 <span data-i18n="aud1">Structural Engineers</span></li>
-                    <li style="font-weight:bold;">📊 <span data-i18n="aud2">Procurement & Planning Professionals</span></li>
+                    <li style="margin-bottom:10px; font-weight:bold; color: var(--dark);">📐 <span data-i18n="aud1">Structural Engineers</span></li>
+                    <li style="font-weight:bold; color: var(--dark);">📊 <span data-i18n="aud2">Procurement & Planning Professionals</span></li>
                 </ul>
                 <p data-i18n="f1D" style="margin-top:auto;">BOM Extractor is a click-and-use application. No local admin rights are required to install and run.</p>
             </div>
@@ -173,21 +173,37 @@
     <section class="faq-section fade-in">
         <h2 data-i18n="faqTitle" style="text-align: center; font-size: 2.5rem; text-transform: uppercase;">Frequently Asked Questions</h2>
         <div class="faq-grid">
-            <div class="faq-card">
+            <div class="faq-card fade-in">
                 <h4 data-i18n="q1">Is BOM Extractor free of charge?</h4>
-                <p data-i18n="a1">Yes, it is free of charge for all GSD IDEA Customers with an IDEA StatiCa Enterprise license and active Maintenance. Others can contact our sales representative.</p>
+                <p data-i18n="a1">BOM Extractor is free of charge for all GSD IDEA Customers with an IDEA StatiCa Enterprise license and active Maintenance. Others can contact our sales representative.</p>
             </div>
-            <div class="faq-card">
-                <h4 data-i18n="q2">Do I need IDEA StatiCa installed?</h4>
-                <p data-i18n="a2">Yes, it is mandatory. BOM Extractor requires the corresponding version (e.g. v25.1 or v26.0) to be installed, though you can extract older .ideacon files.</p>
+            <div class="faq-card fade-in">
+                <h4 data-i18n="q2">How much time will I save using BOM Extractor?</h4>
+                <p data-i18n="a2">Expected time saving for each 10 connections is 2 hours.</p>
             </div>
-            <div class="faq-card">
-                <h4 data-i18n="q3">How do I log in and use it?</h4>
-                <p data-i18n="a3">Launch the app, log in with the email you use to access IDEA StatiCa, check your mailbox for an OTP, and insert the OTP into the login screen.</p>
+            <div class="faq-card fade-in">
+                <h4 data-i18n="q3">I am an Enterprise customer, who in my company can use it?</h4>
+                <p data-i18n="a3">Everybody who requested BOM Extractor via the form and is a Commercial License user of IDEA StatiCa.</p>
             </div>
-            <div class="faq-card">
-                <h4 data-i18n="q4">Do I need admin rights?</h4>
-                <p data-i18n="a4">No. Local admin rights are not required to launch it. It requires the same minimum system specs as IDEA StatiCa and 120MBs of HDD space.</p>
+            <div class="faq-card fade-in">
+                <h4 data-i18n="q4">Do I need local admin rights to install BOM Extractor?</h4>
+                <p data-i18n="a4">Local admin rights are not required to launch. BOM Extractor is a click-and-use type of application.</p>
+            </div>
+            <div class="faq-card fade-in">
+                <h4 data-i18n="q5">What are the minimum requirements to run BOM Extractor?</h4>
+                <p data-i18n="a5">Same as for the IDEA StatiCa application. It requires 120MBs of HDD space.</p>
+            </div>
+            <div class="faq-card fade-in">
+                <h4 data-i18n="q6">Do I need IDEA StatiCa installed on my PC?</h4>
+                <p data-i18n="a6">Yes, it is mandatory.</p>
+            </div>
+            <div class="faq-card fade-in">
+                <h4 data-i18n="q7">What version of IDEA StatiCa do I need to have?</h4>
+                <p data-i18n="a7">BOM Extractor requires the corresponding version to be installed on your PC (currently v25.1 or v26.0). However, you can extract reports from .ideacon files created in older versions like V24.1.</p>
+            </div>
+            <div class="faq-card fade-in">
+                <h4 data-i18n="q8">How can users log in and use BOM Extractor?</h4>
+                <p data-i18n="a8">1. Launch the app. 2. Login with the email you use to access IDEA StatiCa. 3. Check your mailbox for an OTP. 4. Insert the OTP into the login screen.</p>
             </div>
         </div>
     </section>
@@ -231,10 +247,14 @@
                 ws2T: "Extract", ws2D: "Click the Extract button to pull all material data.",
                 ws3T: "Share", ws3D: "Share the instantly generated BOM report.",
                 faqTitle: "Frequently Asked Questions",
-                q1: "Is BOM Extractor free of charge?", a1: "Yes, it is free of charge for all GSD IDEA Customers with an IDEA StatiCa Enterprise license and active Maintenance. Others can contact our sales representative.",
-                q2: "Do I need IDEA StatiCa installed?", a2: "Yes, it is mandatory. BOM Extractor requires the corresponding version (e.g. v25.1 or v26.0) to be installed, though you can extract older .ideacon files.",
-                q3: "How do I log in and use it?", a3: "Launch the app, log in with the email you use to access IDEA StatiCa, check your mailbox for an OTP, and insert the OTP into the login screen.",
-                q4: "Do I need admin rights?", a4: "No. Local admin rights are not required to launch it. It requires the same minimum system specs as IDEA StatiCa and 120MBs of HDD space.",
+                q1: "Is BOM Extractor free of charge?", a1: "BOM Extractor is free of charge for all GSD IDEA Customers with an IDEA StatiCa Enterprise license and active Maintenance. Others can contact our sales representative.",
+                q2: "How much time will I save using BOM Extractor?", a2: "Expected time saving for each 10 connections is 2 hours.",
+                q3: "I am an Enterprise customer, who in my company can use it?", a3: "Everybody who requested BOM Extractor via the form and is a Commercial License user of IDEA StatiCa.",
+                q4: "Do I need local admin rights to install BOM Extractor?", a4: "Local admin rights are not required to launch. BOM Extractor is a click-and-use type of application.",
+                q5: "What are the minimum requirements to run BOM Extractor?", a5: "Same as for the IDEA StatiCa application. It requires 120MBs of HDD space.",
+                q6: "Do I need IDEA StatiCa installed on my PC?", a6: "Yes, it is mandatory.",
+                q7: "What version of IDEA StatiCa do I need to have?", a7: "BOM Extractor requires the corresponding version to be installed on your PC (currently v25.1 or v26.0). However, you can extract reports from .ideacon files created in older versions like V24.1.",
+                q8: "How can users log in and use BOM Extractor?", a8: "1. Launch the app. 2. Login with the email you use to access IDEA StatiCa. 3. Check your mailbox for an OTP. 4. Insert the OTP into the login screen.",
                 ctaTitle: "Ready to eliminate manual reporting?", ctaBtn: "Request the BOM Extractor", 
                 fDesc: "The certified IDEA StatiCa reseller.", fL1: "Products", fL2: "Company", fL3: "Contact" 
             },
@@ -253,10 +273,14 @@
                 ws2T: "استخراج", ws2D: "انقر فوق زر الاستخراج لسحب جميع بيانات المواد.",
                 ws3T: "مشاركة", ws3D: "شارك تقرير جداول الكميات (BOM) الذي تم إنشاؤه فوراً.",
                 faqTitle: "الأسئلة الشائعة",
-                q1: "هل مستخرج BOM مجاني؟", a1: "نعم، إنه مجاني لجميع عملاء GSD IDEA الذين يمتلكون ترخيص Enterprise وصيانة فعالة. يمكن للآخرين التواصل مع مندوب المبيعات.",
-                q2: "هل أحتاج إلى تثبيت IDEA StatiCa؟", a2: "نعم، هذا إلزامي. يتطلب البرنامج الإصدار المطابق (مثل v25.1 أو v26.0)، على الرغم من أنه يمكنك استخراج الملفات القديمة.",
-                q3: "كيف أسجل الدخول؟", a3: "قم بتشغيل التطبيق، سجل الدخول بالبريد المستخدم لـ IDEA StatiCa، واحصل على رمز OTP من بريدك وأدخله في الشاشة.",
-                q4: "هل أحتاج إلى صلاحيات مسؤول (Admin)؟", a4: "لا. حقوق المسؤول ليست مطلوبة للتشغيل. يتطلب التطبيق نفس مواصفات النظام كـ IDEA StatiCa و 120 ميجابايت من مساحة القرص.",
+                q1: "هل مستخرج جدول الكميات مجاني؟", a1: "نعم، إنه مجاني لجميع عملاء GSD IDEA الذين يمتلكون ترخيص Enterprise وصيانة فعالة. يمكن للآخرين التواصل مع مندوب المبيعات.",
+                q2: "كم من الوقت سأوفر باستخدام مستخرج BOM؟", a2: "التوفير المتوقع للوقت لكل 10 وصلات هو ساعتان.",
+                q3: "أنا عميل Enterprise، من يمكنه استخدامه في شركتي؟", a3: "كل من طلبه عبر النموذج وهو مستخدم لترخيص تجاري من IDEA StatiCa.",
+                q4: "هل أحتاج إلى صلاحيات مسؤول (Admin) للتثبيت؟", a4: "صلاحيات المسؤول ليست مطلوبة. إنه تطبيق يعمل بالنقر والاستخدام.",
+                q5: "ما هي المتطلبات الدنيا للتشغيل؟", a5: "نفس متطلبات IDEA StatiCa. يتطلب مساحة 120 ميجابايت على القرص الصلب.",
+                q6: "هل أحتاج إلى تثبيت IDEA StatiCa؟", a6: "نعم، هذا إلزامي.",
+                q7: "ما هو إصدار IDEA StatiCa الذي أحتاجه؟", a7: "يتطلب الإصدار المطابق (حالياً v25.1 أو v26.0)، رغم أنه يمكنك استخراج التقارير من ملفات .ideacon القديمة مثل v24.1.",
+                q8: "كيف يمكن للمستخدمين تسجيل الدخول واستخدامه؟", a8: "1. قم بتشغيل التطبيق. 2. سجل الدخول ببريد IDEA StatiCa. 3. احصل على رمز OTP من بريدك. 4. أدخله في الشاشة.",
                 ctaTitle: "هل أنت مستعد لأتمتة سير عملك؟", ctaBtn: "اطلب مستخرج BOM", 
                 fDesc: "الموزع المعتمد لبرامج IDEA StatiCa.", fL1: "المنتجات", fL2: "الشركة", fL3: "تواصل معنا" 
             }
@@ -276,15 +300,14 @@
             else { document.querySelector('h1[data-i18n="heroTitle"]').innerHTML = "مستخرج <span class='orange-text'>جدول الكميات</span>"; }
         }
         
+        // Exact Logo switching logic maintained
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar'); 
             const logo = document.getElementById('nav-logo');
             if (window.scrollY > 50) { 
-                // Scrolled: White background -> Black logo
                 nav.classList.add('scrolled'); 
                 if(logo) logo.src = 'gsd%20logo%20black.png'; 
             } else { 
-                // Top: Dark background -> White logo
                 nav.classList.remove('scrolled'); 
                 if(logo) logo.src = 'gsd%20logo.png'; 
             }
